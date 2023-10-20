@@ -1,0 +1,40 @@
+.nav {
+  &__header {
+    color: white;
+  }
+
+  &__body {
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .e-list {
+      &-item {
+        &.router-link-active,
+        &:hover {
+          background-color: var(--black);
+          .e-icon {
+            color: var(--primary);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include _xs {
+  html {
+    --root-font-size: 14.8px;
+  }
+}
+
+@include _sm {
+  html {
+    --root-font-size: 15.2px;
+  }
+}
+
+@include _md {
+  html {
+    --root-font-size: 15.6px;
+  }
+}

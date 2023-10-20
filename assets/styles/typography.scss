@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+html {
+    // font-size: 10px;
+}
+
+h1 {
+    +p {
+        margin-top: 0px;
+    }
+}
+
+.title {
+    font-size: 1.37rem;
+    margin-top: 0;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    overflow: hidden;
+    height: 1.5em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dialog-title {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 0;
+    text-transform: capitalize;
+
+    +p {
+        margin-bottom: 20px;
+        margin-top: 0;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 300;
+    }
+}
+
+@include _xs {
+    h1 {
+        font-size: 1.4rem;
+
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+}
+
+@include _sm {
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .title {
+        font-size: 1.1rem;
+    }
+}
+
+@include _md {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .title {
+        font-size: 1.3rem;
+    }
+}

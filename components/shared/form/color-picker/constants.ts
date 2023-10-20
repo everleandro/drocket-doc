@@ -1,0 +1,18 @@
+export const colors = [
+    'golden-tainoi',
+    'yellow-green',
+    'olivine',
+    'shamrock',
+    'egg-blue',
+    'danube',
+    'biloba-flower',
+    'lavender',
+    'tickle-me-pink',
+    'carnation',
+    'salmon',
+    'yellow-orange',
+    'cape-palliser',
+    'river-bed',
+    'gray-hit',
+    'cloud',
+]

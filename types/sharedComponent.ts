@@ -1,0 +1,1 @@
+export type size = 'x-small' | 'small' | 'default' | 'large' | 'x-large'
