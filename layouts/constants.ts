@@ -5,11 +5,11 @@ export const mainLinks = [
     text: "Date Picker",
     to: "/",
   },
-  // {
-  //     icon: iconFactory.staff,
-  //     text: 'staff',
-  //     to: '/staff'
-  // },
+  {
+      icon:"",
+      text: 'form',
+      to: '/form'
+  },
   // {
   //     icon: iconFactory.events,
   //     text: 'eventos',

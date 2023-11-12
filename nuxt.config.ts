@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: ["@/assets/styles/Main.scss", "prismjs/themes/prism.css"],
+  css: ["@/assets/styles/Main.scss"],
   components: [
     { path: "~/components/shared", prefix: "E" },
     { path: "~/components/shared/grid", prefix: "E" },

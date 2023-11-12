@@ -20,7 +20,6 @@ const sliderStyle = reactive<Record<string, string>>({})
 const active = computed(() => Group?.modelValue?.value === props.value)
 
 const changeGroupValue = (): void => {
-    console.log('asda')
     Group?.changeValue?.(props.value)
 }
 
