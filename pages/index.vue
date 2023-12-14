@@ -1,67 +1,73 @@
 <template>
   <div>
-    <div class="markdown-body css-1gvtuo9">
-      <h1 class="my-4">Date Pickers - Getting Started</h1>
-      <p class="description mb-7">Get started with the Date Pickers. Install the package, configure your
-        application
-        and start using the component.</p>
 
-      <h2 id="installation">Installation</h2>
-      <p class="mb-4">Using your favorite package manager, install:</p>
-    </div>
-    <boxCode :code="installCode">
-    </boxCode>
-    <h2>Usage</h2>
-    <BoxExample>
-      <template #tabs>
-        <ETab value="design">
-          Design
-        </ETab>
-        <ETab value="Template">
-          Template
-        </ETab>
-        <ETab value="Ts">
-          Ts
-        </ETab>
-      </template>
-      <template #window-item>
-        <EWindowItem value="design">
-          <div class="d-flex justify-center pa-4">
-            <ECard>
-              <EDatePicker v-model="example" :landscape="landscape" :no-title="noTitle" :color="color"
-                :icon-prev="iconPrev" :icon-next="iconNext" />
-            </ECard>
-          </div>
-        </EWindowItem>
-        <EWindowItem value="Template">
-          <div v-text="HTMLCode" v-prism></div>
-        </EWindowItem>
-        <EWindowItem value="Ts">
-          <div v-text="TSCode" v-prism="{ class: 'language-javascript' }"></div>
-        </EWindowItem>
-      </template>
-      <template #form>
-        <EForm>
-          <ECheckbox v-model="landscape" label="landscape" :color="color" />
-          <ECheckbox v-model="noTitle" label="noTitle" :color="color" />
-          <ESelect v-model="color" :items="colors" :color="color" label="color" />
-          <ESelect v-model="iconPrev" label="icon-prev" :items="icons" :color="color">
-            <template #item="{ attrs, item }">
-              <e-list-item v-bind="attrs" :prepend-icon="item">
-                {{ item }}
-              </e-list-item>
-            </template>
-          </ESelect>
-          <ESelect v-model="iconNext" label="icon-next" :items="icons" :color="color">
-            <template #item="{ attrs, item }">
-              <e-list-item v-bind="attrs" :prepend-icon="item">
-                {{ item }}
-              </e-list-item>
-            </template>
-          </ESelect>
-        </EForm>
-      </template>
-    </BoxExample>
+    <section class="home">
+      <div class="mb-12">
+        <h1 class="text-h3 mb-2">
+          Introduction - Drocket
+        </h1>
+        <p>
+          Drocket is components library built on top of Vue. It offers a collection of pre-designed UI components and
+          styles that you can easily integrate into your web applications. Install Drocket in your Vue application or
+          Nuxt Application following step bellow.
+        </p>
+      </div>
+      <div class="mb-12">
+        <h2 class="text-h4 mb-2">Installation</h2>
+        <p>
+          To get started with Drocket, simply paste the following code into your terminal:
+        </p>
+        <boxCode :code="installCode" class="my-2" />
+      </div>
+      <div class="mb-12">
+        <h2 class="text-h4 mb-2">
+          Vue App
+        </h2>
+        <e-divider></e-divider>
+        <div class="mt-2">
+          <p class="">Setting Up Drocket in Vue Application</p>
+          <e-chip class="mb-2" color="secondary"> //src/main.ts</e-chip>
+          <div v-prism="{ class: 'language-js' }">{{ VueMainJs }}</div>
+          <e-chip class="mb-2 mt-4" color="secondary"> // vue.config.js</e-chip>
+          <div v-prism="{ class: 'language-js' }">{{ VueConfigJs }}</div>
+        </div>
+      </div>
+      <div class="mb-12">
+        <h2 class="text-h4 mb-2">
+          Nuxt App
+        </h2>
+        <e-divider></e-divider>
+        <div class="mt-2">
+          <p class="">Setting Up Drocket in Nuxt Application</p>
+          <e-chip class="mb-2" color="secondary"> // plugins/drocket.js</e-chip>
+          <div v-prism="{ class: 'language-js' }">{{ NuxtPluginsJs }}</div>
+          <e-chip class="mb-2 mt-4" color="secondary"> // nuxt.config.js</e-chip>
+          <div v-prism="{ class: 'language-js' }">{{ NuxtConfigJs }}</div>
+          <e-chip class="mb-2 mt-4" color="secondary"> // sass/variables.scss</e-chip>
+          <div v-prism="{ class: 'language-js' }">{{ SassVariables }}</div>
+        </div>
+      </div>
+      <div class="mb-12">
+        <h2 class="text-h4 mb-2">
+          Sass variables example file
+        </h2>
+        <e-divider></e-divider>
+        <div class="mt-2">
+          <p class="">
+            This file overrides the default library style settings, each of the colors defined in it can be passed as a
+            property to components declared in the library and also generate helper classes.
+          </p>
+          <e-chip class="mb-2" color="secondary"> /sass/variables.scss</e-chip>
+          <div v-prism="{ class: 'language-scss' }">{{ SassVariablesExample }}</div>
+          <p class="mt-4 mb-2">
+            Generated classes
+          </p>
+          <e-divider></e-divider>
+          <div v-prism="{ class: 'language-scss' }">{{ GeneratedClasses }}</div>
+        </div>
+      </div>
+
+    </section>
   </div>
 </template>
 <script lang="ts" setup>
@@ -69,36 +75,84 @@
 import { BoxCode as BC } from "@/components/app/box-code/index.vue";
 
 const installCode: Record<string, BC> = {
-  npm: { code: 'npm install @drocket/d-date-picker', language: 'language-ts' },
-  pnpm: { code: 'pnpm add @drocket/d-date-picker', language: 'language-ts' },
-  yarn: { code: 'yarn add @drocket/d-date-picker', language: 'language-ts' }
+  npm: { code: 'npm install @drocket', language: 'language-js' },
+  pnpm: { code: 'pnpm add @drocket', language: 'language-js' },
+  yarn: { code: 'yarn add @drocket', language: 'language-js' }
 }
-const example = ref();
-const landscape = ref(false)
-const noTitle = ref(false)
-const color = ref('carnation')
-const { $icon } = useNuxtApp()
-const icons = [$icon.pickerIconPrev, $icon.phone, $icon.logout]
-const iconNext = ref($icon.pickerIconNext)
-const iconPrev = ref($icon.pickerIconPrev)
-const colors = ['primary', 'secondary', 'salmon', 'carnation']
 
-const HTMLCode = computed(() => `<template>
-  <e-date-picker 
-      v-model="example" ${landscape.value ? '\n    landscape' : ''} ${noTitle.value ? '\n    no-title' : ''}    
-      color="${color.value}" 
-      icon-prev="${iconNext.value}" 
-      icon-next="${iconPrev.value}" 
-  />
-</template>
+
+
+const VueMainJs = computed(() => `import "@ever.leandros91/e-vue/dist/e-vue.css";
+import Vue from 'vue'
+import { EVue } from '@ever.leandros91/e-vue'
+
+// this line auto imports all components and directives
+Vue.use(EVue)
+
 `)
-const TSCode = `
-  import { DatePicker } from '@drocket/d-date-picker';
-  import { defineComponent } from 'vue';
+const VueConfigJs = `module.exports = {
+  css: {
+    loaderOptions: {
+      sass: {
+        prependData: '
+        // This is the path to your variables
+        @import "@/sass/variables.scss";
+        ',
+      },
+    },
+  },
+};
+`
 
-  export default defineComponent({
-    components: { IonDatetime },
-  });
+
+const NuxtPluginsJs = computed(() => `import Vue from 'vue'
+import { EVue } from '@ever.leandros91/e-vue'
+Vue.use(EVue)
+`)
+const NuxtConfigJs = `css: [
+    '@ever.leandros91/e-vue/dist/e-vue.css',
+     // This is the path to your variables
+    '~sass/variables.scss',
+  ],
+`
+const SassVariables = `@import '@ever.leandros91/e-vue/styles/override.scss';`
+const SassVariablesExample = `// Globals
+$border-radius-root: 4px;
+$root-font-size: 2rem;
+
+// Colors
+$colors: (
+  "primary": #f19933,
+  "secondary": #2c373c,
+  "white": white,
+  "black": black,
+  "disabled": rgba(0, 0, 0, 0.38),
+  "success": #66bb6a,
+  "red": #f44336,
+  "error": #f44336,
+);
+
+$contrast-colors: (
+  "white": black,
+) !default;
+
+// This is mandatory
+@import "@ever.leandros91/e-vue/styles/override.scss";
+`
+const GeneratedClasses = `.primary {
+  background-color: #f19933;
+  &--text {
+    color: #f19933;
+  }
+}
+.secondary {
+  background-color: #2c373c;
+  &--text {
+    color: #2c373c;
+  }
+}
+// ...
 `
 
 </script>
+<style lang="scss"></style>

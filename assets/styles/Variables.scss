@@ -9,8 +9,9 @@ $icon-close-font-size: 24px;
 //colors
 $colors: (
   // "primary": #1de0b1,
-  'primary': #f19933,
+  "primary": #00dc82,
   "secondary": #2c373c,
+  "black-1": #292929,
   "input": #4f636b,
   "input-placeholder": #b7b9ba,
   "input-border": #e3e9eb,
@@ -40,7 +41,7 @@ $colors: (
   "disabled": #b7b9ba,
   "grey": #91a0a8,
   "error": #ff1744,
-  "white": white,
+  "white": white
 );
 
 $contrast-colors: (

@@ -2,8 +2,13 @@ import { iconFactory } from "~~/plugins/icons";
 export const mainLinks = [
   {
     icon: "",
-    text: "Date Picker",
+    text: "Get Started",
     to: "/",
+  },
+  {
+    icon: "",
+    text: "Date Picker",
+    to: "/date-picker",
   },
   {
       icon:"",

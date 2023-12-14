@@ -1,26 +1,26 @@
 <template>
-    <div :class="chipClass" draggable="false">
-        <div v-if="hasPrepend" class="e-chip__prepend">
+    <span :class="chipClass" draggable="false">
+        <span v-if="hasPrepend" class="e-chip__prepend">
             <slot name="prepend">
                 <EIcon v-if="prependIcon" :name="prependIcon" />
                 <EAvatar v-if="prependAvatar" :size="avatarSize" :src="prependAvatar" />
             </slot>
-        </div>
-        <div class="e-chip__underlay"></div>
+        </span>
+        <span class="e-chip__underlay"></span>
         <slot></slot>
 
-        <div class="e-chip__append">
+        <span class="e-chip__append">
             <slot name="append">
                 <EIcon v-if="appendIcon" :name="appendIcon" />
                 <EAvatar v-if="appendAvatar" :size="32" :src="appendAvatar" />
             </slot>
-        </div>
-        <div v-if="closable" class="e-chip__close" aria-label="Close">
+        </span>
+        <span v-if="closable" class="e-chip__close" aria-label="Close">
             <button v-ripple="{ center: true }" type="button" class="e-btn e-btn--icon" @click="handleClickClose">
                 <EIcon name="close" />
             </button>
-        </div>
-    </div>
+        </span>
+    </span>
 </template>
 <script lang="ts">
 export default { name: "Chip" }

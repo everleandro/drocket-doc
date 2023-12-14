@@ -1,27 +1,17 @@
 <template>
   <e-app>
-    <e-bar app fixed clipped color="secondary">
-      <h1 class="d-flex px-3 primary--text">
-        <EIcon :name="$icon.dashboard" class="mr-3" /> Drocket
+    <e-bar app fixed clipped color="white">
+      <e-button :icon="$icon.menu" color="tertiary" large @click="closeDrawer()" />
+      <h1 class="d-flex px-3 secondary--text"> Drocket
       </h1>
       <e-spacer />
-      <e-button
-        :icon="$icon.menu"
-        color="tertiary"
-        large
-        @click="closeDrawer()"
-      />
     </e-bar>
 
-    <EDrawer v-model="drawerModel" fixed nav class="secondary">
+    <EDrawer v-model="drawerModel" fixed nav>
       <div class="nav__body">
         <div class="main-links">
-          <e-list>
-            <template
-              v-for="({ icon, text, to }, index) in mainLinks"
-              :key="index"
-              color="white"
-            >
+          <e-list color="primary">
+            <template v-for="({ icon, text, to }, index) in mainLinks" :key="index">
               <e-list-item :to="to" :prepend-icon="icon">
                 <slot name="item-text">
                   {{ text }}
@@ -35,7 +25,7 @@
 
     <EMain>
       <EContainer class="mt-8">
-        <NuxtPage />
+        <slot />
       </EContainer>
     </EMain>
   </e-app>

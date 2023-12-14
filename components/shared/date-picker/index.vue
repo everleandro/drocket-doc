@@ -1,9 +1,9 @@
 <template >
   <div :class="pickerClass">
-    <div v-if="!noTitle" :class="[color, 'e-picker__title']">
+    <div v-if="!noTitle && !(onlyYear || onlyMonth)" :class="[color, 'e-picker__title']">
       <div class="e-date-picker-title">
         <slot name="title">
-          <div class="e-picker__title__btn e-date-picker-title__year">
+          <div class="e-picker__title__btn e-date-picker-title__year" @click="changeViewMode(store.viewTypeOptions.year)">
             {{ currentYear }}
           </div>
           <div class="e-picker__title__btn e-date-picker-title__date e-picker__title__btn--active">
@@ -66,6 +66,15 @@
               </span>
             </div>
           </div>
+          <div v-show="viewComputed === store.viewTypeOptions.year" :key="keyYearPage" class="year-view">
+            <div class="grid-body">
+              <span v-for="year in years" :key="year.timestamp" role="month-day" class="grid-body__cell__cell">
+                <button v-ripple :class="yearClasses(year)" standard="true" @click="selectYear(year)">
+                  <span class="e-btn__content"> {{ year.year }} </span>
+                </button>
+              </span>
+            </div>
+          </div>
         </transition-group>
       </div>
     </div>
@@ -74,7 +83,7 @@
 <script lang="ts" setup>
 
 import { Lng as Lnguage, suportedLng } from '@/locales/index';
-import { DatesConfiguration, datePickerViewType, Day, Month } from "./types"
+import { DatesConfiguration, datePickerViewType, Day, Month, Year } from "./types"
 import UtilDate from '@/models/date';
 import { EDIalog } from '@/components/shared/dialog/index.vue';
 import { ContainerMenuInterface } from '@/components/shared/menu/types';
@@ -83,6 +92,8 @@ export interface Props {
   landscape?: boolean
   color?: string
   noTitle?: boolean
+  onlyYear?: boolean
+  onlyMonth?: boolean
   closeOnChange?: boolean
   modelValue?: Date | string
   weekStart?: number
@@ -105,7 +116,7 @@ const menuContainer = inject<ContainerMenuInterface | undefined>("EMenuContainer
 
 const props = withDefaults(defineProps<Props>(), {
   color: 'primary',
-  lng: 'es',
+  lng: 'en',
   disabled: undefined,
   highlighted: undefined,
   view: undefined,
@@ -119,7 +130,7 @@ const availableRootClasses = {
 const store = reactive({
   pageDate: new Date(),
   localView: datePickerViewType.day,
-  selectedDate: new UtilDate(),
+  selectedDate: new UtilDate(new Date(), props.lng),
   globalContentAnimation: 'tab-transition',
   viewTypeOptions: datePickerViewType,
   pickerTransition: 'picker-transition',
@@ -131,7 +142,11 @@ const keyMonth = computed(() => {
 })
 
 const keyYear = computed(() => {
-  return new Date(store.pageDate).getFullYear() + '' + store.pageDate.getFullYear()
+  return store.localView === datePickerViewType.month ? new Date(store.pageDate).getFullYear() + '' + store.pageDate.getFullYear() + '' : 367893
+})
+
+const keyYearPage = computed(() => {
+  return Math.floor(new Date(store.pageDate).getFullYear() / 12) * 12
 })
 
 const emit = defineEmits<{
@@ -141,6 +156,11 @@ const emit = defineEmits<{
 }>()
 
 const viewComputed = computed((): datePickerViewType => {
+  if (props.onlyYear) {
+    return datePickerViewType.year
+  } else if (props.onlyMonth) {
+    return store.localView === datePickerViewType.day ? datePickerViewType.month : store.localView
+  }
   return props.view !== undefined ? props.view : store.localView;
 })
 const changeView = (value: datePickerViewType) => {
@@ -150,10 +170,10 @@ const changeView = (value: datePickerViewType) => {
 const changeValue = (value: UtilDate) => {
   updatePageConfiguration(value);
   if (props.closeOnChange) {
-    setTimeout(() => {
-      dialog?.close(true)
-      menuContainer?.closeMenu()
-    }, 400)
+    // setTimeout(() => {
+    dialog?.close(true)
+    menuContainer?.closeMenu()
+    // }, 400)
   }
   emit('update:modelValue', value.date);
 }
@@ -183,6 +203,11 @@ const visiblePrevMonthDays = computed((): Array<Day> => {
 
 watch(() => props.modelValue, (value) => {
   updatePageConfiguration(new UtilDate(value));
+})
+
+watch(() => props.view, (value: datePickerViewType | undefined) => {
+  if (value)
+    changeView(value)
 })
 
 const amountVisibleDaysOfPrevMonth = computed((): number => {
@@ -235,19 +260,21 @@ const getDateConfiguration = (
     });
   }
   if (
-    typeof configObject.to !== 'undefined' &&
-    configObject.to &&
-    date < configObject.to
+    typeof configObject.to !== 'undefined' && configObject.from && configObject.to &&
+    ((date > configObject.from &&
+      date < configObject.to) ||
+      (new UtilDate(date).format('year-YYYY-month-MM-month-DD') === new UtilDate(configObject.from).format('year-YYYY-month-MM-month-DD') ||
+        new UtilDate(date).format('year-YYYY-month-MM-month-DD') === new UtilDate(configObject.to).format('year-YYYY-month-MM-month-DD')))
   ) {
     result = true;
   }
-  if (
-    typeof configObject.from !== 'undefined' &&
-    configObject.from &&
-    date > configObject.from
-  ) {
-    result = true;
-  }
+  // if (
+  //   typeof configObject.from !== 'undefined' &&
+  //   configObject.from &&
+  //   date > configObject.from
+  // ) {
+  //   result = true;
+  // }
   if (typeof configObject.ranges !== 'undefined') {
     configObject.ranges.forEach((range) => {
       if (
@@ -312,7 +339,6 @@ const isHighlightEnd = (date: Date): boolean => {
   );
 }
 
-
 onMounted(() => {
   store.pageDate = props.modelValue ? new Date(props.modelValue) : new Date();
   store.selectedDate = new UtilDate(props.modelValue);
@@ -321,8 +347,6 @@ onMounted(() => {
 const modelValueTimestamp = computed((): number => {
   return props.modelValue ? new Date(props.modelValue).getTime() : 0;
 })
-
-
 
 const visibleNextMonthDays = computed((): Array<Day> => {
   const utilDate = new UtilDate(store.pageDate).endOfMonth();
@@ -368,12 +392,11 @@ const days = computed((): Array<Day> => {
 })
 
 const months = computed((): Array<Month> => {
-  const d = store.pageDate;
   let months: Array<Month> = [];
-  let utilDate = new UtilDate(store.pageDate).startOfYear();
+  let utilDate = new UtilDate(store.pageDate, props.lng).startOfYear();
   for (let i = 0; i < 12; i++) {
     months.push({
-      month: utilDate.monthhortName,
+      month: utilDate.monthshortName,
       timestamp: utilDate.date.getTime(),
       isSelected: isSelectedMonth(utilDate.date),
       isDisabled: isDisabledMonth(utilDate.date)
@@ -382,11 +405,33 @@ const months = computed((): Array<Month> => {
   }
   return months;
 })
+
+const years = computed((): Array<Year> => {
+  let years: Array<Year> = [];
+  const yearStart = Math.floor(store.pageDate.getFullYear() / 12) * 12
+  let utilDate = new UtilDate().set(yearStart, 'years').startOfYear();
+  for (let i = 0; i < 12; i++) {
+    years.push({
+      year: utilDate.date.getFullYear(),
+      timestamp: utilDate.date.getTime(),
+      isSelected: isSelectedYear(utilDate.date),
+      isDisabled: isDisabledMonth(utilDate.date)
+    });
+    utilDate.add(1, 'years');
+  }
+  return years;
+})
 const isSelectedMonth = (date: Date): boolean => {
   return (
     !!store.selectedDate &&
     store.selectedDate.date.getFullYear() === date.getFullYear() &&
     store.selectedDate.date.getMonth() === date.getMonth()
+  );
+}
+const isSelectedYear = (date: Date): boolean => {
+  return (
+    !!store.selectedDate &&
+    store.selectedDate.date.getFullYear() === date.getFullYear()
   );
 }
 
@@ -417,13 +462,21 @@ const isDisabledMonth = (date: Date): boolean => {
   return disabled;
 }
 
-const changeViewMode = (): void => {
-  store.globalContentAnimation = 'picker-fade-transition';
-  const result =
-    viewComputed.value === store.viewTypeOptions.day
-      ? store.viewTypeOptions.month
-      : store.viewTypeOptions.day;
-  changeView(result)
+const changeViewMode = (viewMode?: datePickerViewType): void => {
+  if (!props.onlyYear) {
+    store.globalContentAnimation = 'picker-fade-transition';
+    if (viewMode) {
+      changeView(viewMode)
+    } else {
+      let result = store.viewTypeOptions.month;
+      if (viewComputed.value === store.viewTypeOptions.day) {
+        result = store.viewTypeOptions.month
+      } else if (viewComputed.value === store.viewTypeOptions.month) {
+        result = store.viewTypeOptions.year
+      }
+      changeView(result)
+    }
+  }
 }
 
 const t = (): Lnguage => {
@@ -442,7 +495,7 @@ const formattedHeaderDate = computed((): string => {
   if (!store.selectedDate) {
     return '&nbsp;';
   }
-  return store.selectedDate.format('week-ddd, month-mmm month-D');
+  return store.selectedDate.setLng(props.lng).format('week-ddd, month-mmm month-D');
 })
 
 const formattedHeaderKey = computed((): number => {
@@ -450,12 +503,15 @@ const formattedHeaderKey = computed((): number => {
 })
 
 const formattedSubheader = (): string => {
-  const utilDate = new UtilDate(store.pageDate);
+  const utilDate = new UtilDate(store.pageDate, props.lng);
   switch (viewComputed.value) {
     case store.viewTypeOptions.day:
       return utilDate.format('month-mmmm year-YYYY');
     case store.viewTypeOptions.month:
       return utilDate.format('year-YYYY');
+    case store.viewTypeOptions.year:
+      const year = Math.floor(new Date(store.pageDate).getFullYear() / 12) * 12
+      return `${year} - ${year + 12}`;
   }
   return ``;
 }
@@ -482,6 +538,15 @@ const monthClasses = (month: Month): Record<string, boolean> => {
     'e-btn--text': !month.isSelected || month.isDisabled,
     'e-btn--disabled': month.isDisabled,
     [`e-btn--${props.color} e-btn--depressed`]: month.isSelected
+  };
+}
+
+const yearClasses = (year: Year): Record<string, boolean> => {
+  return {
+    'e-btn v-ripple-element e-btn--size-default e-btn--block': true,
+    'e-btn--text': !year.isSelected || year.isDisabled,
+    // 'e-btn--disabled': year.isDisabled,
+    [`e-btn--${props.color} e-btn--depressed`]: year.isSelected
   };
 }
 
@@ -538,8 +603,10 @@ const changeYear = (incrementBy = +1): void => {
 const nextButtonAction = (): void => {
   if (viewComputed.value === store.viewTypeOptions.day) {
     nextMonth();
-  } else {
+  } else if (viewComputed.value === store.viewTypeOptions.month) {
     nextYear();
+  } else {
+    nextYearPage();
   }
 }
 const nextYear = (): void => {
@@ -548,11 +615,23 @@ const nextYear = (): void => {
     changeYear(1);
   }
 }
+const nextYearPage = (): void => {
+  if (!nextYearPageDisabled.value) {
+    store.globalContentAnimation = 'tab-transition';
+    changeYear(12);
+  }
+}
 const nextYearDisabled = computed((): boolean => {
   if (!props.disabled || !props.disabled?.from) {
     return false;
   }
   return props.disabled?.from.getFullYear() <= store.pageDate.getFullYear();
+})
+const nextYearPageDisabled = computed((): boolean => {
+  return false
+})
+const previousYearPageDisabled = computed((): boolean => {
+  return false
 })
 
 const previousYearDisabled = computed(() => {
@@ -568,7 +647,17 @@ const previousYear = (): void => {
     changeYear(-1);
   }
 }
+
+const previousYearPage = (): void => {
+  if (!previousYearPageDisabled.value) {
+    store.globalContentAnimation = 'tab-reverse-transition';
+    changeYear(-12);
+  }
+}
 const headerValueKey = computed(() => {
+  if (viewComputed.value === store.viewTypeOptions.year) {
+    return keyYearPage.value
+  }
   return viewComputed.value == store.viewTypeOptions.day
     ? store.pageDate.getMonth()
     : store.pageDate.getFullYear();
@@ -577,8 +666,10 @@ const headerValueKey = computed(() => {
 const prevButtonAction = (): void => {
   if (viewComputed.value == store.viewTypeOptions.day) {
     previousMonth();
-  } else {
+  } else if (viewComputed.value === store.viewTypeOptions.month) {
     previousYear();
+  } else {
+    previousYearPage()
   }
 }
 
@@ -597,9 +688,26 @@ const selectDate = (day: Day): void => {
 
 const selectMonth = (month: Month): void => {
   if (!month.isDisabled) {
-    store.globalContentAnimation = 'picker-fade-transition';
-    store.pageDate = new Date(month.timestamp);
-    changeView(store.viewTypeOptions.day);
+    if (props.onlyMonth) {
+      changeValue(new UtilDate(month.timestamp))
+    } else {
+      store.globalContentAnimation = 'picker-fade-transition';
+      store.pageDate = new Date(month.timestamp);
+      changeView(store.viewTypeOptions.day);
+    }
+  }
+}
+
+const selectYear = (year: Year): void => {
+  if (!year.isDisabled) {
+    if (props.onlyYear) {
+      changeValue(new UtilDate(year.timestamp))
+    }
+    else {
+      store.globalContentAnimation = 'picker-fade-transition';
+      store.pageDate = new Date(year.timestamp);
+      changeView(store.viewTypeOptions.month);
+    }
   }
 }
 </script>

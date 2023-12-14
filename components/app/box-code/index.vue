@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="node-box">
-            <ETabGroup v-model="tab" color="primary" class="black">
+            <ETabGroup v-model="tab" color="primary" class="white mb-2">
                 <ETab v-for="(_, key, index) in code" :value="index" :key="index">
                     {{ key }}
                 </ETab>

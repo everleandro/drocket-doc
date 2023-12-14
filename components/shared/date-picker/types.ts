@@ -24,17 +24,24 @@ export enum datePickerViewType {
 }
 
 export interface DatesConfiguration {
-  dates: Array<Date>;
-  to: Date;
-  from: Date;
-  daysOfMonth: Array<number>;
-  ranges: Array<DatesRange>;
-  days: Array<number>;
-  customPredictor: (date: Date) => boolean;
+  dates?: Array<Date>;
+  from?: Date;
+  to?: Date;
+  daysOfMonth?: Array<number>;
+  ranges?: Array<DatesRange>;
+  days?: Array<number>;
+  customPredictor?: (date: Date) => boolean;
 }
 
 export interface Month {
   month: string;
+  timestamp: number;
+  isSelected: boolean;
+  isDisabled: boolean;
+}
+
+export interface Year {
+  year: number;
   timestamp: number;
   isSelected: boolean;
   isDisabled: boolean;

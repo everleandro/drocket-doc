@@ -1,4 +1,6 @@
 import Prism from "prismjs";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-scss";
 
 Prism.manual = true;
 export const prism = {
