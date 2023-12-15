@@ -34,9 +34,9 @@
               :outlined="formProperty.outlined" :disabled="formProperty.state === formState.disabled" :color="color"
               :readonly="formProperty.state === formState.readonly" :retain-color="formProperty.retainColor"
               @submit="validate">
-              <e-text-field v-model="fields.name" label="First Name" lg="12" :rules="[required]" />
+              <e-text-field v-model="fields.name" label="First Name" lg="12" />
               <e-text-field v-model="fields.lastName" label="Last name" lg="12" />
-              <e-text-field v-model="fields.address" cols="24" label="Address" />
+              <e-text-field v-model="fields.address" cols="24" label="Address" :rules="[required]" />
 
               <EFormColumn cols="24" class="mt-4">
                 <ESpacer />
@@ -106,8 +106,7 @@ const HTMLCode = computed(() => `<template>
     <e-text-field 
         v-model="fields.name" 
         label="First Name" 
-        lg="12" 
-        :rules="[required]"
+        lg="12"
     />
     <e-text-field
         v-model="fields.lastName"
@@ -117,7 +116,8 @@ const HTMLCode = computed(() => `<template>
     <e-text-field 
         v-model="fields.address"
         cols="24"
-        label="Address" 
+        label="Address"
+        :rules="[required]"
     />
     <EFormColumn>
       <ESpacer />
