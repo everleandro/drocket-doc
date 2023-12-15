@@ -48,6 +48,7 @@ const emit = defineEmits<{
 }>()
 
 watch(() => configuration.color, (value: string) => setConfiguration('color', value))
+watch(() => props.color, (value: string = 'primary') => setConfiguration('color', value))
 
 const state = reactive({ radioChilds: new Array<Partial<Radio>>() })
 

@@ -1,58 +1,56 @@
 .e-form {
-    margin: -$space-base;
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1 1 auto;
+  margin: -$space-base;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
 
+  & > .e-field {
+    @include grid-generator();
+  }
+  &--readonly {
+    pointer-events: none;
+  }
 
-    &>.e-field {
-        @include grid-generator();
+  &.no-gutters {
+    padding: 0 0.5px 0.5px 0;
+    margin: 0;
 
+    & > .e-field {
+      @include grid-generator(1px);
+      padding: 0;
+      margin: -0.5px;
+      flex: 0 0 100%;
+      max-width: 100%;
     }
 
-    &.no-gutters {
-        padding: 0 0.5px 0.5px 0;
-        margin: 0;
+    .e-field__slot {
+      background-color: white;
+    }
+  }
 
-        &>.e-field {
-            @include grid-generator(1px);
-            padding: 0;
-            margin: -0.5px;
-            flex: 0 0 100%;
-            max-width: 100%;
-        }
+  &--outlined {
+    .e-field {
+      @include e-field-outlined;
 
-        .e-field__slot {
-            background-color: white;
-        }
+      .e-field__line {
+        display: none;
+      }
     }
 
-    &--outlined {
-
-        .e-field {
-            @include e-field-outlined;
-
-            .e-field__line {
-                display: none;
-            }
-        }
-
-        &.e-form--disabled {
-            .e-field__slot {
-                border-style: dashed;
-            }
-        }
+    &.e-form--disabled {
+      .e-field__slot {
+        border-style: dashed;
+      }
     }
+  }
 
-    &--disabled {
-        .e-field {
-            pointer-events: none;
+  &--disabled {
+    .e-field {
+      pointer-events: none;
 
-            &__line::before {
-                border-style: dashed;
-            }
-        }
-
+      &__line::before {
+        border-style: dashed;
+      }
     }
-
+  }
 }

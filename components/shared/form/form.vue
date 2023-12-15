@@ -1,5 +1,5 @@
 <template>
-    <form ref="form" :class="formClass" @submit="submit">
+    <form ref="form" :class="formClass" v-on:submit="submit">
         <slot></slot>
     </form>
 </template>
@@ -19,6 +19,7 @@ export interface Props {
     noGutters?: boolean
     outlined?: boolean
     disabled?: boolean
+    readonly?: boolean
     retainColor?: boolean
     labelMinWidth?: string
     color?: string
@@ -44,6 +45,7 @@ const formClass = computed(() => {
     props.noGutters && result.push('no-gutters')
     props.outlined && result.push('e-form--outlined')
     props.disabled && result.push('e-form--disabled')
+    props.readonly && result.push('e-form--readonly')
     return result
 })
 

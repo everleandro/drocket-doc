@@ -17,7 +17,7 @@
         customization options, allowing developers to control date formats, highlight specific dates, set minimum and
         maximum selectable dates, and more.
       </p>
-      <BoxExample>
+      <BoxExample :color="color">
         <template #tabs>
           <ETab value="design">
             Design
@@ -67,7 +67,7 @@
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Disabled and Highlighted dates</h2>
       <p>Specify disabled and highlighted dates using objects or functions. based on <code
-          class="primary--text mx2 code ">DatesConfiguration </code>interface</p>
+          class="primary-darken-1--text mx2 code ">DatesConfiguration </code>interface</p>
       <BoxExample>
         <template #tabs>
           <ETab value="design">
@@ -224,7 +224,159 @@
         </template>
       </BoxExample>
     </section>
+    <div class="mb-12 pt-12">
+      <h1 class="text-h3 my-2">
+        API Reference
+      </h1>
+    </div>
 
+    <section class="mb-12">
+      <h2 class="text-h4 mb-2">Props</h2>
+      <p>Explore the available props for the date picker component</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>landscape</td>
+            <td> specifies the orientation of the component</td>
+            <td class="string">boolean</td>
+            <td class="boolean">false</td>
+          </tr>
+          <tr>
+            <td>color</td>
+            <td>Applies specified color to the component - supports only utility colors (for example <code
+                class="boolean">success</code>
+              or <code class="boolean">purple</code>)
+            </td>
+            <td class="string">string</td>
+            <td class="string">primary</td>
+          </tr>
+          <tr>
+            <td>no-title</td>
+            <td>hide or show the header</td>
+            <td class="string">boolean</td>
+            <td class="boolean">false</td>
+          </tr>
+          <tr>
+            <td>only-year</td>
+            <td>changes the behavior of the component to one of year selection</td>
+            <td class="string">boolean</td>
+            <td class="boolean">false</td>
+          </tr>
+          <tr>
+            <td>only-month</td>
+            <td>changes the behavior of the component to one of month selection</td>
+            <td class="string">boolean</td>
+            <td class="boolean">false</td>
+          </tr>
+          <tr>
+            <td>close-on-change</td>
+            <td>If the component is used within a dialog or menu, this property can be used to indicate that it
+              automatically closes the window as soon as a date is selected.</td>
+            <td class="string">boolean</td>
+            <td class="boolean">false</td>
+          </tr>
+          <tr>
+            <td>model-value</td>
+            <td>The v-model value of the component. </td>
+            <td class="string">Date|string</td>
+            <td class="undefined">undefined</td>
+          </tr>
+          <tr>
+            <td>week-start</td>
+            <td>day on which you want the week to start</td>
+            <td class="string">number</td>
+            <td class="string">1</td>
+          </tr>
+          <tr>
+            <td>lng</td>
+            <td>component language</td>
+            <td class="string">en | es</td>
+            <td class="string">'en'</td>
+          </tr>
+          <tr>
+            <td>icon-prev</td>
+            <td>Sets the icon for previous month/year button.</td>
+            <td class="string">string</td>
+            <td class="string">-</td>
+          </tr>
+          <tr>
+            <td>icon-next</td>
+            <td>Sets the icon for next month/year button.</td>
+            <td class="string">string</td>
+            <td class="string">-</td>
+          </tr>
+          <tr>
+            <td>disabled</td>
+            <td>is used to disable the desired dates using the <code class="boolean">DatesConfiguration</code> interface
+            </td>
+            <td class="string">DatesConfiguration</td>
+            <td class="object">{}</td>
+          </tr>
+          <tr>
+            <td>highlighted</td>
+            <td>is used to highlight the desired dates using the <code class="boolean">DatesConfiguration</code> interface
+            </td>
+            <td class="string">DatesConfiguration</td>
+            <td class="object">{}</td>
+          </tr>
+          <tr>
+            <td>view</td>
+            <td>specifies the initial mode of the calendar: day month or year</td>
+            <td class="string">datePickerViewType</td>
+            <td class="string">0</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+    <section class="mb-12">
+      <h2 class="text-h4 mb-2">Events</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>update:modelValue</td>
+            <td class="string">Date | string</td>
+          </tr>
+          <tr>
+            <td>update:view</td>
+            <td class="string">datePickerViewType</td>
+          </tr>
+          <tr>
+            <td>click:day</td>
+            <td class="string">Day</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="mb-12">
+      <h2 class="text-h4 mb-2">Slots</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>title</td>
+            <td>Slot for the component’s title content.</td>
+          </tr>
+          <tr>
+            <td>header</td>
+            <td>Slot for the component’s header content.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </div>
 </template>
 <script lang="ts" setup>

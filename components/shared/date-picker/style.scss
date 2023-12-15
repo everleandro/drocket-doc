@@ -16,7 +16,9 @@
   font-size: 1rem;
   vertical-align: top;
   position: relative;
-
+  .e-btn {
+    font-weight: 400;
+  }
   &__title {
     color: #fff;
     padding: 16px;
@@ -246,7 +248,7 @@
       .grid-header {
         &__cell {
           padding: 8px 0;
-          font-weight: 600;
+          font-weight: 500;
           text-transform: capitalize;
         }
       }
@@ -255,6 +257,7 @@
         height: 32px;
         width: 32px;
         padding: 0;
+
         min-width: unset;
       }
     }
@@ -270,7 +273,7 @@
       .grid-header {
         &__cell {
           padding: 8px 0;
-          font-weight: 600;
+          font-weight: 500;
         }
       }
 

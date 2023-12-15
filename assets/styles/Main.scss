@@ -6,7 +6,8 @@
 @import "./field.scss";
 @import "./typography.scss";
 @import "./prism.scss";
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import "./app.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600&display=swap");
 
 .v-ripple-element {
   position: relative;

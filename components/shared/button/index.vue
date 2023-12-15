@@ -1,5 +1,5 @@
 <template>
-    <component v-ripple :is="tag" :class="btnClass" :style="style" @mouseover="handleHover(true)"
+    <component v-ripple :is="tag" :class="btnClass" :type="type||'button'" :style="style()" @mouseover="handleHover(true)"
         @mouseleave="handleHover(false)">
         <span v-show="props.loading" class="e-btn__loader">
             <slot name="loading">
@@ -52,6 +52,7 @@ export interface Props {
     block?: boolean
     small?: boolean
     xSmall?: boolean
+    type?: string
     large?: boolean
     xLarge?: boolean
     rounded?: boolean
@@ -59,7 +60,7 @@ export interface Props {
     icon?: string
     path?: Array<IconPath>
     height?: string
-    width?: boolean
+    width?: string | number
 }
 const configuration = reactive({
     hovered: false
@@ -107,10 +108,9 @@ const handleHover = (value: boolean) => {
     configuration.hovered = value;
 }
 const style = (): Record<string, string> => {
-    const _height: string = props.height ? `${props.height}px !important;` : 'unset';
     const result: Record<string, string> = {}
-    props.height && (result['height'] = `${props.height}px !important;`)
-    props.width && (result['width'] = `${props.width}px !important;`)
+    props.height && (result.height = `${props.height}px !important`)
+    props.width && (result.width = `${props.width}px !important`)
     return result
 }
 </script>

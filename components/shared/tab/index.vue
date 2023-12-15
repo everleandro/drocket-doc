@@ -4,7 +4,7 @@
             { 'e-slide-group-item--active e-tab--selected': active }]" :color="color" text tabindex="0" role="tab"
             :aria-selected="active" :value="value" @click="changeGroupValue">
             <slot></slot>
-            <div class="e-tab__slider" style="sliderStyle"></div>
+            <div class="e-tab__slider" :style="sliderStyle"></div>
         </EButton>
     </slot>
 </template>

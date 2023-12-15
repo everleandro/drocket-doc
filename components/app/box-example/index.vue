@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="box-example e-card">
-            <ETabGroup v-model="tab">
+            <ETabGroup v-model="tab" :color="color">
                 <slot name="tabs"></slot>
             </ETabGroup>
             <e-divider></e-divider>
@@ -30,7 +30,10 @@ export default {
 <script lang="ts" setup>
 const tab = ref('design')
 const slots = useSlots()
-
+export interface Props {
+    color?: string
+}
+const props = defineProps<Props>()
 const showForm = computed((): boolean => {
     return Boolean(slots.form)
 })
