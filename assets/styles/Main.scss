@@ -2,12 +2,14 @@
 @import "./Reset.scss";
 @import "./Animations.scss";
 @import "./IconFont.scss";
+// @import "@mdi/font/css/materialdesignicons.css";
 @import "./helper.scss";
 @import "./field.scss";
 @import "./typography.scss";
 @import "./prism.scss";
 @import "./app.scss";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600&display=swap");
+// @import url("https://cdn.jsdelivr.net/npm/@mdi/font@7.3.67/css/materialdesignicons.min.css");
 
 .v-ripple-element {
   position: relative;

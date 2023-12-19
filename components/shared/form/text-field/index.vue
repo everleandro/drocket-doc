@@ -2,9 +2,10 @@
     <div :class="textFieldClass">
         <div class="e-field__control">
             <div class="e-field__slot" @mouseenter="handleHover(true)" @mouseleave="handleHover(false)">
-                <div v-if="prependIcon" class="e-field__prepend-inner" @click="handleClickPrependIcon">
+                <div v-if="prependIconName || prependIconPath" class="e-field__prepend-inner"
+                    @click="handleClickPrependIcon">
                     <div class="e-field__icon e-field__icon--prepend-inner">
-                        <EIcon :name="prependIcon" />
+                        <EIcon :name="prependIconName" :path="prependIconPath" />
                     </div>
                 </div>
                 <div class="e-field__overlay"></div>
@@ -28,13 +29,13 @@
                 <transition name="scale">
                     <div v-show="showClearable" class="e-field__append-inner">
                         <div class="e-field__icon e-field__icon--clear">
-                            <EButton :icon="iconClear || $icon.clear" small @click.stop.prevent="clear" />
+                            <EButton icon :icon-path="$icon.clear" small @click.stop.prevent="clear" />
                         </div>
                     </div>
                 </transition>
-                <div v-if="appendIcon" class="e-field__append-inner" @click="handleClickAppendIcon">
+                <div v-if="appendIconName || appendIconPath" class="e-field__append-inner" @click="handleClickAppendIcon">
                     <div class="e-field__icon e-field__icon--append">
-                        <EIcon :name="appendIcon" />
+                        <EIcon :name="appendIconName" :path="appendIconPath" />
                     </div>
                 </div>
                 <div v-if="!outlined" class="e-field__line"></div>
@@ -47,15 +48,17 @@
 </template>
 
 <script setup lang="ts">
+import { IconPath } from '@/components/shared/icon/index.vue';
+
 
 export interface Props {
     iconClear?: string; retainColor?: boolean;
     disabled?: boolean; dense?: boolean; readonly?: boolean; counter?: boolean; clearable?: boolean;
-    labelInline?: boolean; detail?: string; outlined?: boolean; label?: string | number;
+    labelInline?: boolean; detail?: string; outlined?: boolean; label?: string | number; prependIconPath?: Array<IconPath> | IconPath;
     modelValue?: string | number | null; placeholder?: string; suffix?: string; autocomplete?: string;
-    prefix?: string; inputAlign?: string; color?: string; limit?: string | number;
-    detailErrors?: Array<string>; detailsOnMessageOnly?: boolean; type?: string; appendIcon?: string;
-    labelMinWidth?: string; prependIcon?: string; rules?: Array<(param: any) => string | true>;
+    prefix?: string; inputAlign?: string; color?: string; limit?: string | number; appendIconPath?: Array<IconPath> | IconPath
+    detailErrors?: Array<string>; detailsOnMessageOnly?: boolean; type?: string; appendIconName?: string;
+    labelMinWidth?: string; prependIconName?: string; rules?: Array<(param: any) => string | true>;
     cols?: string | number; xs?: string | number; sm?: string | number; md?: string | number;
     lg?: string | number; xl?: string | number; inputReadonly?: boolean
 }

@@ -1,9 +1,9 @@
 <template>
-    <component v-ripple :is="tag" :class="btnClass" :type="type||'button'" :style="style()" @mouseover="handleHover(true)"
-        @mouseleave="handleHover(false)">
+    <component v-ripple :is="tag" :class="btnClass()" :type="type || 'button'" :style="style()"
+        @mouseover="handleHover(true)" @mouseleave="handleHover(false)">
         <span v-show="props.loading" class="e-btn__loader">
             <slot name="loading">
-                <div role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                <span role="progressbar" aria-valuemin="0" aria-valuemax="100"
                     class="e-progress-circular e-progress-circular--visible e-progress-circular--indeterminate"
                     style="height: 23px; width: 23px">
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -13,22 +13,22 @@
                             stroke-width="3.8095238095238093" stroke-dasharray="125.664"
                             stroke-dashoffset="125.66370614359172px" class="e-progress-circular__overlay"></circle>
                     </svg>
-                </div>
+                </span>
             </slot>
         </span>
-        <div v-if="prependIcon" class="e-btn__prepend">
-            <EIcon :name="prependIcon" />
-        </div>
+        <span v-if="prependIconName || prependIconPath" class="e-btn__prepend">
+            <EIcon :name="prependIconName" :path="prependIconPath" />
+        </span>
         <span class="e-btn__content">
             <slot name="default">
-                <template v-if="icon">
-                    <EIcon :name="icon" :path="path" />
+                <template v-if="icon || fab">
+                    <EIcon :name="iconName" :path="iconPath" />
                 </template>
             </slot>
         </span>
-        <div v-if="appendIcon" class="e-btn__append">
-            <EIcon :name="appendIcon" />
-        </div>
+        <span v-if="appendIconName || appendIconPath" class="e-btn__append">
+            <EIcon :name="appendIconName" :path="appendIconPath" />
+        </span>
     </component>
 </template>
 <script lang="ts" setup>
@@ -39,8 +39,10 @@ export type ButtonClassKeys = 'stacked' | 'disabled' | 'ripple' | 'loading' | 'f
 
 export interface Props {
     disabled?: boolean
-    appendIcon?: string
-    prependIcon?: string
+    appendIconName?: string
+    appendIconPath?: IconPath
+    prependIconName?: string
+    prependIconPath?: IconPath
     ripple?: boolean
     loading?: boolean
     color?: string
@@ -57,9 +59,10 @@ export interface Props {
     xLarge?: boolean
     rounded?: boolean
     stacked?: boolean
-    icon?: string
-    path?: Array<IconPath>
-    height?: string
+    icon?: boolean
+    iconName?: string
+    iconPath?: Array<IconPath> | IconPath
+    height?: string | number
     width?: string | number
 }
 const configuration = reactive({
@@ -88,7 +91,7 @@ const availableRootClasses: Record<ButtonClassKeys, string> = {
 
 const tag = computed(() => attrs.to ? 'RouterLink' : 'Button')
 
-const btnClass = computed((): Array<string> => {
+const btnClass = (): Array<string> => {
     const classes = ['e-btn']
     const defaultSize = !(props.small || props.xSmall || props.large || props.xLarge);
     if (configuration.hovered && props.hoverColor)
@@ -103,7 +106,7 @@ const btnClass = computed((): Array<string> => {
     ).map(key => availableRootClasses[key]);
 
     return [...classes, ...classes2];
-})
+}
 const handleHover = (value: boolean) => {
     configuration.hovered = value;
 }

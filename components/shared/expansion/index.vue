@@ -1,18 +1,16 @@
 <template>
   <div :class="expansionClass">
-    <div class="e-expansion__header e-btn">
-      <div class="e-expansion__header-content" @click="changeValue(!opened)">
-        <slot name="header">
-          <div>
-            <h4>
-              {{ headerTitle }}
-            </h4>
+    <div class="e-expansion__header">
+      <button class="e-btn e-btn--block e-btn--text">
+        <span class="e-expansion__header-content" @click="changeValue(!opened)">
+          <slot name="header">
+            {{ headerTitle }}
+          </slot>
+          <div class="e-expansion__header-icon">
+            <EIcon :path="$icon.arrowDown"></EIcon>
           </div>
-        </slot>
-        <div class="e-expansion__header-icon">
-          <EIcon :name="$icon.arrowDown"></EIcon>
-        </div>
-      </div>
+        </span>
+      </button>
       <div class="e-expansion__header-actions">
         <slot name="actions"></slot>
       </div>
@@ -20,6 +18,7 @@
     <div class="e-expansion__body">
       <ETransitionExpand>
         <div v-show="opened" class="e-expansion__body-content">
+          <e-divider></e-divider>
           <slot name="default"></slot>
         </div>
       </ETransitionExpand>
@@ -31,10 +30,11 @@
 export interface Props {
   dense?: boolean
   headerTitle?: string
+  color?: string
   modelValue?: boolean
 }
 
-const localValue = ref(true);
+const localValue = ref(false);
 const props = withDefaults(defineProps<Props>(), { modelValue: undefined })
 
 const emit = defineEmits<{
@@ -52,6 +52,7 @@ const expansionClass = computed(() => {
   const classes = ['e-expansion']
   props.dense && classes.push(rootClasses.dense)
   opened.value && classes.push(rootClasses.opened)
+  props.color && classes.push(`${props.color}--text`)
   return classes
 })
 

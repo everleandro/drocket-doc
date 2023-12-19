@@ -1,7 +1,7 @@
 <template>
   <e-app>
     <e-bar app fixed clipped color="white">
-      <e-button :icon="$icon.menu" color="tertiary" large @click="closeDrawer()" />
+      <e-button icon :icon-path="$icon.menu" text color="tertiary" large @click="closeDrawer()" />
       <h1 class="d-flex px-3 secondary--text"> Drocket
       </h1>
       <e-spacer />

@@ -11,25 +11,25 @@ export const mainLinks = [
     to: "/date-picker",
   },
   {
-      icon:"",
-      text: 'form',
-      to: '/form'
+    icon: "",
+    text: "form",
+    to: "/form",
   },
-  // {
-  //     icon: iconFactory.events,
-  //     text: 'eventos',
-  //     to: '/events'
-  // },
-  // {
-  //     icon: iconFactory.sessions,
-  //     text: 'sesiones',
-  //     to: '/sessions'
-  // },
-  // {
-  //     icon: iconFactory.schedule,
-  //     text: 'Horarios',
-  //     to: '/schedule'
-  // },
+  {
+    icon: "",
+    text: "button",
+    to: "/button",
+  },
+  {
+    icon: "",
+    text: "icons",
+    to: "/icons",
+  },
+  {
+    icon: "",
+    text: "Text Field",
+    to: "/text-field",
+  },
   // {
   //     icon: iconFactory.booking,
   //     text: 'reservas',

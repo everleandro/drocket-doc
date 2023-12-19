@@ -53,13 +53,13 @@
                     <transition name="scale">
                         <div v-if="!empty && clearable" class="e-field__append-inner">
                             <div class="e-field__icon e-field__icon--clear e-icon--size-default">
-                                <EButton :icon="$icon.clear" small @click.stop.prevent="clear" />
+                                <EButton icon :icon-path="$icon.clear" small @click.stop.prevent="clear" />
                             </div>
                         </div>
                     </transition>
                     <div class="e-field__append-inner">
                         <div class="e-field__icon e-field__icon--append">
-                            <EIcon :name="arrowDown || $icon?.arrowDown" class="flip-icon"></EIcon>
+                            <EIcon :path="$icon?.arrowDown" class="flip-icon"></EIcon>
                         </div>
                     </div>
                 </div>

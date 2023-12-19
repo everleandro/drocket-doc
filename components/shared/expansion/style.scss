@@ -1,77 +1,98 @@
 $expansion-header-height: 40px !default;
 $icon-expand-font-size: 24px;
+$expansion-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+  0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 
 .e-expansion {
-    &__header {
+  box-shadow: $expansion-box-shadow;
+  &-panels {
+    box-shadow: $expansion-box-shadow;
+    .e-expansion {
+      box-shadow: none;
+      &:not(:last-child) {
+        border-bottom: thin solid rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    align-items: center;
+    // color: white;
+    user-select: none;
+    position: relative;
+    padding: 0;
+    .e-btn {
+      color: inherit;
+      font-size: 0.9375rem;
+      text-transform: capitalize;
+      font-weight: 400;
+    }
+    // button {
+    //   font-style: normal;
+    //   margin: 0;
+    //   font-weight: normal;
+    //   cursor: inherit;
+    //   font-weight: inherit;
+    //   letter-spacing: inherit;
+    //   color: inherit;
+    //   border: none;
+    //   text-indent: inherit;
+    // }
+
+    &-actions {
+      height: 100%;
+
+      > * {
+        max-height: $expansion-header-height !important;
+        min-height: $expansion-header-height !important;
+        height: $expansion-header-height !important;
+      }
+    }
+
+    i {
+      font-size: $icon-expand-font-size;
+    }
+
+    &-content {
+      max-height: $expansion-header-height;
+      min-height: $expansion-header-height;
+      height: $expansion-header-height;
+      //   background: var(--secondary);
+      padding: 4px 0px;
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
+
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        transition: all 0.5s ease;
         display: flex;
-        justify-content: space-between;
-        cursor: pointer;
-        align-items: center;
-        color: white;
-        user-select: none;
-        position: relative;
-        padding: 0;
-
-        &-actions {
-            height: 100%;
-
-            >* {
-                max-height: $expansion-header-height !important;
-                min-height: $expansion-header-height !important;
-                height: $expansion-header-height !important;
-            }
-        }
-
-        i {
-            font-size: $icon-expand-font-size;
-        }
-
-        &-content {
-            max-height: $expansion-header-height;
-            min-height: $expansion-header-height;
-            height: $expansion-header-height;
-            background: var(--secondary);
-            padding: 4px 24px;
-            flex: 1 1 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-        }
-
-        h4 {
-            font-style: normal;
-            margin: 0;
-            font-weight: bold;
-            font-size: 18px;
-            text-transform: capitalize;
-        }
-
-        &-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            i {
-                transition: all 0.5s ease;
-                display: flex;
-            }
-        }
+      }
     }
+  }
 
-    &__body {
-        padding-top: 24px;
+  &__body {
+    padding-top: 0px;
 
-        &-content {
-            .e-expansion__body-content {
-                margin-bottom: 24px;
-            }
-        }
+    &-content {
+      .e-expansion__body-content {
+        margin-bottom: 24px;
+      }
     }
+  }
 
-    &--opened {
-        .e-expansion__header-icon i {
-            transform: rotate(180deg);
-        }
+  &--opened {
+    .e-expansion__header-icon i {
+      transform: rotate(180deg);
     }
+  }
 }

@@ -19,7 +19,7 @@
         <div class="e-date-picker-header">
           <slot name="header" :prev="prevButtonAction" :next="nextButtonAction" :change-view-mode="changeViewMode"
             :page-date="store.pageDate">
-            <EButton :icon="iconPrev || $icon?.pickerIconPrev" aria-label="Previous month" x-small
+            <EButton icon text v-bind="prevButtonAttributes" aria-label="Previous month" x-small
               @click="prevButtonAction()" />
 
             <div class="e-date-picker-header__value">
@@ -32,7 +32,7 @@
               </transition>
             </div>
 
-            <EButton :icon="iconNext || $icon?.pickerIconNext" aria-label="Previous month" x-small
+            <EButton icon text v-bind="nextButtonAttributes" aria-label="Previous month" x-small
               @click="nextButtonAction()" />
           </slot>
         </div>
@@ -87,6 +87,7 @@ import { DatesConfiguration, datePickerViewType, Day, Month, Year } from "./type
 import UtilDate from '@/models/date';
 import { EDIalog } from '@/components/shared/dialog/index.vue';
 import { ContainerMenuInterface } from '@/components/shared/menu/types';
+import { IconPath } from '@/components/shared/icon/index.vue';
 
 export interface Props {
   landscape?: boolean
@@ -99,8 +100,8 @@ export interface Props {
   weekStart?: number
   format?: string
   lng?: suportedLng
-  iconPrev?: string
-  iconNext?: string
+  iconPrev?: string | Array<IconPath>
+  iconNext?: string | Array<IconPath>
   disabled?: DatesConfiguration
   highlighted?: DatesConfiguration
   view?: datePickerViewType
@@ -139,6 +140,26 @@ const store = reactive({
 
 const keyMonth = computed(() => {
   return new Date(store.pageDate).getMonth() + '' + store.pageDate.getMonth()
+})
+const prevButtonAttributes = computed(() => {
+  if (!props.iconNext) {
+    return { iconPath: $icon.arrowLeft }
+  } if (typeof props.iconPrev === 'string') {
+    return { iconName: props.iconPrev as string }
+  } else {
+
+    return { iconPath: props.iconPrev as Array<IconPath> }
+  }
+})
+const nextButtonAttributes = computed(() => {
+  if (!props.iconNext) {
+    return { iconPath: $icon.arrowRight }
+  } else if (typeof props.iconNext === 'string') {
+    return { iconName: props.iconNext as string }
+  } else {
+
+    return { iconPath: props.iconNext as Array<IconPath> }
+  }
 })
 
 const keyYear = computed(() => {

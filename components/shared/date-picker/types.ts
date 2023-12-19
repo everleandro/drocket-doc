@@ -23,15 +23,15 @@ export enum datePickerViewType {
   year,
 }
 
-export interface DatesConfiguration {
-  dates?: Array<Date>;
-  from?: Date;
-  to?: Date;
-  daysOfMonth?: Array<number>;
-  ranges?: Array<DatesRange>;
-  days?: Array<number>;
-  customPredictor?: (date: Date) => boolean;
-}
+  export interface DatesConfiguration {
+    dates?: Array<Date>;
+    from?: Date;
+    to?: Date;
+    daysOfMonth?: Array<number>;
+    ranges?: Array<DatesRange>;
+    days?: Array<number>;
+    customPredictor?: (date: Date) => boolean;
+  }
 
 export interface Month {
   month: string;

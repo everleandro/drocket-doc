@@ -6,7 +6,7 @@
             </ETabGroup>
             <e-divider></e-divider>
             <ERow no-gutters>
-                <ECol :lg="showForm ? 16 : 24" class="py-8 px-4">
+                <ECol :lg="showForm ? 16 : 24" cols="24" class="py-8 px-4">
                     <EWindow v-model="tab" class="box-container">
                         <slot name="window-item"></slot>
                     </EWindow>
@@ -42,14 +42,30 @@ const showForm = computed((): boolean => {
 <style lang="scss">
 .box {
     &-example {
+        .e-row .e-divider {
+            display: none;
+
+            @include _from_lg {
+                display: block;
+            }
+        }
 
         pre[class*="language-"] {
             margin-top: 0;
+        }
+
+        .e-window,
+        .language-markup,
+        .e-window-item {
+            height: 100%;
+        }
+
+        .e-window-item>div {
+            height: 100%;
         }
 
         .e-btn {
             text-transform: unset;
         }
     }
-}
-</style>
+}</style>

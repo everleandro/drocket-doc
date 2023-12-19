@@ -5,6 +5,8 @@ $grid-cols: 24 !default;
 $root-font-family: "Roboto", sans-serif;
 
 $icon-close-font-size: 24px;
+$icon-class: "mdi";
+$icon-prefix: "mdi-";
 
 //colors
 $colors: (
@@ -23,7 +25,7 @@ $colors: (
   "black": #101418,
   "root-color": #4f636b,
 
-  "golden-tainoi": #ffcc66,
+  "warning": #ffcc66,
   "yellow-green": #c3df77,
   "olivine": #9dbe77,
   "shamrock": #3accaf,
@@ -80,4 +82,6 @@ $breakpoint: (
   @each $color, $value in $colors {
     --#{$color}: #{$value};
   }
+  --icon-class: #{$icon-class};
+  --icon-prefix: #{$icon-prefix};
 }

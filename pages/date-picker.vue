@@ -31,7 +31,7 @@
             <div class="d-flex justify-center pa-4">
               <ECard>
                 <EDatePicker v-model="example" :landscape="landscape" :no-title="noTitle" :color="color"
-                  v-model:view="viewMode" :week-start="weekStart" :icon-prev="iconPrev" :icon-next="iconNext" />
+                  v-model:view="viewMode" :week-start="weekStart" :icon-prev-path="iconPrev" :icon-next-path="iconNext" />
               </ECard>
             </div>
           </EWindowItem>
@@ -79,9 +79,6 @@
           <ETab value="Ts">
             Ts Code
           </ETab>
-          <ETab value="interface">
-            Interface
-          </ETab>
           <ETab value="css">
             Css
           </ETab>
@@ -108,9 +105,7 @@
           <EWindowItem value="Ts">
             <div v-text="DisabledDatesTsCode" v-prism="{ class: 'language-js' }"></div>
           </EWindowItem>
-          <EWindowItem value="interface">
-            <div v-text="DisabledDatesInterface" v-prism="{ class: 'language-ts' }"></div>
-          </EWindowItem>
+
           <EWindowItem value="css">
             <div v-text="HighlightedDatesCss" v-prism="{ class: 'language-css' }"></div>
           </EWindowItem>
@@ -170,15 +165,14 @@
             </EDialog>
             <e-row>
               <e-col class="d-flex justify-center">
-                <ETextField :modelValue="formatDate(integrationPickerModel)" id="event-form-date-picker" input-align="end"
-                  label="birth date" :append-icon="$icon.calendar" input-readonly
-                  @click="integrationDialogModel = true" />
+                <ETextField :modelValue="formatDate(integrationPickerModel)" input-align="end" label="birth date"
+                  :append-icon-path="$icon.calendar" input-readonly @click="integrationDialogModel = true" />
               </e-col>
               <e-col class="d-flex justify-center">
                 <EMenu origin="bottom right">
                   <template #activator="attrs">
-                    <ETextField :modelValue="formatDate(integrationMenuPickerModel)" id="event-form-date-picker"
-                      input-align="end" label="Deadline" :append-icon="$icon.calendar" input-readonly v-bind="attrs" />
+                    <ETextField :modelValue="formatDate(integrationMenuPickerModel)" input-align="end" label="Deadline"
+                      :append-icon-path="$icon.calendar" input-readonly v-bind="attrs" />
                   </template>
                   <EDatePicker v-model="integrationMenuPickerModel" close-on-change />
                 </EMenu>
@@ -233,149 +227,168 @@
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Props</h2>
       <p>Explore the available props for the date picker component</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Property</th>
-            <th>Description</th>
-            <th>Type</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>landscape</td>
-            <td> specifies the orientation of the component</td>
-            <td class="string">boolean</td>
-            <td class="boolean">false</td>
-          </tr>
-          <tr>
-            <td>color</td>
-            <td>Applies specified color to the component - supports only utility colors (for example <code
-                class="boolean">success</code>
-              or <code class="boolean">purple</code>)
-            </td>
-            <td class="string">string</td>
-            <td class="string">primary</td>
-          </tr>
-          <tr>
-            <td>no-title</td>
-            <td>hide or show the header</td>
-            <td class="string">boolean</td>
-            <td class="boolean">false</td>
-          </tr>
-          <tr>
-            <td>only-year</td>
-            <td>changes the behavior of the component to one of year selection</td>
-            <td class="string">boolean</td>
-            <td class="boolean">false</td>
-          </tr>
-          <tr>
-            <td>only-month</td>
-            <td>changes the behavior of the component to one of month selection</td>
-            <td class="string">boolean</td>
-            <td class="boolean">false</td>
-          </tr>
-          <tr>
-            <td>close-on-change</td>
-            <td>If the component is used within a dialog or menu, this property can be used to indicate that it
-              automatically closes the window as soon as a date is selected.</td>
-            <td class="string">boolean</td>
-            <td class="boolean">false</td>
-          </tr>
-          <tr>
-            <td>model-value</td>
-            <td>The v-model value of the component. </td>
-            <td class="string">Date|string</td>
-            <td class="undefined">undefined</td>
-          </tr>
-          <tr>
-            <td>week-start</td>
-            <td>day on which you want the week to start</td>
-            <td class="string">number</td>
-            <td class="string">1</td>
-          </tr>
-          <tr>
-            <td>lng</td>
-            <td>component language</td>
-            <td class="string">en | es</td>
-            <td class="string">'en'</td>
-          </tr>
-          <tr>
-            <td>icon-prev</td>
-            <td>Sets the icon for previous month/year button.</td>
-            <td class="string">string</td>
-            <td class="string">-</td>
-          </tr>
-          <tr>
-            <td>icon-next</td>
-            <td>Sets the icon for next month/year button.</td>
-            <td class="string">string</td>
-            <td class="string">-</td>
-          </tr>
-          <tr>
-            <td>disabled</td>
-            <td>is used to disable the desired dates using the <code class="boolean">DatesConfiguration</code> interface
-            </td>
-            <td class="string">DatesConfiguration</td>
-            <td class="object">{}</td>
-          </tr>
-          <tr>
-            <td>highlighted</td>
-            <td>is used to highlight the desired dates using the <code class="boolean">DatesConfiguration</code> interface
-            </td>
-            <td class="string">DatesConfiguration</td>
-            <td class="object">{}</td>
-          </tr>
-          <tr>
-            <td>view</td>
-            <td>specifies the initial mode of the calendar: day month or year</td>
-            <td class="string">datePickerViewType</td>
-            <td class="string">0</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="responsive-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>landscape</td>
+              <td> specifies the orientation of the component</td>
+              <td class="string">boolean</td>
+              <td class="boolean">false</td>
+            </tr>
+            <tr>
+              <td>color</td>
+              <td>Applies specified color to the component - supports only utility colors (for example <code
+                  class="boolean">primary</code>
+                or <code class="boolean">secondary</code>)
+              </td>
+              <td class="string">string</td>
+              <td class="string">primary</td>
+            </tr>
+            <tr>
+              <td>no-title</td>
+              <td>hide or show the header</td>
+              <td class="string">boolean</td>
+              <td class="boolean">false</td>
+            </tr>
+            <tr>
+              <td>only-year</td>
+              <td>changes the behavior of the component to one of year selection</td>
+              <td class="string">boolean</td>
+              <td class="boolean">false</td>
+            </tr>
+            <tr>
+              <td>only-month</td>
+              <td>changes the behavior of the component to one of month selection</td>
+              <td class="string">boolean</td>
+              <td class="boolean">false</td>
+            </tr>
+            <tr>
+              <td>close-on-change</td>
+              <td>If the component is used within a dialog or menu, this property can be used to indicate that it
+                automatically closes the window as soon as a date is selected.</td>
+              <td class="string">boolean</td>
+              <td class="boolean">false</td>
+            </tr>
+            <tr>
+              <td>model-value</td>
+              <td>The v-model value of the component. </td>
+              <td class="string">Date|string</td>
+              <td class="undefined">undefined</td>
+            </tr>
+            <tr>
+              <td>week-start</td>
+              <td>day on which you want the week to start</td>
+              <td class="string">number {0...6}</td>
+              <td class="string">0</td>
+            </tr>
+            <tr>
+              <td>lng</td>
+              <td>component language</td>
+              <td class="string">en | es</td>
+              <td class="string">'en'</td>
+            </tr>
+            <tr>
+              <td>icon-prev</td>
+              <td>Sets the icon for previous month/year button.</td>
+              <td class="string">string</td>
+              <td class="string">-</td>
+            </tr>
+            <tr>
+              <td>icon-next</td>
+              <td>Sets the icon for next month/year button.</td>
+              <td class="string">string</td>
+              <td class="string">-</td>
+            </tr>
+            <tr>
+              <td>disabled</td>
+              <td>is used to disable the desired dates using the <code class="boolean">DatesConfiguration</code> interface
+              </td>
+              <td class="string">DatesConfiguration</td>
+              <td class="object">{}</td>
+            </tr>
+            <tr>
+              <td>highlighted</td>
+              <td>is used to highlight the desired dates using the <code class="boolean">DatesConfiguration</code>
+                interface
+              </td>
+              <td class="string">DatesConfiguration</td>
+              <td class="object">{}</td>
+            </tr>
+            <tr>
+              <td>view</td>
+              <td>specifies the initial mode of the calendar: day month or year</td>
+              <td class="string">datePickerViewType</td>
+              <td class="string">day -> 0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
     </section>
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Events</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>update:modelValue</td>
-            <td class="string">Date | string</td>
-          </tr>
-          <tr>
-            <td>update:view</td>
-            <td class="string">datePickerViewType</td>
-          </tr>
-          <tr>
-            <td>click:day</td>
-            <td class="string">Day</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="responsive-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>update:modelValue</td>
+              <td class="string">Date | string</td>
+            </tr>
+            <tr>
+              <td>update:view</td>
+              <td class="string">datePickerViewType</td>
+            </tr>
+            <tr>
+              <td>click:day</td>
+              <td class="string">Day</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Slots</h2>
-      <table>
-        <tbody>
-          <tr>
-            <td>title</td>
-            <td>Slot for the component’s title content.</td>
-          </tr>
-          <tr>
-            <td>header</td>
-            <td>Slot for the component’s header content.</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="responsive-table">
+        <table>
+          <tbody>
+            <tr>
+              <td>title</td>
+              <td>Slot for the component’s title content.</td>
+            </tr>
+            <tr>
+              <td>header</td>
+              <td>Slot for the component’s header content.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="mb-12">
+      <h2 class="text-h4 mb-2">data types</h2>
+      <p> You can import all data types used in the component from the path: <code
+          class="primary-darken-1--text">~/drocket/date-picker/types</code> </p>
+
+      <e-expansion-panels>
+        <e-expansion v-for="(int, i) in interfaces" :key="i" :header-title="int.title" color="primary">
+          <div v-text="int.code" v-prism="{ class: 'language-ts' }"></div>
+        </e-expansion>
+      </e-expansion-panels>
+
     </section>
   </div>
 </template>
@@ -398,8 +411,8 @@ const weekStart = ref(0)
 const color = ref('primary')
 const { $icon } = useNuxtApp()
 const icons = [$icon.pickerIconPrev, $icon.phone, $icon.logout]
-const iconNext = ref($icon.pickerIconNext)
-const iconPrev = ref($icon.pickerIconPrev)
+const iconNext = ref($icon.arrowRight)
+const iconPrev = ref($icon.arrowLeft)
 const colors = ['primary', 'secondary', 'salmon', 'carnation']
 const disabledDates: DatesConfiguration = {
   daysOfMonth: [26, 29],
@@ -427,6 +440,68 @@ const weekStartOptions = [
 const formatDate = (date: Date): string => {
   return new UtilDate(date).format('month-DD/month-MM/year-YYYY')
 }
+const interfaces = [
+  {
+    title: 'Day',
+    code: `export interface Day {
+  date: number;
+  timestamp: number;
+  isSelected: boolean;
+  isDisabled: boolean;
+  isHighlighted: boolean;
+  isHighlightStart: boolean;
+  isHighlightEnd: boolean;
+  isToday: boolean;
+  isWeekend: boolean;
+  isSaturday: boolean;
+  isSunday: boolean;
+}`},
+  {
+    title: 'DatesRange',
+    code: `export interface DatesRange {
+  from: Date;
+  to: Date;
+}`
+  },
+  {
+    title: 'datePickerViewType',
+    code: `export enum datePickerViewType {
+  day,
+  month,
+  year,
+}`
+  },
+  {
+    title: 'DatesConfiguration',
+    code: `export interface DatesConfiguration {
+  dates?: Array<Date>;
+  from?: Date;
+  to?: Date;
+  daysOfMonth?: Array<number>;
+  ranges?: Array<DatesRange>;
+  days?: Array<number>;
+  customPredictor?: (date: Date) => boolean;
+}`
+  },
+  {
+    title: 'Month',
+    code: `export interface Month {
+  month: string;
+  timestamp: number;
+  isSelected: boolean;
+  isDisabled: boolean;
+}`
+  },
+  {
+    title: 'Year',
+    code: `export interface Year {
+  year: number;
+  timestamp: number;
+  isSelected: boolean;
+  isDisabled: boolean;
+}`
+  },
+]
 const DefaultCode = computed(() => `<template>
   <e-date-picker week-start
     v-model="example" ${landscape.value ? '\n    landscape' : ''} ${noTitle.value ? '\n    no-title' : ''}    
@@ -437,6 +512,7 @@ const DefaultCode = computed(() => `<template>
   />
 </template>
 `)
+const interfaceImport = `import { ... } from ' ~/drocket/date-picker/types`
 
 const DisabledDatesTemplate = computed(() => `<template>
   <div>
@@ -461,20 +537,7 @@ const highlightedDates: DatesConfiguration = {
   to: new Date(new Date().setDate(new Date().getDate() + 10))
 }
 `)
-const DisabledDatesInterface = computed(() => `export interface DatesRange {
-  from: Date;
-  to: Date;
-}
-export interface DatesConfiguration {
-  dates?: Array<Date>;
-  from?: Date;
-  to?: Date;
-  daysOfMonth?: Array<number>;
-  ranges?: Array<DatesRange>;
-  days?: Array<number>;
-  customPredictor?: (date: Date) => boolean;
-}
-`)
+
 const HighlightedDatesCss = computed(() => `.date-picker-page {
   .btn-day--highlighted {
     background-color: hsl(from var(--primary) h s 90%)
@@ -503,10 +566,10 @@ const IntegrationHtmlCode = computed(() => `<EDialog v-model="dialogModel" max-w
 
 const yearAndMonthPickerTemplate = computed(() => `<div>
   <ECard>
-    <EDatePicker v-model="yearPickerModel" only-year />
+    <EDatePicker v-model="esPickerModel" lng="es" />
   </ECard>
   <ECard>
-    <EDatePicker v-model="monthPickerModel" only-month />
+    <EDatePicker v-model="enPickerModel" lng="en" />
   </ECard>
 </div>`)
 

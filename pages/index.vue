@@ -82,12 +82,12 @@ const installCode: Record<string, BC> = {
 
 
 
-const VueMainJs = computed(() => `import "@ever.leandros91/e-vue/dist/e-vue.css";
+const VueMainJs = computed(() => `import "@drocket/dist/e-vue.css";
 import Vue from 'vue'
-import { EVue } from '@ever.leandros91/e-vue'
+import { DRocket } from '@drocket'
 
 // this line auto imports all components and directives
-Vue.use(EVue)
+Vue.use(DRocket)
 
 `)
 const VueConfigJs = `module.exports = {
@@ -106,16 +106,16 @@ const VueConfigJs = `module.exports = {
 
 
 const NuxtPluginsJs = computed(() => `import Vue from 'vue'
-import { EVue } from '@ever.leandros91/e-vue'
-Vue.use(EVue)
+import { DRocket } from '@drocket'
+Vue.use(DRocket)
 `)
 const NuxtConfigJs = `css: [
-    '@ever.leandros91/e-vue/dist/e-vue.css',
+    '@drocket/dist/e-vue.css',
      // This is the path to your variables
     '~sass/variables.scss',
   ],
 `
-const SassVariables = `@import '@ever.leandros91/e-vue/styles/override.scss';`
+const SassVariables = `@import '@drocket/styles/override.scss';`
 const SassVariablesExample = `// Globals
 $border-radius-root: 4px;
 $root-font-size: 2rem;
@@ -137,7 +137,7 @@ $contrast-colors: (
 ) !default;
 
 // This is mandatory
-@import "@ever.leandros91/e-vue/styles/override.scss";
+@import "@drocket/styles/override.scss";
 `
 const GeneratedClasses = `.primary {
   background-color: #f19933;

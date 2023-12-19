@@ -10,6 +10,9 @@ dependencies:
     version: 1.29.0
 
 devDependencies:
+  '@mdi/font':
+    specifier: ^7.3.67
+    version: 7.3.67
   '@nuxt/devtools':
     specifier: latest
     version: 1.0.0-beta.0(nuxt@3.7.4)(vite@4.4.11)
@@ -866,6 +869,10 @@ packages:
     transitivePeerDependencies:
       - encoding
       - supports-color
+    dev: true
+
+  /@mdi/font@7.3.67:
+    resolution: {integrity: sha512-SWxvzRbUQRfewlIV+OF4/YF4DkeTjMWoT8Hh9yeU/5UBVdJZj9Uf4a9+cXjknSIhIaMxZ/4N1O/s7ojApOOGjg==}
     dev: true
 
   /@netlify/functions@2.2.1:

@@ -1,75 +1,54 @@
+import { IconPath } from "~/components/shared/icon/index.vue";
 
-export const iconFactory: Record<string, any> = {
-    accountCheck: "account-check",
-    accountEdit: "account-edit",
-    accountCancel: "account-cancel",
-    arrowUp: "chevron-up",
-    arrowRight: "chevron-right",
-    arrowLeft: "chevron-left",
-    arrowDown: "chevron-down",
-    accounting: "accounting",
-    ads: "ads",
-    booking: "booking",
-    card: "card",
-    calendar: "calendar",
-    coffee: "coffee",
-    customerInfo: "customer-info",
-    checking: "checking",
-    clear: "close",
-    close: "close",
-    customer: "customer",
-    dashboard: "dashboard",
-    document: "document",
-    dotsVertical: "dots-vertical",
-    events: "events",
-    email: "email",
-    pencil: "pencil",
-    grid: "view-grid",
-    holidays: "holidays",
-    menu: "menu",
-    incidents: "incidents",
-    logout: "logout",
-    list: "view-list",
-    message: "message",
-    maintenance: "maintenance",
-    notification: "notification",
-    pickerIconPrev: "chevron-left",
-    pickerIconNext: "chevron-right",
-    providers: "providers",
-    phone: "phone",
-    replacements: "replacements",
-    reports: "reports",
-    remuneration: "remuneration",
-    roles: {
-        instructor: 'instructor',
-        roomInstructor: 'room-instructor',
-        personalTrainer: 'personal-trainer',
-        customerService: 'phone-msg',
-        coordination: 'table-check',
-        administration: 'mouse',
-        directorate: 'direction',
-        cleaning: 'cleaning',
-        maintenance: 'maintenance',
-        operations: 'operations',
-        reception: 'reception',
-        humanResources: 'human-resources',
-        supervisor: 'admin',
-    },
-    schedule: "schedule",
-    scheduleTimeslot: "schedule-timeslot",
-    sessions: "sessions",
-    staff: "staff",
-    search: "search",
-    sendEmail: "send-email",
-    trash: "trash",
-    wallet: "wallet",
-
-}
+export const iconFactory: Record<string, IconPath> = {
+  arrowLeft: {
+    d: "M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z",
+  },
+  arrowRight: {
+    d: "M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z",
+  },
+  arrowDown: {
+    d: "M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z",
+  },
+  clear: {
+    d: "M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z",
+  },
+  menu: {
+    d: "M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z",
+  },
+  account: {
+    d: "M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z",
+  },
+  pencil: {
+    d: "M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z",
+  },
+  music: {
+    d: "M21,3V15.5A3.5,3.5 0 0,1 17.5,19A3.5,3.5 0 0,1 14,15.5A3.5,3.5 0 0,1 17.5,12C18.04,12 18.55,12.12 19,12.34V6.47L9,8.6V17.5A3.5,3.5 0 0,1 5.5,21A3.5,3.5 0 0,1 2,17.5A3.5,3.5 0 0,1 5.5,14C6.04,14 6.55,14.12 7,14.34V6L21,3Z",
+  },
+  delete: {
+    d: "M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z",
+  },
+  send: {
+    d: "M2,21L23,12L2,3V10L17,12L2,14V21Z",
+  },
+  alert: {
+    d: "M13 14H11V9H13M13 18H11V16H13M1 21H23L12 2L1 21Z",
+  },
+  alertBox: {
+    d: "M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M13,13V7H11V13H13M13,17V15H11V17H13Z",
+  },
+  cog: {
+    d: "M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z",
+  },
+  wifi: {
+    d: "M12,21L15.6,16.2C14.6,15.45 13.35,15 12,15C10.65,15 9.4,15.45 8.4,16.2L12,21M12,3C7.95,3 4.21,4.34 1.2,6.6L3,9C5.5,7.12 8.62,6 12,6C15.38,6 18.5,7.12 21,9L22.8,6.6C19.79,4.34 16.05,3 12,3M12,9C9.3,9 6.81,9.89 4.8,11.4L6.6,13.8C8.1,12.67 9.97,12 12,12C14.03,12 15.9,12.67 17.4,13.8L19.2,11.4C17.19,9.89 14.7,9 12,9Z",
+  },
+};
 
 export default defineNuxtPlugin(() => {
-    return {
-        provide: {
-            icon: iconFactory
-        }
-    }
-})
+  return {
+    provide: {
+      icon: iconFactory,
+    },
+  };
+});
