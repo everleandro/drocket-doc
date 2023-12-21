@@ -68,7 +68,7 @@
           <EWindowItem value="design">
             <div class="d-flex justify-center align-center full-height pa-4">
               <e-form>
-                <e-text-field v-model="iconFieldModel" :prepend-icon="textFieldProperty.prepenIcon?.icon" prefix="asd"
+                <e-text-field v-model="iconFieldModel" :prepend-icon="textFieldProperty.prepenIcon?.icon"
                   :append-icon="textFieldProperty.appendIcon?.icon" cols="24" :label="textFieldProperty.label" />
               </e-form>
             </div>

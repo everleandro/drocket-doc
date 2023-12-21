@@ -8,7 +8,7 @@
     overflow-y: auto;
 
     .e-list {
-      &-item {  
+      &-item {
         &.router-link-active,
         &:hover {
           // background-color: var(--black);
@@ -23,13 +23,13 @@
 
 @include _xs {
   html {
-    --root-font-size: 14.8px;
+    --root-font-size: 15.2px;
   }
 }
 
 @include _sm {
   html {
-    --root-font-size: 15.2px;
+    --root-font-size: 15.4px;
   }
 }
 
