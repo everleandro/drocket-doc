@@ -3,7 +3,7 @@
         :class="listItemCLass" @click="handleItemClick">
         <div v-if="hasPrepend" class="e-list-item__prepend">
             <slot name="prepend">
-                <EIcon v-if="prependIcon" :name="prependIcon"></EIcon>
+                <EIcon v-if="prependIcon" :icon="prependIcon"></EIcon>
                 <EAvatar v-if="prependAvatar" size="34" :src="prependAvatar"></EAvatar>
             </slot>
         </div>
@@ -14,11 +14,12 @@
 </template>
   
 <script lang="ts" setup>
+import { IconPath } from '@/components/shared/icon/index.vue'
 
 export interface Props {
     disabled?: boolean
     ripple?: boolean
-    prependIcon?: string
+    prependIcon?: string | IconPath | Array<IconPath>
     prependAvatar?: string
     isActive?: boolean
     activeClass?: string

@@ -42,12 +42,19 @@ const showForm = computed((): boolean => {
 <style lang="scss">
 .box {
     &-example {
+        position: relative;
+
         .e-row .e-divider {
             display: none;
 
             @include _from_lg {
                 display: block;
             }
+        }
+
+        &>.e-row {
+            max-width: 100%;
+
         }
 
         pre[class*="language-"] {

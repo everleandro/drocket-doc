@@ -5,14 +5,11 @@
         Buttons
       </h1>
       <p>
-        The Buttons component offers a variety of button types and sizes to meet your design needs.
+        The Buttons component offers a variety of button types and sizes to meet your design needs. There are lots of
+        button types for the best fits design of your application.
       </p>
     </div>
     <section class="mb-12">
-      <h2 class="text-h4 mb-2">Example</h2>
-      <p>
-        There are lots of button types for the best fits design of your application.
-      </p>
 
       <BoxExample :color="color">
         <template #tabs>
@@ -83,9 +80,7 @@
     </section>
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Icon</h2>
-      <p>Using the <code class="ma-2 primary-darken-1--text">icon-path</code> or <code
-          class="ma-2 primary-darken-1--text">icon-name</code> property in conjunction
-        with the <code class="ma-2 primary-darken-1--text">icon</code> property you can transform the layout of
+      <p>Using the <code class="ma-2 primary-darken-1--text">icon</code> property property you can transform the layout of
         the component. You can learn more about how icons work on the <e-button to="/icons" text
           color="primary">Icons</e-button> page
       </p>
@@ -104,16 +99,16 @@
         <template #window-item>
           <EWindowItem value="design">
             <div class="pa-4 button-container">
-              <e-button x-small icon :icon-path="$icon.send" />
-              <e-button small icon :icon-path="$icon.send" />
-              <e-button icon :icon-path="$icon.send" />
-              <e-button large icon :icon-path="$icon.send" />
-              <e-button x-large icon :icon-path="$icon.send" />
-              <e-button text x-small icon :icon-path="$icon.music" />
-              <e-button text small icon :icon-path="$icon.music" />
-              <e-button text icon :icon-path="$icon.music" />
-              <e-button text large icon :icon-path="$icon.music" />
-              <e-button text x-large icon :icon-path="$icon.music" />
+              <e-button x-small :icon="$icon.send" />
+              <e-button small :icon="$icon.send" />
+              <e-button :icon="$icon.send" />
+              <e-button large :icon="$icon.send" />
+              <e-button x-large :icon="$icon.send" />
+              <e-button text x-small :icon="$icon.music" />
+              <e-button text small :icon="$icon.music" />
+              <e-button text :icon="$icon.music" />
+              <e-button text large :icon="$icon.music" />
+              <e-button text x-large :icon="$icon.music" />
             </div>
           </EWindowItem>
           <EWindowItem value="Template">
@@ -146,10 +141,10 @@
         <template #window-item>
           <EWindowItem value="design">
             <div class="pa-4 button-container">
-              <e-button :prepend-icon-path="$icon.delete">Delete</e-button>
-              <e-button :prepend-icon-path="$icon.send">Send</e-button>
-              <e-button :prepend-icon-path="$icon.alert" color="warning">warning</e-button>
-              <e-button :append-icon-path="$icon.alertBox">Stop</e-button>
+              <e-button :prepend-icon="$icon.delete">Delete</e-button>
+              <e-button :prepend-icon="$icon.send">Send</e-button>
+              <e-button :prepend-icon="$icon.alert" color="warning">warning</e-button>
+              <e-button :append-icon="$icon.alertBox">Stop</e-button>
             </div>
           </EWindowItem>
           <EWindowItem value="Template">
@@ -228,27 +223,19 @@
               <td class="boolean">false</td>
             </tr>
             <tr>
-              <td>append-icon-name</td>
-              <td> name of the icon to be displayed to the left of the component</td>
-              <td class="string">string</td>
+              <td>append-icon</td>
+              <td> name or configuration of the icon to be displayed to the left of the component</td>
+              <td class="string">Array&lt;IconPath>
+                <e-divider class="my-2" /> IconPath <e-divider class="my-2" /> string
+              </td>
               <td class="undefined">undefined</td>
             </tr>
             <tr>
-              <td>append-icon-path</td>
-              <td> path of the icon to be displayed to the left of the component</td>
-              <td class="string">IconPath</td>
-              <td class="undefined">undefined</td>
-            </tr>
-            <tr>
-              <td>prepend-icon-name</td>
-              <td>name of the icon to be displayed to the left of the component </td>
-              <td class="string">string</td>
-              <td class="undefined">undefined</td>
-            </tr>
-            <tr>
-              <td>prepend-icon-path</td>
-              <td> path of the icon to be displayed to the left of the component</td>
-              <td class="string">IconPath</td>
+              <td>prepend-icon</td>
+              <td>name or configuration of the icon to be displayed to the left of the component </td>
+              <td class="string">Array&lt;IconPath>
+                <e-divider class="my-2" /> IconPath <e-divider class="my-2" /> string
+              </td>
               <td class="undefined">undefined</td>
             </tr>
             <tr>
@@ -348,23 +335,13 @@
             </tr>
             <tr>
               <td>icon</td>
-              <td>prepares the component style to display only icons as content</td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
-              <td>icon-name</td>
-              <td>name of the icon to be displayed</td>
-              <td class="string">string</td>
+              <td>prepares the component style to display only icons as content you must provide the name or configuration
+                of the icon to be displayed</td>
+              <td class="string">Array&lt;IconPath>
+                <e-divider class="my-2" /> IconPath <e-divider class="my-2" /> string
+              </td>
               <td class="undefined">undefined</td>
             </tr>
-            <tr>
-              <td>icon-path</td>
-              <td>path of the icon to be displayed</td>
-              <td class="string">Array&lt;IconPath> | IconPath</td>
-              <td class="boolean">undefined</td>
-            </tr>
-
           </tbody>
         </table>
       </div>
@@ -516,16 +493,16 @@ const sizeHtmlCode = `<template>
 </template>`
 
 const iconHtmlCode = `<template">
-  <e-button x-small icon :icon-path="iconSend" />
-  <e-button small icon :icon-path="iconSend" />
-  <e-button icon :icon-path="iconSend" />
-  <e-button large icon :icon-path="iconSend" />
-  <e-button x-large icon :icon-path="iconSend" />
-  <e-button text x-small icon icon-name="music" />
-  <e-button text small icon icon-name="music" />
-  <e-button text icon icon-name="music" />
-  <e-button text large icon icon-name="music" />
-  <e-button text x-large icon icon-name="music" />
+  <e-button x-small icon="icon-send" />
+  <e-button small icon="icon-send" />
+  <e-button icon="icon-send" />
+  <e-button large icon="icon-send" />
+  <e-button x-large icon="icon-send" />
+  <e-button text x-small icon="music" />
+  <e-button text small icon="music" />
+  <e-button text icon="music" />
+  <e-button text large icon="music" />
+  <e-button text x-large icon="music" />
 </template>`
 const iconTsCode = `import { IconPath } from "~/drocket/icon/types";
 const iconSend: IconPath = {

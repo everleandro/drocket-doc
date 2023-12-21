@@ -9,7 +9,6 @@
       </p>
     </div>
     <section class="mb-12">
-      <h2 class="text-h4 mb-2">Example</h2>
       <p>
         The component facilitates the management of the states of each of the input fields it contains and also provides a
         Grid system to control the columns that each field will occupy.

@@ -2,10 +2,9 @@
     <div :class="textFieldClass">
         <div class="e-field__control">
             <div class="e-field__slot" @mouseenter="handleHover(true)" @mouseleave="handleHover(false)">
-                <div v-if="prependIconName || prependIconPath" class="e-field__prepend-inner"
-                    @click="handleClickPrependIcon">
+                <div v-if="prependIcon" class="e-field__prepend-inner" @click="handleClickPrependIcon">
                     <div class="e-field__icon e-field__icon--prepend-inner">
-                        <EIcon :name="prependIconName" :path="prependIconPath" />
+                        <EIcon :icon="prependIcon" />
                     </div>
                 </div>
                 <div class="e-field__overlay"></div>
@@ -29,13 +28,13 @@
                 <transition name="scale">
                     <div v-show="showClearable" class="e-field__append-inner">
                         <div class="e-field__icon e-field__icon--clear">
-                            <EButton icon :icon-path="$icon.clear" small @click.stop.prevent="clear" />
+                            <EButton :icon="iconClear || $icon.clear" small text @click.stop.prevent="clear" />
                         </div>
                     </div>
                 </transition>
-                <div v-if="appendIconName || appendIconPath" class="e-field__append-inner" @click="handleClickAppendIcon">
+                <div v-if="appendIcon" class="e-field__append-inner" @click="handleClickAppendIcon">
                     <div class="e-field__icon e-field__icon--append">
-                        <EIcon :name="appendIconName" :path="appendIconPath" />
+                        <EIcon :icon="appendIcon" />
                     </div>
                 </div>
                 <div v-if="!outlined" class="e-field__line"></div>
@@ -52,13 +51,13 @@ import { IconPath } from '@/components/shared/icon/index.vue';
 
 
 export interface Props {
-    iconClear?: string; retainColor?: boolean;
+    iconClear?: Array<IconPath> | IconPath | string; retainColor?: boolean;
     disabled?: boolean; dense?: boolean; readonly?: boolean; counter?: boolean; clearable?: boolean;
-    labelInline?: boolean; detail?: string; outlined?: boolean; label?: string | number; prependIconPath?: Array<IconPath> | IconPath;
+    labelInline?: boolean; detail?: string; outlined?: boolean; label?: string | number;
     modelValue?: string | number | null; placeholder?: string; suffix?: string; autocomplete?: string;
-    prefix?: string; inputAlign?: string; color?: string; limit?: string | number; appendIconPath?: Array<IconPath> | IconPath
-    detailErrors?: Array<string>; detailsOnMessageOnly?: boolean; type?: string; appendIconName?: string;
-    labelMinWidth?: string; prependIconName?: string; rules?: Array<(param: any) => string | true>;
+    prefix?: string; inputAlign?: string; color?: string; limit?: string | number; prependIcon?: Array<IconPath> | IconPath | string;
+    detailErrors?: Array<string>; detailsOnMessageOnly?: boolean; type?: string; appendIcon?: Array<IconPath> | IconPath | string;
+    labelMinWidth?: string; rules?: Array<(param: string) => string | true>;
     cols?: string | number; xs?: string | number; sm?: string | number; md?: string | number;
     lg?: string | number; xl?: string | number; inputReadonly?: boolean
 }
@@ -75,6 +74,7 @@ const emit = defineEmits<{
 const { fieldClass, inputStyle, id, showClearable, showDetails, textColor,
     details, labelStyle, handleHover, handleBlur, handleClickPrependIcon,
     handleClickAppendIcon, handleFocus, setInputFocus } = useField()
+
 
 const { gridClass } = useGrid('e-field')
 const textFieldClass = computed(() => [...fieldClass.value, 'e-text-field', ...gridClass.value])

@@ -6,17 +6,10 @@
       </h1>
       <p>
         The component offers an intuitive way for users to select dates
-        from a calendar.
+        from a calendar, users can easily navigate through months and years to pick specific dates.
       </p>
     </div>
     <section class="mb-12">
-      <h2 class="text-h4 mb-2">Example</h2>
-      <p>
-        With this component,
-        users can easily navigate through months and years to pick specific dates. The Date Picker supports a range of
-        customization options, allowing developers to control date formats, highlight specific dates, set minimum and
-        maximum selectable dates, and more.
-      </p>
       <BoxExample :color="color">
         <template #tabs>
           <ETab value="design">
@@ -31,7 +24,8 @@
             <div class="d-flex justify-center pa-4">
               <ECard>
                 <EDatePicker v-model="example" :landscape="landscape" :no-title="noTitle" :color="color"
-                  v-model:view="viewMode" :week-start="weekStart" :icon-prev-path="iconPrev" :icon-next-path="iconNext" />
+                  v-model:view="viewMode" :week-start="weekStart" :icon-prev="(iconPrev?.icon as IconPath)"
+                  :icon-next="(iconNext?.icon as IconPath)" />
               </ECard>
             </div>
           </EWindowItem>
@@ -46,17 +40,19 @@
             <ESelect v-model="color" :items="colors" :color="color" label="color" />
             <ESelect v-model="weekStart" :items="weekStartOptions" :color="color" label="week-start" />
             <ESelect v-model="viewMode" :items="viewModeOptions" :color="color" label="view" />
-            <ESelect v-model="iconPrev" label="icon-prev" :items="icons" :color="color">
+            <ESelect v-model="iconPrev" cols="24" placeholder="default" :items="arrowLeft" return-object label="icon-prev"
+              clearable>
               <template #item="{ attrs, item }">
-                <e-list-item v-bind="attrs" :prepend-icon="item">
-                  {{ item }}
+                <e-list-item v-bind="attrs" :prepend-icon="item.icon">
+                  {{ item.text }}
                 </e-list-item>
               </template>
             </ESelect>
-            <ESelect v-model="iconNext" label="icon-next" :items="icons" :color="color">
+            <ESelect v-model="iconNext" cols="24" placeholder="default" :items="arrowRight" return-object
+              label="icon-next" clearable>
               <template #item="{ attrs, item }">
-                <e-list-item v-bind="attrs" :prepend-icon="item">
-                  {{ item }}
+                <e-list-item v-bind="attrs" :prepend-icon="item.icon">
+                  {{ item.text }}
                 </e-list-item>
               </template>
             </ESelect>
@@ -299,13 +295,17 @@
             <tr>
               <td>icon-prev</td>
               <td>Sets the icon for previous month/year button.</td>
-              <td class="string">string</td>
+              <td class="string">Array&lt;IconPath>
+                <e-divider class="my-2" /> IconPath <e-divider class="my-2" /> string
+              </td>
               <td class="string">-</td>
             </tr>
             <tr>
               <td>icon-next</td>
               <td>Sets the icon for next month/year button.</td>
-              <td class="string">string</td>
+              <td class="string">Array&lt;IconPath>
+                <e-divider class="my-2" /> IconPath <e-divider class="my-2" /> string
+              </td>
               <td class="string">-</td>
             </tr>
             <tr>
@@ -388,7 +388,6 @@
           <div v-text="int.code" v-prism="{ class: 'language-ts' }"></div>
         </e-expansion>
       </e-expansion-panels>
-
     </section>
   </div>
 </template>
@@ -396,6 +395,7 @@
 import { DatesConfiguration } from '~/components/shared/date-picker/types';
 import { datePickerViewType } from '~/components/shared/date-picker/types';
 import UtilDate from '@/models/date';
+import { IconPath } from '~/components/shared/icon/index.vue';
 const example = ref();
 const integrationDialogModel = ref();
 const integrationPickerModel = ref();
@@ -409,10 +409,21 @@ const landscape = ref(false)
 const noTitle = ref(false)
 const weekStart = ref(0)
 const color = ref('primary')
+const iconPrev: Ref<Record<string, string | number | IconPath> | undefined> = ref()
+const iconNext: Ref<Record<string, string | number | IconPath> | undefined> = ref()
 const { $icon } = useNuxtApp()
-const icons = [$icon.pickerIconPrev, $icon.phone, $icon.logout]
-const iconNext = ref($icon.arrowRight)
-const iconPrev = ref($icon.arrowLeft)
+
+const arrowLeft = [
+  { text: 'menu-left', icon: $icon.menuLeft, value: 1 },
+  { text: 'menu-left-outlined', icon: $icon.menuLeftOutlined, value: 2 },
+  { text: 'arrow-left-thin', icon: $icon.arrowLeftThin, value: 3 },
+]
+const arrowRight = [
+  { text: 'menu-right', icon: $icon.menuRight, value: 1 },
+  { text: 'menu-right-outlined', icon: $icon.menuRightOutlined, value: 2 },
+  { text: 'arrow-right-thin', icon: $icon.arrowRightThin, value: 3 },
+]
+
 const colors = ['primary', 'secondary', 'salmon', 'carnation']
 const disabledDates: DatesConfiguration = {
   daysOfMonth: [26, 29],
@@ -506,9 +517,8 @@ const DefaultCode = computed(() => `<template>
   <e-date-picker week-start
     v-model="example" ${landscape.value ? '\n    landscape' : ''} ${noTitle.value ? '\n    no-title' : ''}    
     color="${color.value}" 
-    :week-start="${weekStart.value}" 
-    icon-prev="${iconNext.value}" 
-    icon-next="${iconPrev.value}" 
+    :week-start="${weekStart.value}"${iconNext.value ? '\n    icon-next:="' + iconNext.value.text + '"' : ''}${iconPrev.value ?
+    '\n    icon-prev:="' + iconPrev.value.text + '"' : ''}
   />
 </template>
 `)

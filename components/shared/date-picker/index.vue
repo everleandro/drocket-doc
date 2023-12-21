@@ -19,7 +19,7 @@
         <div class="e-date-picker-header">
           <slot name="header" :prev="prevButtonAction" :next="nextButtonAction" :change-view-mode="changeViewMode"
             :page-date="store.pageDate">
-            <EButton icon text v-bind="prevButtonAttributes" aria-label="Previous month" x-small
+            <EButton :icon="iconPrev || $icon.arrowLeft" text aria-label="Previous month" x-small
               @click="prevButtonAction()" />
 
             <div class="e-date-picker-header__value">
@@ -32,7 +32,7 @@
               </transition>
             </div>
 
-            <EButton icon text v-bind="nextButtonAttributes" aria-label="Previous month" x-small
+            <EButton :icon="iconNext || $icon.arrowRight" text aria-label="Previous month" x-small
               @click="nextButtonAction()" />
           </slot>
         </div>
@@ -100,8 +100,8 @@ export interface Props {
   weekStart?: number
   format?: string
   lng?: suportedLng
-  iconPrev?: string | Array<IconPath>
-  iconNext?: string | Array<IconPath>
+  iconPrev?: string | Array<IconPath> | IconPath
+  iconNext?: string | Array<IconPath> | IconPath
   disabled?: DatesConfiguration
   highlighted?: DatesConfiguration
   view?: datePickerViewType
@@ -140,26 +140,6 @@ const store = reactive({
 
 const keyMonth = computed(() => {
   return new Date(store.pageDate).getMonth() + '' + store.pageDate.getMonth()
-})
-const prevButtonAttributes = computed(() => {
-  if (!props.iconNext) {
-    return { iconPath: $icon.arrowLeft }
-  } if (typeof props.iconPrev === 'string') {
-    return { iconName: props.iconPrev as string }
-  } else {
-
-    return { iconPath: props.iconPrev as Array<IconPath> }
-  }
-})
-const nextButtonAttributes = computed(() => {
-  if (!props.iconNext) {
-    return { iconPath: $icon.arrowRight }
-  } else if (typeof props.iconNext === 'string') {
-    return { iconName: props.iconNext as string }
-  } else {
-
-    return { iconPath: props.iconNext as Array<IconPath> }
-  }
 })
 
 const keyYear = computed(() => {

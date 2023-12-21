@@ -10,7 +10,6 @@
   
 <script lang="ts" setup>
 export type DrawerClassKeys = 'disabled' | 'right' | 'modelValue' | 'fixed'
-
 export interface Props {
   modelValue?: boolean
   absolute?: boolean
@@ -34,7 +33,7 @@ const availableRootClasses: Record<DrawerClassKeys, string> = {
   modelValue: 'e-drawer--open',
 };
 
-const route = useRoute()
+const router = useRouter()
 const absoluteComputed = computed(() => props.absolute || mdBreakpoint.value)
 const tag = computed(() => props.nav ? 'nav' : 'aside')
 
@@ -81,13 +80,17 @@ watch(() => mdBreakpoint.value, () => {
   setOverlay();
   refreshLayoutStyle()
 });
+// watch(() => route.fullPath, () => {
+//   console.log('ads')
 
-watch(() => route, () => {
+// }, { deep: true })
+
+watch(() => router, () => {
   if (props.modelValue && mdBreakpoint.value) {
     changeValue(false)
   }
 
-}, { deep: true });
+}, { deep: true, immediate: true });
 
 const setOverlay = (): void => {
   if (props.modelValue && absoluteComputed.value) {

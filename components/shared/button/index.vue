@@ -16,18 +16,18 @@
                 </span>
             </slot>
         </span>
-        <span v-if="prependIconName || prependIconPath" class="e-btn__prepend">
-            <EIcon :name="prependIconName" :path="prependIconPath" />
+        <span v-if="prependIcon" class="e-btn__prepend">
+            <EIcon :icon="prependIcon" />
         </span>
         <span class="e-btn__content">
             <slot name="default">
                 <template v-if="icon || fab">
-                    <EIcon :name="iconName" :path="iconPath" />
+                    <EIcon :icon="icon" />
                 </template>
             </slot>
         </span>
-        <span v-if="appendIconName || appendIconPath" class="e-btn__append">
-            <EIcon :name="appendIconName" :path="appendIconPath" />
+        <span v-if="appendIcon" class="e-btn__append">
+            <EIcon :icon="appendIcon" />
         </span>
     </component>
 </template>
@@ -39,10 +39,8 @@ export type ButtonClassKeys = 'stacked' | 'disabled' | 'ripple' | 'loading' | 'f
 
 export interface Props {
     disabled?: boolean
-    appendIconName?: string
-    appendIconPath?: IconPath
-    prependIconName?: string
-    prependIconPath?: IconPath
+    appendIcon?: Array<IconPath> | IconPath | string
+    prependIcon?: Array<IconPath> | IconPath | string
     ripple?: boolean
     loading?: boolean
     color?: string
@@ -59,9 +57,7 @@ export interface Props {
     xLarge?: boolean
     rounded?: boolean
     stacked?: boolean
-    icon?: boolean
-    iconName?: string
-    iconPath?: Array<IconPath> | IconPath
+    icon?: Array<IconPath> | IconPath | string
     height?: string | number
     width?: string | number
 }

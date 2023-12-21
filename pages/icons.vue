@@ -12,8 +12,6 @@
       </p>
     </div>
     <section class="mb-12">
-      <h2 class="text-h4 mb-2">Example</h2>
-
       <BoxExample :color="iconProperty.color">
         <template #tabs>
           <ETab value="design">
@@ -26,7 +24,7 @@
         <template #window-item>
           <EWindowItem value="design">
             <div class="d-flex justify-center align-center full-height pa-4">
-              <e-icon :color="iconProperty.color" :path="iconProperty.path"
+              <e-icon :color="iconProperty.color" :icon="iconProperty.path"
                 :x-small="iconProperty.size === iconSize.xSmall" :small="iconProperty.size === iconSize.small"
                 :x-large="iconProperty.size === iconSize.xLarge" :large="iconProperty.size === iconSize.large" />
             </div>
@@ -46,7 +44,7 @@
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Icon svg</h2>
       <p> You can use svg as an icon by simply passing an object of type <code
-          class="primary-darken-1--text mx-2">IconPath</code> to the <code class="primary-darken-1--text mx-2">path</code>
+          class="primary-darken-1--text mx-2">IconPath</code> to the <code class="primary-darken-1--text mx-2">icon</code>
         property of the component.
       </p>
       <e-chip class="mb-2">svg exanple</e-chip>
@@ -81,11 +79,11 @@
         <template #window-item>
           <EWindowItem value="design">
             <div class="d-flex justify-center align-center full-height pa-4 flex-wrap">
-              <e-button color="salmon" icon :icon-path="$icon.cog" class="ma-4"></e-button>
-              <e-button color="salmon" icon :icon-path="$icon.wifi" class="ma-4" text></e-button>
-              <e-button color="carnation" :prepend-icon-path="$icon.delete" class="ma-4"> Delete</e-button>
-              <e-button color="yellow-orange" :prepend-icon-path="$icon.send" class="ma-4">Send</e-button>
-              <e-button color="primary" :append-icon-path="$icon.pencil" class="ma-4">Edit</e-button>
+              <e-button color="salmon" :icon="$icon.cog" class="ma-4"></e-button>
+              <e-button color="salmon" :icon="$icon.wifi" class="ma-4" text></e-button>
+              <e-button color="carnation" :prepend-icon="$icon.delete" class="ma-4"> Delete</e-button>
+              <e-button color="yellow-orange" :prepend-icon="$icon.send" class="ma-4">Send</e-button>
+              <e-button color="primary" :append-icon="$icon.pencil" class="ma-4">Edit</e-button>
             </div>
           </EWindowItem>
           <EWindowItem value="Template">
@@ -146,27 +144,12 @@
               <td class="boolean">false</td>
             </tr>
             <tr>
-              <td>rounded</td>
-              <td>applies a predefined <code class="primary-darken-1--text">border-radius</code> to the component. </td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
               <td>icon</td>
-              <td>prepares the component style to display only icons as content</td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
-              <td>name</td>
-              <td>name of the icon to be displayed</td>
-              <td class="string">string</td>
-              <td class="undefined">undefined</td>
-            </tr>
-            <tr>
-              <td>path</td>
-              <td>path of the icon to be displayed</td>
-              <td class="string">Array&lt;IconPath> | IconPath</td>
+              <td>object with the icon configuration or class name that corresponds to the font that has been imported
+                into the project</td>
+              <td class="string">Array&lt;IconPath>
+                <e-divider class="my-2" /> IconPath <e-divider class="my-2" /> string
+              </td>
               <td class="boolean">undefined</td>
             </tr>
 
@@ -261,11 +244,11 @@ const variableCode = `$icon-class: "fas";
 $icon-prefix: "fa-";
 `
 const iconHtmlCode = `<template">
-  <e-button color="salmon" icon icon-name="cog"></e-button>
-  <e-button color="salmon" icon icon-name="wifi" text></e-button>
-  <e-button color="carnation" prepend-icon-path="delete"> Delete</e-button>
-  <e-button color="yellow-orange" prepend-icon-name="send">Send</e-button>
-  <e-button color="primary" append-icon-name="$icon.pencil">Edit</e-button>
+  <e-button color="salmon" icon icon="cog"></e-button>
+  <e-button color="salmon" icon icon="wifi" text></e-button>
+  <e-button color="carnation" prepend-icon="delete"> Delete</e-button>
+  <e-button color="yellow-orange" prepend-icon="send">Send</e-button>
+  <e-button color="primary" append-icon="pencil">Edit</e-button>
 </template>`
 </script>
 <style lang="scss">

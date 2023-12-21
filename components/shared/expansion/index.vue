@@ -7,7 +7,7 @@
             {{ headerTitle }}
           </slot>
           <div class="e-expansion__header-icon">
-            <EIcon :path="$icon.arrowDown"></EIcon>
+            <EIcon :icon="$icon.arrowDown"></EIcon>
           </div>
         </span>
       </button>
