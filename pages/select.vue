@@ -53,7 +53,7 @@
     </section>
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Icons</h2>
-      <p>The <code class="primary-darken-1--text mx-2">e-text-field</code> With Icon component pairs a standard text input
+      <p>The <code class="primary-darken-1--text mx-2">e-select</code> With Icon component pairs a standard text input
         with a functional addon element, can be
         positioned on either the left or right side of the input field.</p>
       <BoxExample :color="textFieldProperty.color">
