@@ -42,10 +42,10 @@ import {
 
 import "@drocket/dist/e-vue.css";
 import Vue from 'vue'
-import { EVue } from '@drocket'
+import { DRocket  } from '@drocket'
 
 // this line auto imports all components and directives
-Vue.use(EVue)
+Vue.use(DRocket )
 
 
 ```
@@ -75,9 +75,9 @@ module.exports = {
 // plugins/e-vue.js
 
 import Vue from 'vue'
-import { EVue } from '@drocket'
+import { DRocket  } from '@drocket'
 
-Vue.use(EVue)
+Vue.use(DRocket )
 
 
 ```
