@@ -2,11 +2,10 @@
   <div class="button-page">
     <div class="mb-12">
       <h1 class="text-h3 mb-2">
-        Text Field
+        Select
       </h1>
       <p>
-        Input Component is a fundamental user interface element used to collect user input or data in various forms, such
-        as text, numbers, dates, or selections.
+        You can select options from a list of multiple formats with this component
       </p>
     </div>
     <section class="mb-12">
