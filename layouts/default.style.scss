@@ -2,19 +2,17 @@
   &__header {
     color: white;
   }
-
   &__body {
     overflow-x: hidden;
     overflow-y: auto;
 
     .e-list {
       &-item {
-        &.router-link-active,
-        &:hover {
-          // background-color: var(--black);
-          // .e-icon {
-          //   color: var(--primary);
-          // }
+        text-transform: capitalize;
+        &--text {
+          pointer-events: none;
+          text-transform: uppercase;
+          font-weight: 500;
         }
       }
     }

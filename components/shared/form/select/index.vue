@@ -5,7 +5,7 @@
             <div role="button" aria-expanded="false" class="e-field__slot">
                 <div v-if="prependIcon" class="e-field__prepend-inner" @click="handleClickPrependIcon">
                     <div class="e-field__icon e-field__icon--prepend-inner">
-                        <EIcon :name="prependIcon" />
+                        <EIcon :icon="prependIcon" />
                     </div>
                 </div>
                 <div class="e-field__overlay"></div>
@@ -66,7 +66,7 @@
 
                 <div v-if="appendIcon" class="e-field__append-inner" @click="handleClickAppendIcon">
                     <div class="e-field__icon e-field__icon--append">
-                        <EIcon :name="appendIcon" />
+                        <EIcon :icon="appendIcon" />
                     </div>
                 </div>
                 <div v-if="!outlined" :style="lineStyle" class="e-field__line"></div>
@@ -102,16 +102,16 @@
 export default { name: "Select" }
 </script>
 <script lang="ts" setup>
-
+import { IconPath } from '@/components/shared/icon/index.vue';
 export type itemType = string | number | null | Record<string, any> | Array<itemType>;
 export interface Props {
-    arrowDown?: string; multiple?: boolean, returnObject?: boolean; retainColor?: boolean; loading?: boolean
+    arrowDown?: string | IconPath | Array<IconPath>; multiple?: boolean, returnObject?: boolean; retainColor?: boolean; loading?: boolean
     disabled?: boolean; dense?: boolean; readonly?: boolean; clearable?: boolean; itemCol?: string | number;
     labelInline?: boolean; detail?: string; outlined?: boolean; label?: string | number; search?: string | number
     modelValue?: itemType; placeholder?: string; suffix?: string; autocomplete?: boolean; chip?: boolean; lineWidth?: string | number
     prefix?: string; inputAlign?: string; color?: string; limit?: string | number; chipClosable?: boolean
-    detailErrors?: Array<string>; detailsOnMessageOnly?: boolean; type?: string; appendIcon?: string;
-    labelMinWidth?: string; prependIcon?: string; rules?: Array<(param: any) => string | boolean>;
+    detailErrors?: Array<string>; detailsOnMessageOnly?: boolean; type?: string; appendIcon?: Array<IconPath> | IconPath | string;
+    labelMinWidth?: string; prependIcon?: Array<IconPath> | IconPath | string; rules?: Array<(param: any) => string | boolean>;
     cols?: string | number; xs?: string | number; sm?: string | number; md?: string | number;
     lg?: string | number; xl?: string | number;
     itemText?: string

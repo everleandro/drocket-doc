@@ -1,40 +1,37 @@
 import { iconFactory } from "~~/plugins/icons";
 export const mainLinks = [
   {
-    icon: "",
     text: "Get Started",
     to: "/",
   },
   {
-    icon: "",
-    text: "Date Picker",
-    to: "/date-picker",
-  },
-  {
-    icon: "",
-    text: "form",
-    to: "/form",
-  },
-  {
-    icon: "",
     text: "button",
     to: "/button",
   },
   {
-    icon: "",
     text: "icons",
     to: "/icons",
   },
   {
-    icon: "",
+    text: "Date Picker",
+    to: "/date-picker",
+  },
+  {
+    text: "Form & Inputs",
+    divider: true,
+  },
+  {
+    text: "form",
+    to: "/form",
+  },
+  {
     text: "Text Field",
     to: "/text-field",
   },
-  // {
-  //     icon: iconFactory.booking,
-  //     text: 'reservas',
-  //     to: '/bookings'
-  // },
+  {
+    text: "select",
+    to: "/select",
+  },
   // {
   //     icon: iconFactory.checking,
   //     text: 'Fichajes',

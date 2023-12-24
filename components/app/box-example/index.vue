@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="box-example e-card">
+        <e-card class="box-example">
             <ETabGroup v-model="tab" :color="color">
                 <slot name="tabs"></slot>
             </ETabGroup>
@@ -18,7 +18,7 @@
                     </ECol>
                 </template>
             </ERow>
-        </div>
+        </e-card>
 
     </div>
 </template>
@@ -75,4 +75,5 @@ const showForm = computed((): boolean => {
             text-transform: unset;
         }
     }
-}</style>
+}
+</style>

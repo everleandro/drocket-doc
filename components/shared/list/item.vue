@@ -49,7 +49,8 @@ const active = (): boolean => {
 }
 
 const listItemCLass = computed((): Array<string> => {
-    const classes = ['e-list-item']
+    const defaultClass = attrs.class ? `${attrs.class}` : ''
+    const classes = ['e-list-item', defaultClass]
     props.color && classes.push(`${props.color}--text`)
     props.disabled && classes.push('"e-list-item--disabled"')
     typeLink() && classes.push('e-list-item--link')

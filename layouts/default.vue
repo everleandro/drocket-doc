@@ -10,8 +10,14 @@
       <div class="nav__body">
         <div class="main-links">
           <e-list color="primary">
-            <template v-for="({ icon, text, to }, index) in mainLinks" :key="index">
-              <e-list-item :to="to" :prepend-icon="icon">
+            <template v-for="({ text, to, divider }, index) in mainLinks" :key="index">
+              <template v-if="divider">
+                <e-divider></e-divider>
+                <e-list-item class="e-list-item--text">
+                  {{ text }}
+                </e-list-item>
+              </template>
+              <e-list-item v-else :to="to">
                 <slot name="item-text">
                   {{ text }}
                 </slot>

@@ -22,9 +22,10 @@
         <template #window-item>
           <EWindowItem value="design">
             <div class="d-flex justify-center align-center full-height pa-4">
-              <e-text-field v-model="exampleModel" :outlined="textFieldProperty.outlined"
-                :retain-color="textFieldProperty.retainColor" :color="textFieldProperty.color"
-                :clearable="textFieldProperty.clearable" :disabled="textFieldProperty.state === textFieldState.disabled"
+              <e-select v-model="exampleModel" :items="['item-1', 'item-2', 'item-3']"
+                :outlined="textFieldProperty.outlined" :retain-color="textFieldProperty.retainColor"
+                :color="textFieldProperty.color" :clearable="textFieldProperty.clearable"
+                :disabled="textFieldProperty.state === textFieldState.disabled"
                 :readonly="textFieldProperty.state === textFieldState.readonly" />
             </div>
           </EWindowItem>
@@ -68,8 +69,9 @@
           <EWindowItem value="design">
             <div class="d-flex justify-center align-center full-height pa-4">
               <e-form>
-                <e-text-field v-model="iconFieldModel" :prepend-icon="textFieldProperty.prepenIcon?.icon"
-                  :append-icon="textFieldProperty.appendIcon?.icon" cols="24" :label="textFieldProperty.label" />
+                <e-select v-model="iconFieldModel" :items="['item-1', 'item-2', 'item-3']"
+                  :prepend-icon="textFieldProperty.prepenIcon?.icon" :append-icon="textFieldProperty.appendIcon?.icon"
+                  cols="24" :label="textFieldProperty.label" />
               </e-form>
             </div>
           </EWindowItem>
@@ -122,7 +124,8 @@
             <div class="d-flex justify-center align-center full-height pa-4">
               <e-form>
                 <e-spacer></e-spacer>
-                <e-text-field v-model="rulesFieldModel" :rules="[required]" cols="24" label="Nombre" lg="12" clearable />
+                <e-select v-model="rulesFieldModel" :rules="[required]" cols="24" label="option" lg="12" clearable
+                  :items="['item-1', 'item-2', 'item-3']" />
                 <e-spacer></e-spacer>
               </e-form>
             </div>
@@ -175,13 +178,6 @@
               <td class="boolean">false</td>
             </tr>
             <tr>
-              <td>counter</td>
-              <td>places a counter at the bottom of the component with the number of characters that have been entered
-              </td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
               <td>clearable</td>
               <td>sets whether the component is cleanable or not </td>
               <td class="string">boolean</td>
@@ -205,7 +201,6 @@
               <td class="string">boolean</td>
               <td class="boolean">false</td>
             </tr>
-
             <tr>
               <td>label</td>
               <td>label associated with the input field</td>
@@ -215,7 +210,18 @@
             <tr>
               <td>model-value</td>
               <td>The v-model value of the component. </td>
-              <td class="string">string | number</td>
+              <td class="string">
+                string
+                <e-divider class="my-2" />
+                number
+                <e-divider class="my-2" />
+                null
+                <e-divider class="my-2" />
+                Record&lt;string, any>
+                <e-divider class="my-2" />
+                Array&lt;itemType>
+                <e-divider class="my-2" />
+              </td>
               <td class="boolean"></td>
             </tr>
             <tr>
@@ -250,12 +256,6 @@
               </td>
               <td class="string">string</td>
               <td class="undefined">undefined</td>
-            </tr>
-            <tr>
-              <td>limit</td>
-              <td>sets a character limit to the input field</td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
             </tr>
             <tr>
               <td>details-error</td>
@@ -334,9 +334,9 @@
 </template>
 <script lang="ts" setup>
 
-const exampleModel = ref('')
+const exampleModel = ref('item-1')
 const iconFieldModel = ref('')
-const rulesFieldModel = ref('')
+const rulesFieldModel = ref('item-1')
 enum textFieldState { disabled, readonly, default }
 const { $icon } = useNuxtApp()
 const icons = [
@@ -352,21 +352,26 @@ const textFieldProperty = ref({
 })
 const required = (value: string) => !!value || 'Field is required'
 const colors = ['primary', 'secondary', 'salmon', 'carnation']
-const rulesTemplate = `<e-text-field 
+const rulesTemplate = `<e-select 
   v-model="rulesFieldModel"
+  :items="items"
   :rules="[required]"
   label="Nombre"
   clearable
 />`
 const rulesTs = `const required = (value: string) => !!value || 'Field is required'`
 const iconsTemplateCode = computed(() => `<template>
-<e-text-field 
-    v-mdodel="model" ${textFieldProperty.value.prepenIcon ?
+<e-select 
+    v-mdodel="model"
+    :items="items" ${textFieldProperty.value.prepenIcon ?
     '\n    prepend-icon="' + textFieldProperty.value.prepenIcon.text + '"' : ''}${textFieldProperty.value.appendIcon ?
       '\n    append-icon="' + textFieldProperty.value.appendIcon.text + '"' : ''}/>  
 </template>`)
 const HTMLCode = computed(() => `<template>
-  <e-text-field \n    v-model="example" \n    color="${textFieldProperty.value.color}"${textFieldProperty.value.clearable ?
+  <e-select 
+    v-model="example"
+    :items="items"
+    color="${textFieldProperty.value.color}"${textFieldProperty.value.clearable ?
     '\n    clearable' : ''}${textFieldProperty.value.state === textFieldState.readonly ? '\n    read-only' : ''}${textFieldProperty.value.rounded ?
       '\n    rounded' : ''}${textFieldProperty.value.state === textFieldState.disabled ? '\n    disabled' : ''}${textFieldProperty.value.retainColor ?
         '\n    retain-color' : ''}${textFieldProperty.value.outlined ? '\n    outlined' : ''}
