@@ -1,4 +1,4 @@
-# e-vue
+# d-rocket
 
 ui-library with frequently used components, adaptable to your needs. You can use each of the proposed components or just use the one you need
 
@@ -40,7 +40,7 @@ import {
 ```bash
 // src/main.ts
 
-import "@drocket/dist/e-vue.css";
+import "@drocket/dist/d-rocket.css";
 import Vue from 'vue'
 import { DRocket  } from '@drocket'
 
@@ -72,7 +72,7 @@ module.exports = {
 ### nuxt app
 
 ```bash
-// plugins/e-vue.js
+// plugins/d-rocket.js
 
 import Vue from 'vue'
 import { DRocket  } from '@drocket'
@@ -87,7 +87,7 @@ Vue.use(DRocket )
 // nuxt.config.js
 
  css: [
-    '@drocket/dist/e-vue.css',
+    '@drocket/dist/d-rocket.css',
      // This is the path to your variables
     '~sass/variables.scss',
   ],
