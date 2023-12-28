@@ -26,11 +26,11 @@ export const mainLinks = [
   },
   {
     text: "Text Field",
-    to: "/text-field",
+    to: "/form/text-fields",
   },
   {
     text: "select",
-    to: "/select",
+    to: "/form/selects",
   },
   // {
   //     icon: iconFactory.checking,

@@ -258,7 +258,7 @@
               <td class="boolean">false</td>
             </tr>
             <tr>
-              <td>details-error</td>
+              <td>detail-errors</td>
               <td>shows an error message below the component and changes the state</td>
               <td class="string">Array&lt;string></td>
               <td class="boolean">[]</td>
@@ -324,11 +324,24 @@
                 a string containing an error message. This also change the
                 input state.</td>
               <td class="string">Array&lt;(param: any)=> string | true></td>
-              <td class="boolean">false</td>
+              <td class="boolean"></td>
             </tr>
           </tbody>
         </table>
       </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-h4 mb-2">data types</h2>
+      <p> You can import all data types used in the component from the path: <code
+          class="primary-darken-1--text">~/drocket/icon/types</code> </p>
+
+      <e-expansion-panels>
+        <e-expansion :model-value="true" v-for="(int, i) in interfaces" :key="i" :header-title="int.title"
+          color="primary">
+          <div v-text="int.code" v-prism="{ class: 'language-ts' }"></div>
+        </e-expansion>
+      </e-expansion-panels>
     </section>
   </div>
 </template>
@@ -344,6 +357,15 @@ const icons = [
   { text: 'account', icon: $icon.account, value: 2 },
   { text: 'email', icon: $icon.email, value: 3 },
 ]
+const interfaces = [
+  {
+    title: 'itemType',
+    code: `export type itemType<T = Record<string, any>> =
+    | null
+    | undefined
+    | readonly (string | number)[]
+    | ((item: T, fallback?: any) => any)`}]
+
 const textFieldProperty = ref({
   outlined: false, readOnly: false, disabled: false, retainColor: false, label: 'label',
   prepenIcon: { text: 'calendar', icon: $icon.calendar, value: 1 },

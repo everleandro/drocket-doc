@@ -67,8 +67,13 @@ export const iconFactory: Record<string, IconPath> = {
   arrowRightThin: {
     d: "M14 16.94V12.94H5.08L5.05 10.93H14V6.94L19 11.94Z",
   },
+  menuDown: {
+    d: "M7,10L12,15L17,10H7Z",
+  },
+  menuDownOutline: {
+    d: "M18,9V10.5L12,16.5L6,10.5V9H18M12,13.67L14.67,11H9.33L12,13.67Z",
+  },
 };
-
 export default defineNuxtPlugin(() => {
   return {
     provide: {

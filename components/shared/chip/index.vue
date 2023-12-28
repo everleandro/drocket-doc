@@ -2,7 +2,7 @@
     <span :class="chipClass" draggable="false">
         <span v-if="hasPrepend" class="e-chip__prepend">
             <slot name="prepend">
-                <EIcon v-if="prependIcon" :name="prependIcon" />
+                <EIcon v-if="prependIcon" :icon="prependIcon" />
                 <EAvatar v-if="prependAvatar" :size="avatarSize" :src="prependAvatar" />
             </slot>
         </span>
@@ -11,13 +11,14 @@
 
         <span class="e-chip__append">
             <slot name="append">
-                <EIcon v-if="appendIcon" :name="appendIcon" />
+                <EIcon v-if="appendIcon" :icon="appendIcon" />
                 <EAvatar v-if="appendAvatar" :size="32" :src="appendAvatar" />
             </slot>
         </span>
         <span v-if="closable" class="e-chip__close" aria-label="Close">
-            <button v-ripple="{ center: true }" type="button" class="e-btn e-btn--icon" @click="handleClickClose">
-                <EIcon name="close" />
+            <button v-ripple="{ center: true }" type="button" class="e-btn e-btn--icon e-btn--size-small"
+                @click="handleClickClose">
+                <EIcon :icon="$icon.clear" />
             </button>
         </span>
     </span>
@@ -26,6 +27,7 @@
 export default { name: "Chip" }
 </script>
 <script lang="ts" setup>
+import { IconPath } from '@/components/shared/icon/index.vue';
 export interface Props {
     closable?: boolean
     color?: string
@@ -33,8 +35,8 @@ export interface Props {
     prependAvatar?: string
     avatarSize?: string | number
     appendAvatar?: string
-    appendIcon?: string
-    prependIcon?: string
+    appendIcon?: Array<IconPath> | IconPath | string
+    prependIcon?: Array<IconPath> | IconPath | string
 }
 
 const props = withDefaults(defineProps<Props>(), { avatarSize: 27 })
