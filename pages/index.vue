@@ -28,8 +28,10 @@
           <p class="">Setting Up Drocket in Vue Application</p>
           <e-chip class="mb-2" color="secondary"> //src/main.ts</e-chip>
           <div v-prism="{ class: 'language-js' }">{{ VueMainJs }}</div>
-          <e-chip class="mb-2 mt-4" color="secondary"> // vue.config.js</e-chip>
-          <div v-prism="{ class: 'language-js' }">{{ VueConfigJs }}</div>
+          <e-chip class="mb-2 mt-4" color="secondary"> // vite.config.ts</e-chip>
+          <div v-prism="{ class: 'language-js' }">{{ ViteConfig }}</div>
+          <e-chip class="mb-2 mt-4" color="secondary"> // style.scss</e-chip>
+          <div v-prism="{ class: 'language-js' }">{{ SassVariables }}</div>
         </div>
       </div>
       <div class="mb-12">
@@ -82,40 +84,61 @@ const installCode: Record<string, BC> = {
 
 
 
-const VueMainJs = computed(() => `import "@drocket/dist/e-vue.css";
-import Vue from 'vue'
-import { DRocket } from '@drocket'
+const VueMainJs = computed(() => `import { createApp } from "vue";
+import "drocket/styles.css";
+import App from "./App.vue";
+import { Drocket } from "drocket";
 
+const app = createApp(App);
 // this line auto imports all components and directives
-Vue.use(DRocket)
+app.use(Drocket);
+app.mount("#app");
 
 `)
-const VueConfigJs = `module.exports = {
+const ViteConfig = `import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+
+export default defineConfig({
+  plugins: [vue()],
   css: {
-    loaderOptions: {
-      sass: {
-        prependData: '
+    preprocessorOptions: {
+      scss: {
         // This is the path to your variables
-        @import "@/sass/variables.scss";
-        ',
+        additionalData: ' @import "assets/styles/variables.scss";  ',
       },
     },
   },
-};
+});
 `
 
 
-const NuxtPluginsJs = computed(() => `import Vue from 'vue'
-import { DRocket } from '@drocket'
-Vue.use(DRocket)
+const NuxtPluginsJs = computed(() => `
+import { Drocket } from "drocket";
+export default defineNuxtPlugin((nuxtApp) => {
+  // this line auto imports all components and directives
+  nuxtApp.vueApp.use(Drocket);
+});
 `)
-const NuxtConfigJs = `css: [
-    '@drocket/dist/e-vue.css',
-     // This is the path to your variables
-    '~sass/variables.scss',
-  ],
+const NuxtConfigJs = `export default defineNuxtConfig({
+  css: [
+    "drocket/styles.css",
+    "drocket/framework.scss",
+  ],  
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          // This is the path to your variables
+          additionalData: '@import "assets/styles/variables.scss";',
+        },
+      },
+    },
+  },
+});
 `
-const SassVariables = `@import '@drocket/styles/override.scss';`
+
+
+const SassVariables = `@import "drocket/setting.scss" `
 const SassVariablesExample = `// Globals
 $border-radius-root: 4px;
 $root-font-size: 2rem;
@@ -137,7 +160,7 @@ $contrast-colors: (
 ) !default;
 
 // This is mandatory
-@import "@drocket/styles/override.scss";
+@import "drocket/setting.scss";
 `
 const GeneratedClasses = `.primary {
   background-color: #f19933;

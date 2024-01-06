@@ -5,8 +5,8 @@ export const mainLinks = [
     to: "/",
   },
   {
-    text: "button",
-    to: "/button",
+    text: "buttons",
+    to: "/buttons",
   },
   {
     text: "icons",
@@ -25,11 +25,11 @@ export const mainLinks = [
     to: "/form",
   },
   {
-    text: "Text Field",
+    text: "Text Fields",
     to: "/form/text-fields",
   },
   {
-    text: "select",
+    text: "selects",
     to: "/form/selects",
   },
   // {
