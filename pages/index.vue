@@ -74,7 +74,7 @@
 </template>
 <script lang="ts" setup>
 
-import { BoxCode as BC } from "@/components/box-code/index.vue";
+import type { BoxCode as BC } from "@/components/box-code/index.vue";
 
 const installCode: Record<string, BC> = {
   npm: { code: 'npm install @drocket', language: 'language-js' },
