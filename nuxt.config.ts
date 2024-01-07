@@ -1,4 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { resolve } from "path";
+const r = (p: string) => resolve(__dirname, p);
+
 export default defineNuxtConfig({
   css: ["@/assets/styles/app.scss"],
   app: {
@@ -35,7 +38,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@import "@/assets/styles/variables.scss";',
+          additionalData: `@use "${r("assets/styles/variables.scss")}";`,
         },
       },
     },
