@@ -10,12 +10,12 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@mdi/font": "^7.3.67",
+    "@mdi/font": "^7.4.47",
     "@nuxt/devtools": "latest",
-    "@types/prismjs": "^1.26.1",
-    "nuxt": "^3.7.4",
-    "sass": "^1.69.0",
-    "vue": "^3.3.4",
+    "@types/prismjs": "^1.26.3",
+    "nuxt": "^3.9.1",
+    "sass": "^1.69.7",
+    "vue": "^3.4.5",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
