@@ -40,6 +40,8 @@ const showForm = computed((): boolean => {
 
 </script>
 <style lang="scss">
+@import "@/assets/styles/variables.scss";
+
 .box {
     &-example {
         position: relative;

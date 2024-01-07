@@ -19,20 +19,20 @@
   }
 }
 
-@include _xs {
-  html {
-    --root-font-size: 15.2px;
-  }
-}
+// @include _xs {
+//   html {
+//     --root-font-size: 15.2px;
+//   }
+// }
 
-@include _sm {
-  html {
-    --root-font-size: 15.4px;
-  }
-}
+// @include _sm {
+//   html {
+//     --root-font-size: 15.4px;
+//   }
+// }
 
-@include _md {
-  html {
-    --root-font-size: 15.6px;
-  }
-}
+// @include _md {
+//   html {
+//     --root-font-size: 15.6px;
+//   }
+// }

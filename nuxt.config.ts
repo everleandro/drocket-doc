@@ -33,16 +33,5 @@ export default defineNuxtConfig({
     build: {
       sourcemap: true,
     },
- 
-    },
-  },
-  resolve: {
-    alias: [
-      {
-        // this is required for the SCSS modules
-        find: /^~(.*)$/,
-        replacement: "$1",
-      },
-    ],
   },
 });
