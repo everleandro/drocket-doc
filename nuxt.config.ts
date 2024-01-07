@@ -33,12 +33,7 @@ export default defineNuxtConfig({
     build: {
       sourcemap: true,
     },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: `@import "~/assets/styles/variables.scss";`,
-        },
-      },
+ 
     },
   },
   resolve: {
