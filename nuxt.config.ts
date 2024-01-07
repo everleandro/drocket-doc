@@ -3,8 +3,8 @@ export default defineNuxtConfig({
   css: [
     "drocket/styles.css",
     "drocket/framework.scss",
-    "assets/styles/prism.scss",
-    "assets/styles/app.scss",
+    "@/assets/styles/prism.scss",
+    "@/assets/styles/app.scss",
   ],
   app: {
     head: {
@@ -40,7 +40,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@import "assets/styles/variables.scss";',
+          additionalData: '@import "@/assets/styles/variables.scss";',
         },
       },
     },
