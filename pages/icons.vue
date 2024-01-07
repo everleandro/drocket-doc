@@ -195,11 +195,11 @@
     <p> You can import all data types used in the component from the path: <code
         class="primary-darken-1--text">~/drocket/icon/types</code> </p>
 
-    <e-expansion-panels>
+    <e-expansion-panel>
       <e-expansion :model-value="true" v-for="(int, i) in interfaces" :key="i" :header-title="int.title" color="primary">
         <div v-text="int.code" v-prism="{ class: 'language-ts' }"></div>
       </e-expansion>
-    </e-expansion-panels>
+    </e-expansion-panel>
   </section>
 </template>
 <script lang="ts" setup>
@@ -235,7 +235,7 @@ const svgHtml = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <title>send</title>
   <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
 </svg>`
-const pathAttributeExample = `import { IconPath } from "@/drocket";
+const pathAttributeExample = `import { IconPath } from "drocket";
 const iconSend: IconPath = {
   title: "send",
   d: "M2,21L23,12L2,3V10L17,12L2,14V21Z",

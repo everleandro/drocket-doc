@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  drocket:
+    specifier: ^1.0.1
+    version: 1.0.1
   prismjs:
     specifier: ^1.29.0
     version: 1.29.0
@@ -2644,6 +2647,10 @@ packages:
     resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
     engines: {node: '>=12'}
     dev: true
+
+  /drocket@1.0.1:
+    resolution: {integrity: sha512-2Uoz8EyfHUcOH2TYR8aDJkt46Dhy4T6Iylq+PxGhNQ9PjfFM2n5UfDDkaCAefQq/MJfpSu4PDvCm7ojsL9/SgQ==}
+    dev: false
 
   /duplexer@0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}

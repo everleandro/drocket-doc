@@ -33,9 +33,9 @@
                 :outlined="formProperty.outlined" :disabled="formProperty.state === formState.disabled" :color="color"
                 :readonly="formProperty.state === formState.readonly" :retain-color="formProperty.retainColor"
                 @submit="validate">
-                <e-text-field v-model="fields.name" label="First Name" lg="12" />
-                <e-text-field v-model="fields.lastName" label="Last name" lg="12" />
-                <e-text-field v-model="fields.address" cols="24" label="Address" :rules="[required]" />
+                <ETextfield v-model="fields.name" label="First Name" lg="12" />
+                <ETextfield v-model="fields.lastName" label="Last name" lg="12" />
+                <ETextfield v-model="fields.address" cols="24" label="Address" :rules="[required]" />
 
                 <EFormColumn cols="24" class="mt-4">
                   <ESpacer />
@@ -205,17 +205,17 @@ const HTMLCode = computed(() => `<template>
     '\n      outlined' : ''}${formProperty.value.state === formState.disabled ? '\n      disabled' : ''}${formProperty.value.state === formState.readonly ?
       '\n      readonly' : ''}${formProperty.value.retainColor ? '\n      retain-color' : ''} 
       @submit="validate">
-    <e-text-field 
+    <e-textfield 
         v-model="fields.name" 
         label="First Name" 
         lg="12"
     />
-    <e-text-field
+    <e-textfield
         v-model="fields.lastName"
         label="Last Name"
         lg="12"
     />
-    <e-text-field 
+    <e-textfield 
         v-model="fields.address"
         cols="24"
         label="Address"

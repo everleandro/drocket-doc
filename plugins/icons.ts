@@ -1,4 +1,4 @@
-import { IconPath } from "~/components/shared/icon/index.vue";
+import { IconPath } from "drocket";
 
 export const iconFactory: Record<string, IconPath> = {
   arrowLeft: {

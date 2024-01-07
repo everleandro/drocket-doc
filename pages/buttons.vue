@@ -134,9 +134,6 @@
           <ETab value="Template">
             Template
           </ETab>
-          <ETab value="ts">
-            Ts
-          </ETab>
         </template>
         <template #window-item>
           <EWindowItem value="design">
@@ -148,10 +145,7 @@
             </div>
           </EWindowItem>
           <EWindowItem value="Template">
-            <div v-text="iconHtmlCode" v-prism class="full-height"></div>
-          </EWindowItem>
-          <EWindowItem value="ts">
-            <div v-text="iconTsCode" v-prism="{ class: 'language-ts' }" class="full-height"></div>
+            <div v-text="appendPrependHtmlCode" v-prism class="full-height"></div>
           </EWindowItem>
         </template>
 
@@ -181,10 +175,7 @@
             </div>
           </EWindowItem>
           <EWindowItem value="Template">
-            <div v-text="iconHtmlCode" v-prism class="full-height"></div>
-          </EWindowItem>
-          <EWindowItem value="ts">
-            <div v-text="iconTsCode" v-prism="{ class: 'language-ts' }" class="full-height"></div>
+            <div v-text="customSizeHtmlCode" v-prism class="full-height"></div>
           </EWindowItem>
         </template>
 
@@ -195,7 +186,6 @@
         API Reference
       </h1>
     </div>
-
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Props</h2>
       <p>Explore the available props for the form component</p>
@@ -210,142 +200,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>disabled</td>
-              <td> change button style and removes the ability to click or target the component.</td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
-              <td>to</td>
-              <td> Denotes the target route of the link.</td>
-              <td class="string">RouteLocationRaw</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
-              <td>append-icon</td>
-              <td> name or configuration of the icon to be displayed to the left of the component</td>
-              <td class="string">Array&lt;IconPath>
-                <e-divider class="my-2" /> IconPath <e-divider class="my-2" /> string
-              </td>
-              <td class="undefined">undefined</td>
-            </tr>
-            <tr>
-              <td>prepend-icon</td>
-              <td>name or configuration of the icon to be displayed to the left of the component </td>
-              <td class="string">Array&lt;IconPath>
-                <e-divider class="my-2" /> IconPath <e-divider class="my-2" /> string
-              </td>
-              <td class="undefined">undefined</td>
-            </tr>
-            <tr>
-              <td>ripple</td>
-              <td>Applies the v-ripple directive.</td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
-              <td>loading</td>
-              <td>shows a spinner and removes the possibility of clicking on the component </td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
-              <td>color</td>
-              <td>Applies specified color to the component - supports only utility colors (for example <code
-                  class="boolean">primary</code>
-                or <code class="boolean">secondary</code>)
-              </td>
-              <td class="string">string</td>
-              <td class="undefined">undefined</td>
-            </tr>
-            <tr>
-              <td>hover-color</td>
-              <td>Applies a specific color for the hover event to the component - supports only utility colors (for
-                example <code class="boolean">primary</code>
-                or <code class="boolean">secondary</code>)
-              </td>
-              <td class="string">string</td>
-              <td class="undefined">undefined</td>
-            </tr>
-            <tr>
-              <td>depressed</td>
-              <td>remove the box-shadow property </td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
-              <td>text</td>
-              <td>removes the shadow from the component and inverts the <code class="primary-darken-1--text">color</code>
-                and <code class="primary-darken-1--text">background-color</code> values </td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
-              <td>outlined</td>
-              <td>applies an outlined style</td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
-              <td>block</td>
-              <td>makes the component take up the entire width of the container</td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
-              <td>small</td>
-              <td>applies the size configured in the sass variables for the <code
-                  class="primary-darken-1--text">small</code> value </td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
-              <td>x-small</td>
-              <td>applies the size configured in the sass variables for the <code
-                  class="primary-darken-1--text">x-small</code> value </td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
-              <td>type</td>
-              <td> The <code class="primary-darken-1--text">type</code> attribute specifies the type of button.</td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
-              <td>large</td>
-              <td>applies the size configured in the sass variables for the <code
-                  class="primary-darken-1--text">large</code> value </td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
-              <td>x-large</td>
-              <td>applies the size configured in the sass variables for the <code
-                  class="primary-darken-1--text">x-large</code> value </td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
-              <td>rounded</td>
-              <td>applies a predefined <code class="primary-darken-1--text">border-radius</code> to the component. </td>
-              <td class="string">boolean</td>
-              <td class="boolean">false</td>
-            </tr>
-            <tr>
-              <td>icon</td>
-              <td>prepares the component style to display only icons as content you must provide the name or configuration
-                of the icon to be displayed</td>
-              <td class="string">Array&lt;IconPath>
-                <e-divider class="my-2" /> IconPath <e-divider class="my-2" /> string
-              </td>
-              <td class="undefined">undefined</td>
+            <tr v-for="(item, i) in buttonApiReference" :key="i">
+              <td>{{ item.property }}</td>
+              <td v-html="item.description"> </td>
+              <td :class="item.type.class" v-html="item.type.value"></td>
+              <td :class="item.default.class">{{ item.default.value }}</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
+
+
     <section class="mb-12">
       <h2 class="text-h4 mb-2">SASS Variables</h2>
       <div class="responsive-table">
@@ -463,7 +329,7 @@ map-merge(
   </div>
 </template>
 <script lang="ts" setup>
-
+import buttonApiReference from '@/api-reference/button.json'
 
 const color = ref('primary')
 
@@ -492,12 +358,26 @@ const sizeHtmlCode = `<template>
   <e-button x-large> x-large </e-button>
 </template>`
 
+const appendPrependHtmlCode = `<template>
+  <e-button prepend-icon="delete">Delete</e-button>
+  <e-button prepend-icon="send">Send</e-button>
+  <e-button prepend-icon="alert" color="warning">warning</e-button>
+  <e-button append-icon="alertBox">Stop</e-button>
+</template>`
+
+const customSizeHtmlCode = `<template>
+  <e-button width="150">width:150px</e-button>
+  <e-button width="200">width: 100px</e-button>
+  <e-button height="60">height: 60px</e-button>
+  <e-button height="70">height: 70px</e-button>
+</template>`
+
 const iconHtmlCode = `<template">
-  <e-button x-small icon="icon-send" />
-  <e-button small icon="icon-send" />
-  <e-button icon="icon-send" />
-  <e-button large icon="icon-send" />
-  <e-button x-large icon="icon-send" />
+  <e-button x-small :icon="iconSend" />
+  <e-button small :icon="iconSend" />
+  <e-button :icon="iconSend" />
+  <e-button large :icon="iconSend" />
+  <e-button x-large :icon="iconSend" />
   <e-button text x-small icon="music" />
   <e-button text small icon="music" />
   <e-button text icon="music" />

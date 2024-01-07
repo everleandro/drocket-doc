@@ -32,6 +32,10 @@ export const mainLinks = [
     text: "selects",
     to: "/form/selects",
   },
+  {
+    text: "checkboxes",
+    to: "/form/checkboxes",
+  },
   // {
   //     icon: iconFactory.checking,
   //     text: 'Fichajes',

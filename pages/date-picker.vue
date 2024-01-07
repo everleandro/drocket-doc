@@ -2,7 +2,7 @@
   <div class="date-picker-page">
     <div class="mb-12">
       <h1 class="text-h3 mb-2">
-        Date Piceker
+        Date Picker
       </h1>
       <p>
         The component offers an intuitive way for users to select dates
@@ -161,13 +161,13 @@
             </EDialog>
             <e-row>
               <e-col class="d-flex justify-center">
-                <ETextField :modelValue="formatDate(integrationPickerModel)" input-align="end" label="birth date"
+                <ETextfield :modelValue="formatDate(integrationPickerModel)" input-align="end" label="birth date"
                   :append-icon-path="$icon.calendar" input-readonly @click="integrationDialogModel = true" />
               </e-col>
               <e-col class="d-flex justify-center">
                 <EMenu origin="bottom right">
                   <template #activator="attrs">
-                    <ETextField :modelValue="formatDate(integrationMenuPickerModel)" input-align="end" label="Deadline"
+                    <ETextfield :modelValue="formatDate(integrationMenuPickerModel)" input-align="end" label="Deadline"
                       :append-icon-path="$icon.calendar" input-readonly v-bind="attrs" />
                   </template>
                   <EDatePicker v-model="integrationMenuPickerModel" close-on-change />
@@ -383,19 +383,18 @@
       <p> You can import all data types used in the component from the path: <code
           class="primary-darken-1--text">drocket</code> </p>
 
-      <e-expansion-panels>
+      <e-expansion-panel>
         <e-expansion v-for="(int, i) in interfaces" :key="i" :header-title="int.title" color="primary">
           <div v-text="int.code" v-prism="{ class: 'language-ts' }"></div>
         </e-expansion>
-      </e-expansion-panels>
+      </e-expansion-panel>
     </section>
   </div>
 </template>
 <script lang="ts" setup>
-import { DatesConfiguration } from '~/components/shared/date-picker/types';
-import { datePickerViewType } from '~/components/shared/date-picker/types';
+import type { DatesConfiguration, IconPath } from 'drocket';
+import { datePickerViewType } from 'drocket';
 import UtilDate from '@/models/date';
-import { IconPath } from '~/components/shared/icon/index.vue';
 const example = ref();
 const integrationDialogModel = ref();
 const integrationPickerModel = ref();
@@ -559,14 +558,14 @@ const IntegrationHtmlCode = computed(() => `<EDialog v-model="dialogModel" max-w
 </EDialog>
 <e-row>
   <e-col class="d-flex justify-center">
-    <ETextField :modelValue="formatDate(birthDate)" id="event-form-date-picker" input-align="end"
+    <ETextfield :modelValue="formatDate(birthDate)" id="event-form-date-picker" input-align="end"
       label="birth date" append-icon="calendar" input-readonly
       @click="integrationDialogModel = true" />
   </e-col>
   <e-col class="d-flex justify-center">
     <EMenu origin="bottom right">
       <template #activator="attrs">
-        <ETextField :modelValue="formatDate(Deadline)" id="event-form-date-picker"
+        <ETextfield :modelValue="formatDate(Deadline)" id="event-form-date-picker"
           input-align="end" label="Deadline" append-icon="calendar" input-readonly v-bind="attrs" />
       </template>
       <EDatePicker v-model="Deadline" close-on-change />

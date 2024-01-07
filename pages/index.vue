@@ -41,9 +41,9 @@
         <e-divider></e-divider>
         <div class="mt-2">
           <p class="">Setting Up Drocket in Nuxt Application</p>
-          <e-chip class="mb-2" color="secondary"> // plugins/drocket.js</e-chip>
+          <e-chip class="mb-2" color="secondary"> // plugins/drocket.ts</e-chip>
           <div v-prism="{ class: 'language-js' }">{{ NuxtPluginsJs }}</div>
-          <e-chip class="mb-2 mt-4" color="secondary"> // nuxt.config.js</e-chip>
+          <e-chip class="mb-2 mt-4" color="secondary"> // nuxt.config.ts</e-chip>
           <div v-prism="{ class: 'language-js' }">{{ NuxtConfigJs }}</div>
           <e-chip class="mb-2 mt-4" color="secondary"> // sass/variables.scss</e-chip>
           <div v-prism="{ class: 'language-js' }">{{ SassVariables }}</div>
@@ -74,7 +74,7 @@
 </template>
 <script lang="ts" setup>
 
-import { BoxCode as BC } from "@/components/app/box-code/index.vue";
+import { BoxCode as BC } from "@/components/box-code/index.vue";
 
 const installCode: Record<string, BC> = {
   npm: { code: 'npm install @drocket', language: 'language-js' },

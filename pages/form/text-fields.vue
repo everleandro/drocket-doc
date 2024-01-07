@@ -22,7 +22,7 @@
         <template #window-item>
           <EWindowItem value="design">
             <div class="d-flex justify-center align-center full-height pa-4">
-              <e-text-field v-model="exampleModel" :outlined="textFieldProperty.outlined"
+              <e-textfield v-model="exampleModel" :outlined="textFieldProperty.outlined"
                 :retain-color="textFieldProperty.retainColor" :color="textFieldProperty.color"
                 :clearable="textFieldProperty.clearable" :disabled="textFieldProperty.state === textFieldState.disabled"
                 :readonly="textFieldProperty.state === textFieldState.readonly" />
@@ -52,7 +52,7 @@
     </section>
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Icons</h2>
-      <p>The <code class="primary-darken-1--text mx-2">e-text-field</code> With Icon component pairs a standard text input
+      <p>The <code class="primary-darken-1--text mx-2">e-textfield</code> With Icon component pairs a standard text input
         with a functional addon element, can be
         positioned on either the left or right side of the input field.</p>
       <BoxExample :color="textFieldProperty.color">
@@ -68,7 +68,7 @@
           <EWindowItem value="design">
             <div class="d-flex justify-center align-center full-height pa-4">
               <e-form>
-                <e-text-field v-model="iconFieldModel" :prepend-icon="textFieldProperty.prepenIcon?.icon"
+                <e-textfield v-model="iconFieldModel" :prepend-icon="textFieldProperty.prepenIcon?.icon"
                   :append-icon="textFieldProperty.appendIcon?.icon" cols="24" :label="textFieldProperty.label" />
               </e-form>
             </div>
@@ -122,7 +122,7 @@
             <div class="d-flex justify-center align-center full-height pa-4">
               <e-form>
                 <e-spacer></e-spacer>
-                <e-text-field v-model="rulesFieldModel" :rules="[required]" cols="24" label="Nombre" lg="12" clearable />
+                <e-textfield v-model="rulesFieldModel" :rules="[required]" cols="24" label="Nombre" lg="12" clearable />
                 <e-spacer></e-spacer>
               </e-form>
             </div>
@@ -331,18 +331,6 @@
       </div>
     </section>
 
-    <section class="mb-12">
-      <h2 class="text-h4 mb-2">data types</h2>
-      <p> You can import all data types used in the component from the path: <code
-          class="primary-darken-1--text">drocket</code> </p>
-
-      <e-expansion-panels>
-        <e-expansion :model-value="true" v-for="(int, i) in interfaces" :key="i" :header-title="int.title"
-          color="primary">
-          <div v-text="int.code" v-prism="{ class: 'language-ts' }"></div>
-        </e-expansion>
-      </e-expansion-panels>
-    </section>
   </div>
 </template>
 <script lang="ts" setup>
@@ -357,14 +345,6 @@ const icons = [
   { text: 'account', icon: $icon.account, value: 2 },
   { text: 'email', icon: $icon.email, value: 3 },
 ]
-const interfaces = [
-  {
-    title: 'itemType',
-    code: `export type itemType<T = Record<string, any>> =
-    | null
-    | undefined
-    | readonly (string | number)[]
-    | ((item: T, fallback?: any) => any)`}]
 
 const textFieldProperty = ref({
   outlined: false, readOnly: false, disabled: false, retainColor: false, label: 'label',
@@ -374,7 +354,7 @@ const textFieldProperty = ref({
 })
 const required = (value: string) => !!value || 'Field is required'
 const colors = ['primary', 'secondary', 'salmon', 'carnation']
-const rulesTemplate = `<e-text-field 
+const rulesTemplate = `<e-textfield 
   v-model="rulesFieldModel"
   :rules="[required]"
   label="Nombre"
@@ -382,13 +362,13 @@ const rulesTemplate = `<e-text-field
 />`
 const rulesTs = `const required = (value: string) => !!value || 'Field is required'`
 const iconsTemplateCode = computed(() => `<template>
-<e-text-field 
+<e-textfield 
     v-mdodel="model" ${textFieldProperty.value.prepenIcon ?
     '\n    prepend-icon="' + textFieldProperty.value.prepenIcon.text + '"' : ''}${textFieldProperty.value.appendIcon ?
       '\n    append-icon="' + textFieldProperty.value.appendIcon.text + '"' : ''}/>  
 </template>`)
 const HTMLCode = computed(() => `<template>
-  <e-text-field \n    v-model="example" \n    color="${textFieldProperty.value.color}"${textFieldProperty.value.clearable ?
+  <e-textfield \n    v-model="example" \n    color="${textFieldProperty.value.color}"${textFieldProperty.value.clearable ?
     '\n    clearable' : ''}${textFieldProperty.value.state === textFieldState.readonly ? '\n    read-only' : ''}${textFieldProperty.value.rounded ?
       '\n    rounded' : ''}${textFieldProperty.value.state === textFieldState.disabled ? '\n    disabled' : ''}${textFieldProperty.value.retainColor ?
         '\n    retain-color' : ''}${textFieldProperty.value.outlined ? '\n    outlined' : ''}

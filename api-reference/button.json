@@ -1,0 +1,242 @@
+[
+    {
+        "property": "disabled",
+        "description": "change button style and removes the ability to click or target the component.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "to",
+        "description": "Denotes the target route of the link.",
+        "type": {
+            "value": "RouteLocationRaw",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "append-icon",
+        "description": "name or configuration of the icon to be displayed to the right of the component",
+        "type": {
+            "value": "Array<IconPath> <hr role='separator' aria-orientation='horizontal' class='e-divider my-2'> IconPath <hr role='separator' aria-orientation='horizontal' class='e-divider my-2'> string",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "prepend-icon",
+        "description": "name or configuration of the icon to be displayed to the left of the component ",
+        "type": {
+            "value": "Array<IconPath> <hr role='separator' aria-orientation='horizontal' class='e-divider my-2'> IconPath <hr role='separator' aria-orientation='horizontal' class='e-divider my-2'> string",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "icon",
+        "description": "icon name to be rendered inside the button.",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "null",
+            "class": "null"
+        }
+    },
+    {
+        "property": "ripple",
+        "description": "Applies the v-ripple directive.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "color",
+        "description": "Applies specified color to the component - supports only utility colors (for example <code class='boolean'>primary</code> or <code class='boolean'>secondary</code>)",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "loading",
+        "description": "change button style and shows a loading icon.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "hover-color",
+        "description": "Applies a specific color for the hover event to the component - supports only utility colors (for example <code class='boolean'>primary</code> or <code class='boolean'>secondary</code>)",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "depressed",
+        "description": "remove the box-shadow property",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "text",
+        "description": "removes the shadow from the component and inverts the <code class='primary-darken-1--text'>color</code> and <code class='primary-darken-1--text'>background-color</code> values",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "outlined",
+        "description": "remove the box-shadow property and adds a border",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "text",
+        "description": "removes the shadow from the component and inverts the <code class='primary-darken-1--text'>color</code> and <code class='primary-darken-1--text'>background-color</code> values",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "block",
+        "description": "makes the component take up the entire width of the container",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "x-small",
+        "description": "applies the size configured in the sass variables for the <code class='primary-darken-1--text'>x-small</code> value",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "small",
+        "description": "applies the size configured in the sass variables for the <code class='primary-darken-1--text'>small</code> value",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "large",
+        "description": "applies the size configured in the sass variables for the <code class='primary-darken-1--text'>large</code> value",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "x-large",
+        "description": "applies the size configured in the sass variables for the <code class='primary-darken-1--text'>x-large</code> value",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "type",
+        "description": "The <code class='primary-darken-1--text'>type</code> attribute specifies the type of button.",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "button",
+            "class": "string"
+        }
+    },
+    {
+        "property": "rounded",
+        "description": "applies a predefined <code class='primary-darken-1--text'>border-radius</code> to the component. ",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    }
+]

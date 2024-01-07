@@ -38,6 +38,16 @@
 <script lang="ts" setup>
 import { mainLinks } from "./constants";
 const drawerModel = ref(true);
+import { useBreakpoint } from 'drocket'
+const { viewport } = useBreakpoint()
+const router = useRouter()
+
+watch(() => router, () => {
+  if (drawerModel.value && (viewport.xs || viewport.sm || viewport.md)) {
+    drawerModel.value = false
+  }
+
+}, { deep: true, immediate: true });
 
 const closeDrawer = () => {
   drawerModel.value = !drawerModel.value;
