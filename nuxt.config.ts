@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   css: [
     "drocket/styles.css",
     "drocket/framework.scss",
+    "assets/styles/prism.scss",
     "assets/styles/app.scss",
   ],
   app: {
