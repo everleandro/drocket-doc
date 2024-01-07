@@ -381,7 +381,7 @@
     <section class="mb-12">
       <h2 class="text-h4 mb-2">data types</h2>
       <p> You can import all data types used in the component from the path: <code
-          class="primary-darken-1--text">~/drocket/date-picker/types</code> </p>
+          class="primary-darken-1--text">drocket</code> </p>
 
       <e-expansion-panels>
         <e-expansion v-for="(int, i) in interfaces" :key="i" :header-title="int.title" color="primary">
@@ -522,7 +522,7 @@ const DefaultCode = computed(() => `<template>
   />
 </template>
 `)
-const interfaceImport = `import { ... } from ' ~/drocket/date-picker/types`
+const interfaceImport = `import { ... } from ' drocket`
 
 const DisabledDatesTemplate = computed(() => `<template>
   <div>
@@ -535,7 +535,7 @@ const DisabledDatesTemplate = computed(() => `<template>
   </div>
 </template>
 `)
-const DisabledDatesTsCode = computed(() => `import { DatesConfiguration } from '~/drocket/date-picker/types';
+const DisabledDatesTsCode = computed(() => `import { DatesConfiguration } from 'drocket';
 const modelForDisabledDates = ref();
 const modelForHighlightedDates = ref();
 const disabledDates: DatesConfiguration = {

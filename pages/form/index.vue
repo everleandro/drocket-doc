@@ -237,7 +237,7 @@ const HTMLCode = computed(() => `<template>
 </template>
 `)
 
-const TSCode = `import { Form } from "@/Drocket/form/types";
+const TSCode = `import { Form } from "drocket";
 const form = ref<Form>()
 const validate = () => {
   form.value?.validate();
