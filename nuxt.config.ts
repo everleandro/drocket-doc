@@ -1,11 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  css: [
-    "drocket/styles.css",
-    "drocket/framework.scss",
-    "@/assets/styles/prism.scss",
-    "@/assets/styles/app.scss",
-  ],
+  css: ["@/assets/styles/app.scss"],
   app: {
     head: {
       title: "Drocket",
@@ -40,7 +35,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@import "./assets/styles/variables.scss";',
+          additionalData: '@import "@/assets/styles/variables.scss";',
         },
       },
     },
