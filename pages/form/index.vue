@@ -173,7 +173,7 @@
 </template>
 <script lang="ts" setup>
 
-import { Form } from "@/components/shared/form/types";
+import type { Form } from "drocket";
 
 const color = ref('primary')
 
