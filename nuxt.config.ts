@@ -12,8 +12,17 @@ export default defineNuxtConfig({
           content: "width=device-width, initial-scale=1, maximum-scale=1",
         },
         {
+          name: "keywords",
+          content: "vue components, vue, nuxt, vuejs, vue3, vue 3, nuxtjs",
+        },
+        {
+          name: "robots",
+          content: "index, follow",
+        },
+        {
           name: "description",
-          content: "default description",
+          content:
+            "Drocket is components library built on top of Vue. It offers a collection of pre-designed UI components and styles that you can easily integrate into your web applications. Install Drocket in your Vue application or Nuxt Application following step bellow.",
         },
       ],
       script: [

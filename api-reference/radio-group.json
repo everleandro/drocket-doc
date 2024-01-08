@@ -1,0 +1,230 @@
+[
+    {
+        "property": "retain-color",
+        "description": "allows the input to maintain the color regardless of the state it is in.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "disabled",
+        "description": "Modify the style and change the input state to disabled",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "readonly",
+        "description": "change the input state to disabled",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "label-inline",
+        "description": "set the css rule <code class='string'>white-space: nowrap;</code> to the label",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "detail",
+        "description": "displays an informational message below the component",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "''",
+            "class": "string"
+        }
+    },
+    {
+        "property": "outlined",
+        "description": "applies an outlined style",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "label",
+        "description": "label associated with the input field",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "model-value",
+        "description": "The v-model value of the component.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "color",
+        "description": "Applies specified color to the component - supports only utility colors (for example <code or <code class='boolean'>secondary</code>)",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "primary",
+            "class": "string"
+        }
+    },
+    {
+        "property": "detail-errors",
+        "description": "shows an error message below the component and changes the state",
+        "type": {
+            "value": "Array<string>",
+            "class": "string"
+        },
+        "default": {
+            "value": "[]",
+            "class": "string"
+        }
+    },
+    {
+        "property": "label-min-width",
+        "description": "This sets a minimum width in px for the label",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "",
+            "class": "string"
+        }
+    },
+    {
+        "property": "cols",
+        "description": "Sets the default number of columns the component extends. Available options are: {1...24}.",
+        "type": {
+            "value": "string | number",
+            "class": "string"
+        },
+        "default": {
+            "value": "",
+            "class": "string"
+        }
+    },
+    {
+        "property": "sm",
+        "description": "Changes the number of columns on small and greater breakpoints.",
+        "type": {
+            "value": "string | number",
+            "class": "string"
+        },
+        "default": {
+            "value": "",
+            "class": "string"
+        }
+    },
+    {
+        "property": "md",
+        "description": "Changes the number of columns on medium and greater breakpoints.",
+        "type": {
+            "value": "string | number",
+            "class": "string"
+        },
+        "default": {
+            "value": "",
+            "class": "string"
+        }
+    },
+    {
+        "property": "lg",
+        "description": "Changes the number of columns on large and greater breakpoints.",
+        "type": {
+            "value": "string | number",
+            "class": "string"
+        },
+        "default": {
+            "value": "",
+            "class": "string"
+        }
+    },
+    {
+        "property": "rules",
+        "description": "Accepts a array of types <code class='string'>function</code> that pass an input value as an argument and must return either <code class='boolean'>true</code> | <code class='boolean'>false</code> or  a string containing an error message. This also change the  input state.",
+        "type": {
+            "value": "Array<(param: any)=> string | true>",
+            "class": "string"
+        },
+        "default": {
+            "value": "[]",
+            "class": "string"
+        }
+    },
+    {
+        "property": "hide-overlay",
+        "description": "hides the color layer that covers the component",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "string"
+        }
+    },
+    {
+        "property": "flat",
+        "description": "removes the border-bottom from the component",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "string"
+        }
+    },
+    {
+        "property": "row",
+        "description": "display the component as a row instead of a column",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "string"
+        }
+    }
+]
