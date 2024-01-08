@@ -2,6 +2,7 @@
   &__header {
     color: white;
   }
+
   &__body {
     overflow-x: hidden;
     overflow-y: auto;
@@ -9,6 +10,7 @@
     .e-list {
       &-item {
         text-transform: capitalize;
+
         &--text {
           pointer-events: none;
           text-transform: uppercase;

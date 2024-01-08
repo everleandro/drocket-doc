@@ -162,13 +162,13 @@
             <e-row>
               <e-col class="d-flex justify-center">
                 <ETextfield :modelValue="formatDate(integrationPickerModel)" input-align="end" label="birth date"
-                  :append-icon-path="$icon.calendar" input-readonly @click="integrationDialogModel = true" />
+                  :append-icon="$icon.calendar" input-readonly @click="integrationDialogModel = true" />
               </e-col>
               <e-col class="d-flex justify-center">
                 <EMenu origin="bottom right">
                   <template #activator="attrs">
                     <ETextfield :modelValue="formatDate(integrationMenuPickerModel)" input-align="end" label="Deadline"
-                      :append-icon-path="$icon.calendar" input-readonly v-bind="attrs" />
+                      :append-icon="$icon.calendar" input-readonly v-bind="attrs" />
                   </template>
                   <EDatePicker v-model="integrationMenuPickerModel" close-on-change />
                 </EMenu>

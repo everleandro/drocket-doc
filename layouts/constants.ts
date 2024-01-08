@@ -4,20 +4,9 @@ export const mainLinks = [
     text: "Get Started",
     to: "/",
   },
+
   {
-    text: "buttons",
-    to: "/buttons",
-  },
-  {
-    text: "icons",
-    to: "/icons",
-  },
-  {
-    text: "Date Picker",
-    to: "/date-picker",
-  },
-  {
-    text: "Form & Inputs",
+    text: "FORM & INPUTS",
     divider: true,
   },
   {
@@ -43,6 +32,26 @@ export const mainLinks = [
   {
     text: "radio buttons",
     to: "/form/radio-buttons",
+  },
+  {
+    text: "CONTAINMENT",
+    divider: true,
+  },
+  {
+    text: "schedule",
+    to: "/schedule",
+  },
+  {
+    text: "buttons",
+    to: "/buttons",
+  },
+  {
+    text: "icons",
+    to: "/icons",
+  },
+  {
+    text: "Date Picker",
+    to: "/date-picker",
   },
   // {
   //     icon: iconFactory.checking,

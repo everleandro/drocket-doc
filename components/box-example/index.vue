@@ -5,6 +5,12 @@
                 <slot name="tabs"></slot>
             </ETabGroup>
             <e-divider></e-divider>
+            <template v-if="showBar">
+                <e-bar depressed class="mb-0" style="z-index: 3;">
+                    <slot name="bar"></slot>
+                </e-bar>
+            </template>
+            <e-divider></e-divider>
             <ERow no-gutters>
                 <ECol :lg="showForm ? 16 : 24" cols="24" class="py-8 px-4">
                     <EWindow v-model="tab" class="box-container">
@@ -33,9 +39,12 @@ const slots = useSlots()
 export interface Props {
     color?: string
 }
-const props = defineProps<Props>()
+defineProps<Props>()
 const showForm = computed((): boolean => {
     return Boolean(slots.form)
+})
+const showBar = computed((): boolean => {
+    return Boolean(slots.bar)
 })
 
 </script>
