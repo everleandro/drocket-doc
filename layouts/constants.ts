@@ -37,6 +37,10 @@ export const mainLinks = [
     to: "/form/checkboxes",
   },
   {
+    text: "switches",
+    to: "/form/switches",
+  },
+  {
     text: "radio buttons",
     to: "/form/radio-buttons",
   },
