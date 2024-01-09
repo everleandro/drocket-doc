@@ -11,7 +11,7 @@
       </p>
     </div>
     <section class="mb-12">
-      <BoxExample :color="checkboxProperty.color">
+      <BoxExample :color="checkboxProperty.color" :github="githubRepo.radio">
         <template #tabs>
           <ETab value="design">
             Design
@@ -114,6 +114,7 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { default as githubRepo } from '@/external-links/github'
 import radioGroupApiReference from '@/api-reference/radio-group.json'
 import radioApiReference from '@/api-reference/radio.json'
 const exampleModel = ref(1)

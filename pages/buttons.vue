@@ -11,7 +11,7 @@
     </div>
     <section class="mb-12">
 
-      <BoxExample :color="color">
+      <BoxExample :color="color" :github="githubRepo.button">
         <template #tabs>
           <ETab value="design">
             Design
@@ -330,6 +330,7 @@ map-merge(
 </template>
 <script lang="ts" setup>
 import buttonApiReference from '@/api-reference/button.json'
+import { default as githubRepo } from '@/external-links/github'
 
 const color = ref('primary')
 

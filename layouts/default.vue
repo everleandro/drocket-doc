@@ -2,9 +2,12 @@
   <e-app>
     <e-bar app fixed clipped color="white">
       <e-button :icon="$icon.menu" text color="tertiary" large @click="closeDrawer()" />
-      <h1 class="d-flex px-3 secondary--text"> Drocket
+      <h1 class="app-logo"> <e-icon :icon="$icon.logo" color="primary" class="mr-1"></e-icon> Drocket
       </h1>
       <e-spacer />
+      <e-button :prepend-icon="$icon.gitHub" text :to="githubRepo.root.url" target="_blank" class="mr-1">
+        view on GitHub
+      </e-button>
     </e-bar>
     <EDrawer v-model="drawerModel" fixed nav>
       <div class="nav__body">
@@ -37,6 +40,7 @@
 </template>
 <script lang="ts" setup>
 import { mainLinks } from "./constants";
+import { default as githubRepo } from '@/external-links/github'
 const drawerModel = ref(true);
 import { useBreakpoint } from 'drocket'
 const { viewport } = useBreakpoint()

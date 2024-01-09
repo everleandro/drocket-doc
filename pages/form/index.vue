@@ -14,7 +14,7 @@
         Grid system to control the columns that each field will occupy.
       </p>
 
-      <BoxExample :color="color">
+      <BoxExample :color="color" :github="githubRepo.form">
         <template #tabs>
           <ETab value="design">
             Design
@@ -172,7 +172,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-
+import { default as githubRepo } from '@/external-links/github'
 import type { Form } from "drocket";
 
 const color = ref('primary')

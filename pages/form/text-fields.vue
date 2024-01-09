@@ -10,7 +10,7 @@
       </p>
     </div>
     <section class="mb-12">
-      <BoxExample :color="textFieldProperty.color">
+      <BoxExample :color="textFieldProperty.color" :github="githubRepo.textfield">
         <template #tabs>
           <ETab value="design">
             Design
@@ -334,7 +334,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-
+import { default as githubRepo } from '@/external-links/github'
 const exampleModel = ref('')
 const iconFieldModel = ref('')
 const rulesFieldModel = ref('')

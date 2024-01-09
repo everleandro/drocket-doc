@@ -9,7 +9,7 @@
       </p>
     </div>
     <section class="mb-12">
-      <BoxExample>
+      <BoxExample :github="githubRepo.schedule">
         <template #tabs>
           <ETab value="design">
             Design
@@ -55,6 +55,7 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { default as githubRepo } from '@/external-links/github'
 import { useBreakpoint, scheduleMode, DateBuilder } from 'drocket'
 import type { ScheduleEvent } from 'drocket'
 const { $icon } = useNuxtApp()

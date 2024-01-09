@@ -12,7 +12,7 @@
       </p>
     </div>
     <section class="mb-12">
-      <BoxExample :color="iconProperty.color">
+      <BoxExample :color="iconProperty.color" :github="githubRepo.icon">
         <template #tabs>
           <ETab value="design">
             Design
@@ -203,6 +203,7 @@
   </section>
 </template>
 <script lang="ts" setup>
+import { default as githubRepo } from '@/external-links/github'
 const { $icon } = useNuxtApp()
 enum iconSize { xSmall, small, default, large, xLarge };
 const iconProperty = ref({

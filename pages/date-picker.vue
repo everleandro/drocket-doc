@@ -10,7 +10,7 @@
       </p>
     </div>
     <section class="mb-12">
-      <BoxExample :color="color">
+      <BoxExample :color="color" :github="githubRepo.datePicker">
         <template #tabs>
           <ETab value="design">
             Design
@@ -393,6 +393,7 @@
 </template>
 <script lang="ts" setup>
 import type { DatesConfiguration, IconPath } from 'drocket';
+import { default as githubRepo } from '@/external-links/github'
 import { datePickerViewType } from 'drocket';
 import UtilDate from '@/models/date';
 const example = ref();

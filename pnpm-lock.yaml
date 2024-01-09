@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   drocket:
-    specifier: ^1.0.7
-    version: 1.0.7
+    specifier: file:..\drocket-lib\drocket-1.0.7.tgz
+    version: file:../drocket-lib/drocket-1.0.7.tgz
   prismjs:
     specifier: ^1.29.0
     version: 1.29.0
@@ -2521,10 +2521,6 @@ packages:
     resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
     engines: {node: '>=12'}
     dev: true
-
-  /drocket@1.0.7:
-    resolution: {integrity: sha512-UwTzIk+V79eihr9CKTCAAD7ZBa4tGDUTZ9/x6QQ5913aj3gv/ze+49tzV8V+CD+TJzNJthRrzfzdjKCUxD1e4g==}
-    dev: false
 
   /duplexer@0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
@@ -5930,3 +5926,9 @@ packages:
       compress-commons: 5.0.1
       readable-stream: 3.6.2
     dev: true
+
+  file:../drocket-lib/drocket-1.0.7.tgz:
+    resolution: {integrity: sha512-U57VTTDucyd9cTWmYEioeCWPTWpA7Q4N+CaNtI8SXiIRHPDN3i/lxyzb9P3PX4lsI1fxqEHIL6PyoprhgG6n2A==, tarball: file:../drocket-lib/drocket-1.0.7.tgz}
+    name: drocket
+    version: 1.0.7
+    dev: false

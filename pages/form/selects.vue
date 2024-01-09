@@ -9,7 +9,7 @@
       </p>
     </div>
     <section class="mb-12">
-      <BoxExample :color="textFieldProperty.color">
+      <BoxExample :color="textFieldProperty.color" :github="githubRepo.select">
         <template #tabs>
           <ETab value="design">
             Design
@@ -525,7 +525,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-
+import { default as githubRepo } from '@/external-links/github'
 const exampleModel = ref('item-1')
 const iconFieldModel = ref('')
 const chipFieldModel = ref('item-1')

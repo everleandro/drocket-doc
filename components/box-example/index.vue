@@ -3,14 +3,20 @@
         <e-card class="box-example">
             <ETabGroup v-model="tab" :color="color">
                 <slot name="tabs"></slot>
+                <template v-if="github">
+                    <e-spacer />
+                    <e-button :prepend-icon="$icon.gitHub" text small :to="github.url" target="_blank" class="mr-1">
+                        view on GitHub
+                    </e-button>
+                </template>
             </ETabGroup>
             <e-divider></e-divider>
             <template v-if="showBar">
                 <e-bar depressed class="mb-0" style="z-index: 3;">
                     <slot name="bar"></slot>
                 </e-bar>
+                <e-divider></e-divider>
             </template>
-            <e-divider></e-divider>
             <ERow no-gutters>
                 <ECol :lg="showForm ? 16 : 24" cols="24" class="py-8 px-4">
                     <EWindow v-model="tab" class="box-container">
@@ -36,8 +42,13 @@ export default {
 <script lang="ts" setup>
 const tab = ref('design')
 const slots = useSlots()
+interface githubInterface {
+    title: string;
+    url: string;
+}
 export interface Props {
-    color?: string
+    color?: string,
+    github?: githubInterface,
 }
 defineProps<Props>()
 const showForm = computed((): boolean => {
@@ -50,8 +61,19 @@ const showBar = computed((): boolean => {
 </script>
 <style lang="scss">
 .box {
+
+
+
     &-example {
         position: relative;
+
+        .e-slide-group {
+            width: 100%;
+
+            &__content {
+                align-items: center;
+            }
+        }
 
         .e-row .e-divider {
             display: none;

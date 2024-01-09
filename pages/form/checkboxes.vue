@@ -11,7 +11,7 @@
       </p>
     </div>
     <section class="mb-12">
-      <BoxExample :color="checkboxProperty.color">
+      <BoxExample :color="checkboxProperty.color" :github="githubRepo.checkbox">
         <template #tabs>
           <ETab value="design">
             Design
@@ -85,6 +85,7 @@
 </template>
 <script lang="ts" setup>
 import checkboxApiReference from '@/api-reference/checkbox.json'
+import { default as githubRepo } from '@/external-links/github'
 const exampleModel = ref(false)
 
 enum checkboxState { disabled, readonly, default }
