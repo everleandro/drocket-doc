@@ -18,7 +18,7 @@
           <EForm>
             <ESelect v-model="menuProperty.origin" cols="24" :items="originOptions" label="origin" clearable
               placehodler="default" />
-            <ESelect v-model="menuProperty.transition" cols="24" :items="transitionOptions" label="origin" clearable
+            <ESelect v-model="menuProperty.transition" cols="24" :items="transitionOptions" label="transition" clearable
               placeholder="default" />
             <ECheckbox v-model="menuProperty.closeOnContentClick" cols="24" label="close-on-content-click" />
             <ECheckbox v-model="menuProperty.fullWidth" cols="24" label="full-width" />
