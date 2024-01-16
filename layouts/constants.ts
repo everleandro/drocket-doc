@@ -53,6 +53,10 @@ export const mainLinks = [
     text: "Date Picker",
     to: "/date-picker",
   },
+  {
+    text: "Expansion Panel",
+    to: "/expansion-panel",
+  },
   // {
   //     icon: iconFactory.checking,
   //     text: 'Fichajes',

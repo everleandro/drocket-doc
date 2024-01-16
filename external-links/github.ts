@@ -46,4 +46,8 @@ export default {
     title: "Form",
     url: `${preffix}form/form.vue`,
   },
+  expansionPanel: {
+    title: "expansion-panel",
+    url: `${preffix}expansion`,
+  },
 };
