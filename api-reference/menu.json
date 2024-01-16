@@ -1,0 +1,146 @@
+[
+    {
+        "property": "model-value",
+        "description": "The v-model value of the component.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "close-on-content-click",
+        "description": "Close the dropdown when clicking on the content.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "activator",
+        "description": "HTML element used to activate the component.",
+        "type": {
+            "value": "HTMLElement",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "disable-menu",
+        "description": "Disable the menu.",
+        "type": {
+            "value": "Boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "check-offset",
+        "description": "Check if the menu is going to overflow the page and automatically correct it.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "transition",
+        "description": "name of the transition to use when opening the menu.",
+        "type": {
+            "value": "String",
+            "class": "string"
+        },
+        "default": {
+            "value": "'fade'",
+            "class": "string"
+        }
+    },
+    {
+        "property": "origin",
+        "description": "Origin point of the menu, relative to the activator. Can be either \"top left\", \"top right\", \"bottom left\", or \"bottom right\".",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "'bottom left'",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "max-width",
+        "description": "Maximum menu width in pixels.",
+        "type": {
+            "value": "string | number",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "offset-x",
+        "description": "Number of pixels to offset the menu Horizontally.",
+        "type": {
+            "value": "string | number",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "offset-y",
+        "description": "Number of pixels to offset the menu Vertically.",
+        "type": {
+            "value": "string | number",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "width",
+        "description": "Menu width in pixels. Also used as the minWidth if the menu is forced to open on the right or left due to space limitations.",
+        "type": {
+            "value": "string | number",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "full-width",
+        "description": "Make the dropdown full width of its parent container.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    }
+]

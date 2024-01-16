@@ -93,7 +93,42 @@
         </table>
       </div>
     </section>
+    <section class="mb-12">
+      <h2 class="text-h4 mb-2">SASS Variables</h2>
+      <div class="responsive-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>$expansion-header-height</td>
+              <td class="string">40px <span class="boolean">!default;</span></td>
+            </tr>
 
+            <tr>
+              <td>$icon-expand-font-size</td>
+              <td class="string">40px <span class="boolean">!default;</span></td>
+            </tr>
+            <tr>
+              <td>$expansion-box-shadow</td>
+              <td>
+                <div v-prism="{ class: 'language-scss' }">
+                  <pre>
+0 3px 1px -2px rgba(0, 0, 0, 0.2),
+0 2px 2px 0 rgba(0, 0, 0, 0.14),
+0 1px 5px 0 rgba(0, 0, 0, 0.12) !default;
+</pre>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Slots</h2>
       <p>Explore the available slots for the form component</p>

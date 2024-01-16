@@ -57,6 +57,10 @@ export const mainLinks = [
     text: "Expansion Panel",
     to: "/expansion-panel",
   },
+  {
+    text: "menu",
+    to: "/menu",
+  },
   // {
   //     icon: iconFactory.checking,
   //     text: 'Fichajes',
