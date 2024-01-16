@@ -21,16 +21,18 @@
   }
 }
 
-.e-bar{ .app-logo {
-  display: flex;
-  padding: 0 12px;
-  align-items: center;
-  color: var(--primary);
-  font-weight: 300;
+.e-bar {
+  .app-logo {
+    display: flex;
+    padding: 0 12px;
+    align-items: center;
+    color: var(--primary);
+    font-weight: 300;
 
-  .e-icon {
-    transform: rotate(45deg);
-  }}
+    .e-icon {
+      transform: rotate(45deg);
+    }
+  }
 }
 
 @include _xs {

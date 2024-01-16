@@ -1,9 +1,9 @@
 <template>
     <code class="language-html">
-        <span class="token tag">
-            &lt;<template v-if="end">/</template><slot />>
-        </span>
-    </code>
+            <span class="token tag">
+                &lt;<template v-if="end">/</template><slot />>
+            </span>
+        </code>
 </template>
 <script setup lang="ts">
 

@@ -97,7 +97,7 @@
     },
     {
         "property": "color",
-        "description": "Applies specified color to the component - supports only utility colors (for example <code or <code class='boolean'>secondary</code>)",
+        "description": "Applies specified color to the component - supports only utility colors (for example <code class='boolean'>primary</code> or <code class='boolean'>secondary</code>)",
         "type": {
             "value": "string",
             "class": "string"

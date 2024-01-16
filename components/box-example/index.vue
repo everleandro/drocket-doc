@@ -1,10 +1,11 @@
 <template>
     <div>
-        <e-card class="box-example">
+        <e-card :class="boxClass">
             <ETabGroup v-model="tab" :color="color">
                 <slot name="tabs"></slot>
                 <template v-if="github">
                     <e-spacer />
+                    <!-- <e-button :icon="$icon.fullScreen" @click="fullScreenAction" /> -->
                     <e-button :prepend-icon="$icon.gitHub" text small :to="github.url" target="_blank" class="mr-1">
                         view on GitHub
                     </e-button>
@@ -34,12 +35,12 @@
 
     </div>
 </template>
-<script lang="ts">
-export default {
-    name: 'box-example'
-}
-</script>
 <script lang="ts" setup>
+import { ref, computed, useSlots } from 'vue'
+const boxAbsolute = ref(false);
+const boxClass = computed(() => {
+    return { 'box-absolute': boxAbsolute.value, 'box-example': true }
+})
 const tab = ref('design')
 const slots = useSlots()
 interface githubInterface {
@@ -57,15 +58,24 @@ const showForm = computed((): boolean => {
 const showBar = computed((): boolean => {
     return Boolean(slots.bar)
 })
-
+const fullScreenAction = () => {
+    boxAbsolute.value = !boxAbsolute.value
+}
 </script>
 <style lang="scss">
 .box {
+    position: relative;
 
-
+    &-absolute {
+        position: fixed;
+        top: 0;
+        z-index: 999999;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
 
     &-example {
-        position: relative;
 
         .e-slide-group {
             width: 100%;
@@ -105,6 +115,7 @@ const showBar = computed((): boolean => {
         .e-btn {
             text-transform: unset;
         }
+
     }
 }
 </style>

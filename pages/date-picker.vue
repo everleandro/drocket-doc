@@ -395,7 +395,7 @@
 import type { DatesConfiguration, IconPath } from 'drocket';
 import { default as githubRepo } from '@/external-links/github'
 import { datePickerViewType } from 'drocket';
-import UtilDate from '@/models/date';
+import { DateBuilder as UtilDate } from 'drocket';
 const example = ref();
 const integrationDialogModel = ref();
 const integrationPickerModel = ref();
