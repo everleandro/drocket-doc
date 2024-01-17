@@ -19,7 +19,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "drocket": "^1.0.9",
+    "drocket": "^1.0.10",
     "prismjs": "^1.29.0"
   }
 }

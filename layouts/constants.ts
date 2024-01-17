@@ -61,6 +61,10 @@ export const mainLinks = [
     text: "menu",
     to: "/menu",
   },
+  {
+    text: "chips",
+    to: "/chips",
+  },
   // {
   //     icon: iconFactory.checking,
   //     text: 'Fichajes',

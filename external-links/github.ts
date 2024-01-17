@@ -50,6 +50,10 @@ export default {
     title: "Menu",
     url: `${preffix}menu/index.vue`,
   },
+  chips: {
+    title: "Chips",
+    url: `${preffix}chip/index.vue`,
+  },
   expansionPanel: {
     title: "expansion-panel",
     url: `${preffix}expansion`,

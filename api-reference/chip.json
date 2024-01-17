@@ -1,0 +1,98 @@
+[
+    {
+        "property": "closable",
+        "description": "show close button",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "color",
+        "description": "Applies specified color to the component - supports only utility colors (for example <code class='boolean'>primary</code> or <code class='boolean'>secondary</code>)",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "primary",
+            "class": "string"
+        }
+    },
+    {
+        "property": "text",
+        "description": "Removes the background color and borders",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "primary",
+            "class": "string"
+        }
+    },
+    {
+        "property": "prependAvatar",
+        "description": "Prepends an avatar to the component",
+        "type": {
+            "value": "URL",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "appendAvatar",
+        "description": "Appends an avatar to the component",
+        "type": {
+            "value": "URL",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "prependIcon",
+        "description": "Prepends an icon to the component",
+        "type": {
+            "value": "IconPath",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "appendIcon",
+        "description": "Appends an icon to the component",
+        "type": {
+            "value": "IconPath",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "closable",
+        "description": "show close button",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    }
+]
