@@ -44,8 +44,7 @@
       </BoxExample>
     </section>
     <section class="mb-12">
-      <h2 class="text-h4 mb-2">Props</h2>
-      <p>Multiple panels</p>
+      <h2 class="text-h4 mb-2">Multiple panels</h2>
       <BoxExample>
         <template #tabs>
           <ETab value="design"> Design </ETab>

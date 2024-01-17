@@ -111,7 +111,7 @@
 <script lang="ts" setup>
 import { default as githubRepo } from '@/external-links/github'
 import { useBreakpoint, ScheduleMode, DateBuilder } from 'drocket'
-import scheduleApiReference from '@/api-reference/schedule.json'
+import scheduleApiReference from '@/api-reference/schedule.json'            
 
 import type { ScheduleEvent, ScheduleSpace } from 'drocket'
 const { viewport } = useBreakpoint()
