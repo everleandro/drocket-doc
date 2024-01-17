@@ -2,7 +2,7 @@
   <e-app>
     <e-bar app fixed clipped color="white">
       <e-button :icon="$icon.menu" text color="tertiary" large @click="closeDrawer()" />
-      <h1 class="app-logo"> <e-icon :icon="$icon.logo" color="primary" class="mr-1"></e-icon> Drocket
+      <h1 class="app-logo"> <e-icon :icon="$icon.logo" color="primary" class="mr-2"></e-icon> Drocket
       </h1>
       <e-spacer />
       <e-button :prepend-icon="$icon.gitHub" text :to="githubRepo.root.url" target="_blank" class="mr-1">

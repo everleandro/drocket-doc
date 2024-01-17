@@ -54,6 +54,10 @@ export default {
     title: "Chips",
     url: `${preffix}chip/index.vue`,
   },
+  dialog: {
+    title: "Dialog",
+    url: `${preffix}dialog/index.vue`,
+  },
   expansionPanel: {
     title: "expansion-panel",
     url: `${preffix}expansion`,

@@ -1,0 +1,62 @@
+[
+    {
+        "property": "model-value",
+        "description": "The v-model value of the component.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "absolute",
+        "description": "Makes the modal position absolute.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "persistent",
+        "description": "Makes the modal persistent, meaning it will not close when the user clicks outside of it or presses the escape key.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "max-width",
+        "description": "Sets the maximum width in pixels of the modal.",
+        "type": {
+            "value": "string | number",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "fullscreen",
+        "description": "This property is used to set the modal to fullscreen when opened.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    }
+]

@@ -65,6 +65,10 @@ export const mainLinks = [
     text: "chips",
     to: "/chips",
   },
+  {
+    text: "dialog",
+    to: "/dialog",
+  },
   // {
   //     icon: iconFactory.checking,
   //     text: 'Fichajes',
