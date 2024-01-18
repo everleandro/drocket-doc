@@ -50,7 +50,7 @@
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Button Sizes Variant</h2>
       <p>
-        Here are the available size options: <code class="primary-darken-1--text">x-small small large x-large</code>
+        Here are the available size options: <code class="green--text">x-small small large x-large</code>
       </p>
 
       <BoxExample :color="color">
@@ -80,7 +80,7 @@
     </section>
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Icon</h2>
-      <p>Using the <code class="ma-2 primary-darken-1--text">icon</code> property property you can transform the layout of
+      <p>Using the <code class="ma-2 green--text">icon</code> property property you can transform the layout of
         the component. You can learn more about how icons work on the <e-button to="/icons" text
           color="primary">Icons</e-button> page
       </p>
@@ -123,8 +123,8 @@
     </section>
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Prepend and Append icons</h2>
-      <p>You have the flexibility to position icons on either the <code class="ma-2 primary-darken-1--text">left</code> or
-        <code class="ma-2 primary-darken-1--text">right</code> side of the button.
+      <p>You have the flexibility to position icons on either the <code class="ma-2 green--text">left</code> or
+        <code class="ma-2 green--text">right</code> side of the button.
       </p>
       <BoxExample color="primary">
         <template #tabs>
@@ -153,8 +153,8 @@
     </section>
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Custom icon size</h2>
-      <p>Using <code class="ma-2 primary-darken-1--text">width</code> or
-        <code class="ma-2 primary-darken-1--text">height</code> you can change the default size of the component
+      <p>Using <code class="ma-2 green--text">width</code> or
+        <code class="ma-2 green--text">height</code> you can change the default size of the component
       </p>
       <BoxExample color="primary">
         <template #tabs>

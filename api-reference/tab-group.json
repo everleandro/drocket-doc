@@ -1,0 +1,74 @@
+[
+    {
+        "property": "model-value",
+        "description": "The v-model value of the component.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "color",
+        "description": "Applies specified color to the component - supports only utility colors (for example <code class='boolean'>primary</code> or <code class='boolean'>secondary</code>)",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "primary",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "inactive-color",
+        "description": "Applies specified color to the tabs when they are inactive - supports only utility colors (for example <code class='boolean'>primary</code> or <code class='boolean'>secondary</code>)",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "secondary",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "grow",
+        "description": "Makes the tabs grow to fit the container",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "secondary",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "tab-align",
+        "description": "Aligns the tabs to the specified side of the container",
+        "type": {
+            "value": "<span>|'start'</br>|'center' </br>|'end'</span>",
+            "class": "string"
+        },
+        "default": {
+            "value": "'center'",
+            "class": "string"
+        }
+    },
+    {
+        "property": "vertical",
+        "description": "Displays the tabs vertically",
+        "type": {
+            "value": "boolean",
+            "class": "boolean"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    }
+]

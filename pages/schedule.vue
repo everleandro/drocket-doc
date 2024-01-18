@@ -98,7 +98,7 @@
     <section class="mb-12">
       <h2 class="text-h4 mb-2">data types</h2>
       <p> You can import all data types used in the component from the path: <code
-          class="primary-darken-1--text">drocket</code> </p>
+          class="green--text">drocket</code> </p>
 
       <e-expansion-panel>
         <e-expansion v-for="(int, i) in interfaces" :key="i" :header-title="int.title" color="primary">

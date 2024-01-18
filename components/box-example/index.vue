@@ -77,7 +77,7 @@ const fullScreenAction = () => {
 
     &-example {
 
-        .e-slide-group {
+        &>.e-slide-group {
             width: 100%;
 
             &__content {

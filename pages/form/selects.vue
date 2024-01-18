@@ -54,7 +54,7 @@
 
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Icons</h2>
-      <p>The <code class="primary-darken-1--text mx-2">e-select</code> With Icon component pairs a standard text input
+      <p>The <code class="green--text mx-2">e-select</code> With Icon component pairs a standard text input
         with a functional addon element, can be
         positioned on either the left or right side of the input field.</p>
       <BoxExample>
@@ -113,7 +113,7 @@
 
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Chips</h2>
-      <p> There are different ways to use <code class="primary-darken-1--text mx-2">chips</code> in component.</p>
+      <p> There are different ways to use <code class="green--text mx-2">chips</code> in component.</p>
       <BoxExample>
         <template #tabs>
           <ETab value="design">
@@ -144,7 +144,7 @@
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Autocomplete</h2>
       <p>you can transform the behavior of the select using the appropriate properties and make it behave like an <code
-          class="primary-darken-1--text mx-2">autocomplete</code>.</p>
+          class="green--text mx-2">autocomplete</code>.</p>
       <BoxExample>
         <template #tabs>
           <ETab value="design">
@@ -180,8 +180,8 @@
 
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Slots</h2>
-      <p>You can combine the different <code class="primary-darken-1--text mx-2">props</code> with the component <code
-          class="primary-darken-1--text mx-2">slots</code> to display more dynamic content </p>
+      <p>You can combine the different <code class="green--text mx-2">props</code> with the component <code
+          class="green--text mx-2">slots</code> to display more dynamic content </p>
       <BoxExample>
         <template #tabs>
           <ETab value="design">
@@ -232,7 +232,7 @@
 
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Validations</h2>
-      <p><code class="primary-darken-1--text mx-2">selects</code> use a rule-based validation system that returns
+      <p><code class="green--text mx-2">selects</code> use a rule-based validation system that returns
         true or a text string.</p>
       <BoxExample>
         <template #tabs>

@@ -96,6 +96,18 @@
         }
     },
     {
+        "property": "stacked",
+        "description": "Displays the button as a flex-column.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
         "property": "hover-color",
         "description": "Applies a specific color for the hover event to the component - supports only utility colors (for example <code class='boolean'>primary</code> or <code class='boolean'>secondary</code>)",
         "type": {
@@ -121,7 +133,7 @@
     },
     {
         "property": "text",
-        "description": "removes the shadow from the component and inverts the <code class='primary-darken-1--text'>color</code> and <code class='primary-darken-1--text'>background-color</code> values",
+        "description": "removes the shadow from the component and inverts the <code class='green--text'>color</code> and <code class='green--text'>background-color</code> values",
         "type": {
             "value": "boolean",
             "class": "string"
@@ -145,7 +157,7 @@
     },
     {
         "property": "text",
-        "description": "removes the shadow from the component and inverts the <code class='primary-darken-1--text'>color</code> and <code class='primary-darken-1--text'>background-color</code> values",
+        "description": "removes the shadow from the component and inverts the <code class='green--text'>color</code> and <code class='green--text'>background-color</code> values",
         "type": {
             "value": "boolean",
             "class": "string"
@@ -169,7 +181,7 @@
     },
     {
         "property": "x-small",
-        "description": "applies the size configured in the sass variables for the <code class='primary-darken-1--text'>x-small</code> value",
+        "description": "applies the size configured in the sass variables for the <code class='green--text'>x-small</code> value",
         "type": {
             "value": "boolean",
             "class": "string"
@@ -181,7 +193,7 @@
     },
     {
         "property": "small",
-        "description": "applies the size configured in the sass variables for the <code class='primary-darken-1--text'>small</code> value",
+        "description": "applies the size configured in the sass variables for the <code class='green--text'>small</code> value",
         "type": {
             "value": "boolean",
             "class": "string"
@@ -193,7 +205,7 @@
     },
     {
         "property": "large",
-        "description": "applies the size configured in the sass variables for the <code class='primary-darken-1--text'>large</code> value",
+        "description": "applies the size configured in the sass variables for the <code class='green--text'>large</code> value",
         "type": {
             "value": "boolean",
             "class": "string"
@@ -205,7 +217,7 @@
     },
     {
         "property": "x-large",
-        "description": "applies the size configured in the sass variables for the <code class='primary-darken-1--text'>x-large</code> value",
+        "description": "applies the size configured in the sass variables for the <code class='green--text'>x-large</code> value",
         "type": {
             "value": "boolean",
             "class": "string"
@@ -217,7 +229,7 @@
     },
     {
         "property": "type",
-        "description": "The <code class='primary-darken-1--text'>type</code> attribute specifies the type of button.",
+        "description": "The <code class='green--text'>type</code> attribute specifies the type of button.",
         "type": {
             "value": "string",
             "class": "string"
@@ -229,7 +241,7 @@
     },
     {
         "property": "rounded",
-        "description": "applies a predefined <code class='primary-darken-1--text'>border-radius</code> to the component. ",
+        "description": "applies a predefined <code class='green--text'>border-radius</code> to the component. ",
         "type": {
             "value": "boolean",
             "class": "string"

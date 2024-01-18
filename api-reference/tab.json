@@ -1,0 +1,14 @@
+[
+    {
+        "property": "value",
+        "description": "The value of the tab.",
+        "type": {
+            "value": "string | number",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    }
+]

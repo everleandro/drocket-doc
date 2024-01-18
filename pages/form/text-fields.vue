@@ -52,7 +52,7 @@
     </section>
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Icons</h2>
-      <p>The <code class="primary-darken-1--text mx-2">e-textfield</code> With Icon component pairs a standard text input
+      <p>The <code class="green--text mx-2">e-textfield</code> With Icon component pairs a standard text input
         with a functional addon element, can be
         positioned on either the left or right side of the input field.</p>
       <BoxExample :color="textFieldProperty.color">
@@ -103,7 +103,7 @@
     </section>
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Validations</h2>
-      <p><code class="primary-darken-1--text mx-2">Input fields</code> use a rule-based validation system that returns
+      <p><code class="green--text mx-2">Input fields</code> use a rule-based validation system that returns
         true or a text string.</p>
       <BoxExample :color="textFieldProperty.color">
         <template #tabs>

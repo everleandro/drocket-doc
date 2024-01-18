@@ -58,6 +58,10 @@ export const mainLinks = [
     to: "/expansion-panel",
   },
   {
+    text: "Tabs",
+    to: "/tabs",
+  },
+  {
     text: "menu",
     to: "/menu",
   },

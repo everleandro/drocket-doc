@@ -5,7 +5,7 @@
         Icons
       </h1>
       <p>
-        The <code class="primary-darken-1--text mx-2">e-icon</code> component provides an easy way to display icons in
+        The <code class="green--text mx-2">e-icon</code> component provides an easy way to display icons in
         your
         application using webfont or simply passing the
         svg code directly
@@ -44,7 +44,7 @@
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Icon svg</h2>
       <p> You can use svg as an icon by simply passing an object of type <code
-          class="primary-darken-1--text mx-2">IconPath</code> to the <code class="primary-darken-1--text mx-2">icon</code>
+          class="green--text mx-2">IconPath</code> to the <code class="green--text mx-2">icon</code>
         property of the component.
       </p>
       <e-chip class="mb-2">svg exanple</e-chip>
@@ -124,14 +124,14 @@
             <tr>
               <td>small</td>
               <td>applies the size configured in the sass variables for the <code
-                  class="primary-darken-1--text">small</code> value </td>
+                  class="green--text">small</code> value </td>
               <td class="string">boolean</td>
               <td class="boolean">false</td>
             </tr>
             <tr>
               <td>x-small</td>
               <td>applies the size configured in the sass variables for the <code
-                  class="primary-darken-1--text">x-small</code> value </td>
+                  class="green--text">x-small</code> value </td>
               <td class="string">boolean</td>
               <td class="boolean">false</td>
             </tr>
@@ -139,7 +139,7 @@
             <tr>
               <td>x-large</td>
               <td>applies the size configured in the sass variables for the <code
-                  class="primary-darken-1--text">x-large</code> value </td>
+                  class="green--text">x-large</code> value </td>
               <td class="string">boolean</td>
               <td class="boolean">false</td>
             </tr>
@@ -193,7 +193,7 @@
   <section class="mb-12">
     <h2 class="text-h4 mb-2">data types</h2>
     <p> You can import all data types used in the component from the path: <code
-        class="primary-darken-1--text">~/drocket/icon/types</code> </p>
+        class="green--text">~/drocket/icon/types</code> </p>
 
     <e-expansion-panel>
       <e-expansion :model-value="true" v-for="(int, i) in interfaces" :key="i" :header-title="int.title" color="primary">

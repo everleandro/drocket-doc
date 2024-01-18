@@ -105,7 +105,7 @@
           <tbody>
             <tr>
               <td>$expansion-header-height</td>
-              <td class="string">40px <span class="boolean">!default;</span></td>
+              <td class="string">3rem <span class="boolean">!default;</span></td>
             </tr>
 
             <tr>
