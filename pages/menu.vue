@@ -5,7 +5,7 @@
         Menu
       </h1>
       <p>
-        The menu component shows a menu with a list of options.
+        The <code class="green--text mx-2 title">e-menu</code> component shows a menu with a list of options.
       </p>
     </div>
     <section class="mb-12">

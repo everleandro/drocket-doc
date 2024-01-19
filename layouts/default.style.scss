@@ -11,6 +11,11 @@
       &-item {
         text-transform: capitalize;
 
+        &[data-activator-node="true"] {
+          font-size: 14px;
+          font-weight: 500;
+        }
+
         &--text {
           pointer-events: none;
           text-transform: uppercase;

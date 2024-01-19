@@ -5,7 +5,7 @@
         Icons
       </h1>
       <p>
-        The <code class="green--text mx-2">e-icon</code> component provides an easy way to display icons in
+        The <code class="green--text mx-2 title">e-icon</code> component provides an easy way to display icons in
         your
         application using webfont or simply passing the
         svg code directly

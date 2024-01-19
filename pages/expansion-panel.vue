@@ -5,7 +5,8 @@
         Expansion Panel
       </h1>
       <p>
-        The Expansion Panel component is a container that can be expanded to reveal content. It is useful for reducing
+        The <code class="green--text mx-2 title">e-expansion</code> component is a container that can be expanded to
+        reveal content. It is useful for reducing
         vertical space with large amounts of information.
       </p>
     </div>

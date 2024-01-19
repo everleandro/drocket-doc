@@ -5,7 +5,7 @@
         Buttons
       </h1>
       <p>
-        The Buttons component offers a variety of button types and sizes to meet your design needs. There are lots of
+        The <code class="green--text mx-2 title">e-button</code> component offers a variety of button types and sizes to meet your design needs. There are lots of
         button types for the best fits design of your application.
       </p>
     </div>

@@ -1,0 +1,146 @@
+[
+    {
+        "property": "value",
+        "description": "The value of the item. This can be a string or a number and is used to determine the selected item.",
+        "type": {
+            "value": "string | number",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "append-icon",
+        "description": "name or configuration of the icon to be displayed to the right of the component",
+        "type": {
+            "value": "Array<IconPath> <hr role='separator' aria-orientation='horizontal' class='e-divider my-2'> IconPath <hr role='separator' aria-orientation='horizontal' class='e-divider my-2'> string",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "prepend-icon",
+        "description": "name or configuration of the icon to be displayed to the left of the component ",
+        "type": {
+            "value": "Array<IconPath> <hr role='separator' aria-orientation='horizontal' class='e-divider my-2'> IconPath <hr role='separator' aria-orientation='horizontal' class='e-divider my-2'> string",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "prepend-avatar",
+        "description": "Url for the avatar to be displayed to the left of the component",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "append-avatar",
+        "description": "Url for the avatar to be displayed to the right of the component",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "color",
+        "description": "Applies specified color to the component - supports only utility colors (for example <code class='boolean'>primary</code> or <code class='boolean'>secondary</code>)",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "primary",
+            "class": "string"
+        }
+    },
+    {
+        "property": "is-active",
+        "description": "Whether or not the item is active.",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "active-class",
+        "description": "The class to be applied to the active item.",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "title",
+        "description": "The text to be displayed as a title in the item.",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "subtitle",
+        "description": "The text to be displayed as a subtitle in the item.",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "tag",
+        "description": "The html tag to be used for rendering the item.",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "'li'",
+            "class": "string"
+        }
+    },
+    {
+        "property": "disabled",
+        "description": "Whether or not the item is disabled.",
+        "type": {
+            "value": "string | number",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    }
+]

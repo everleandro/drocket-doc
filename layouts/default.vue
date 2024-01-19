@@ -12,19 +12,17 @@
     <EDrawer v-model="drawerModel" fixed nav>
       <div class="nav__body">
         <div class="main-links">
-          <e-list color="primary">
-            <template v-for="({ text, to, divider }, index) in mainLinks" :key="index">
-              <template v-if="divider">
-                <e-divider></e-divider>
-                <e-list-item class="e-list-item--text">
-                  {{ text }}
+          <e-list v-model:group="listModel" color="primary">
+            <template v-for="({ text, to, group, items }, index) in mainLinks" :key="index">
+              <e-list-group v-if="group" :value="index">
+                <template #activator="{ attrs }">
+                  <e-list-item v-bind="attrs">{{ text }}</e-list-item>
+                </template>
+                <e-list-item v-for="item in items" :to="item.to">
+                  {{ item.text }}
                 </e-list-item>
-              </template>
-              <e-list-item v-else :to="to">
-                <slot name="item-text">
-                  {{ text }}
-                </slot>
-              </e-list-item>
+              </e-list-group>
+              <e-list-item v-else :to="to"> {{ text }} </e-list-item>
             </template>
           </e-list>
         </div>
@@ -45,7 +43,7 @@ const drawerModel = ref(true);
 import { useBreakpoint } from 'drocket'
 const { viewport } = useBreakpoint()
 const router = useRouter()
-
+const listModel = ref([])
 watch(() => router, () => {
   if (drawerModel.value && (viewport.xs || viewport.sm || viewport.md)) {
     drawerModel.value = false

@@ -5,7 +5,8 @@
         Switches
       </h1>
       <p>
-        The Toggle Switch component provides a user-friendly way to enable or disable a setting or feature. It presents a
+        The <code class="green--text mx-2 title">e-switch</code> component provides a user-friendly way to enable or
+        disable a setting or feature. It presents a
         visual representation of two states, typically on and off, allowing users to easily toggle between them.
       </p>
     </div>

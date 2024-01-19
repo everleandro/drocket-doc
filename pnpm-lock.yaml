@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   drocket:
-    specifier: ^1.0.11
-    version: 1.0.11
+    specifier: ^1.0.12
+    version: 1.0.12
   prismjs:
     specifier: ^1.29.0
     version: 1.29.0
@@ -2522,8 +2522,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /drocket@1.0.11:
-    resolution: {integrity: sha512-EdAoxH+qLGmhvUkBjlTIUH61FAz/qtzQYCpe5dM4wD4p3WVU4X1ZN9fTbKW2mieAPTpBcjIQB2bRlLyFjXKzEw==}
+  /drocket@1.0.12:
+    resolution: {integrity: sha512-rWLitSg3caSii1TpeaBoFuvC/0KawdkFy9J1BFieGLpJsy2KKSEdLI15cZKW+GPMKfqCiKeOVYqDgU6oyJqXGg==}
     dev: false
 
   /duplexer@0.1.2:

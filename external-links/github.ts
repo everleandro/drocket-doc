@@ -34,6 +34,10 @@ export default {
     title: "Textfield",
     url: `${preffix}form/textfield/index.vue`,
   },
+  list: {
+    title: "List",
+    url: `${preffix}list`,
+  },
   tab: {
     title: "Tabs",
     url: `${preffix}tab`,

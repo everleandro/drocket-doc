@@ -1,0 +1,62 @@
+[
+    {
+        "property": "disabled",
+        "description": "Remove the ability to click on the component",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "color",
+        "description": "Applies specified color to the component - supports only utility colors (for example <code class='boolean'>primary</code> or <code class='boolean'>secondary</code>)",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "primary",
+            "class": "string"
+        }
+    },
+    {
+        "property": "group",
+        "description": "contain the value or values of currently opened groups. Can be two-way bound with v-model:group. if the value is an array, the component will be in multiple mode",
+        "type": {
+            "value": "(string | number)[] | string | number",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "model-value",
+        "description": "The v-model value of the component. if the value is an array, the component will be in multiple mode",
+        "type": {
+            "value": "(string | number)[] | string | number",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "elevated",
+        "description": "Add a shadow to the component",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    }
+]

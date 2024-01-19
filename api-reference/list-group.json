@@ -1,0 +1,14 @@
+[
+    {
+        "property": "value",
+        "description": "The value of the group. This is the value that will be returned by the list when the group is selected.",
+        "type": {
+            "value": "string | number",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    }
+]

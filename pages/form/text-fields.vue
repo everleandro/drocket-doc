@@ -5,7 +5,7 @@
         Text Field
       </h1>
       <p>
-        Input Component is a fundamental user interface element used to collect user input or data in various forms, such
+        <code class="green--text mx-2 title">e-textfield</code> Component is a fundamental user interface element used to collect user input or data in various forms, such
         as text, numbers, dates, or selections.
       </p>
     </div>

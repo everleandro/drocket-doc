@@ -4,75 +4,84 @@ export const mainLinks = [
     text: "Get Started",
     to: "/",
   },
-
   {
     text: "FORM & INPUTS",
-    divider: true,
+    group: true,
+    items: [
+      {
+        text: "form",
+        to: "/form",
+      },
+      {
+        text: "Text Fields",
+        to: "/form/text-fields",
+      },
+      {
+        text: "selects",
+        to: "/form/selects",
+      },
+      {
+        text: "checkboxes",
+        to: "/form/checkboxes",
+      },
+      {
+        text: "switches",
+        to: "/form/switches",
+      },
+      {
+        text: "radio buttons",
+        to: "/form/radio-buttons",
+      },
+    ],
   },
-  {
-    text: "form",
-    to: "/form",
-  },
-  {
-    text: "Text Fields",
-    to: "/form/text-fields",
-  },
-  {
-    text: "selects",
-    to: "/form/selects",
-  },
-  {
-    text: "checkboxes",
-    to: "/form/checkboxes",
-  },
-  {
-    text: "switches",
-    to: "/form/switches",
-  },
-  {
-    text: "radio buttons",
-    to: "/form/radio-buttons",
-  },
+
   {
     text: "CONTAINMENT",
-    divider: true,
+    group: true,
+    items: [
+      {
+        text: "schedule",
+        to: "/schedule",
+      },
+      {
+        text: "buttons",
+        to: "/buttons",
+      },
+      {
+        text: "icons",
+        to: "/icons",
+      },
+      {
+        text: "Date Picker",
+        to: "/date-picker",
+      },
+      {
+        text: "Expansion Panel",
+        to: "/expansion-panel",
+      },
+      {
+        text: "menu",
+        to: "/menu",
+      },
+      {
+        text: "chips",
+        to: "/chips",
+      },
+      {
+        text: "dialog",
+        to: "/dialog",
+      },
+      {
+        text: "Tabs",
+        to: "/tabs",
+      },
+      {
+        text: "Lists",
+        to: "/lists",
+      },
+    ],
   },
-  {
-    text: "schedule",
-    to: "/schedule",
-  },
-  {
-    text: "buttons",
-    to: "/buttons",
-  },
-  {
-    text: "icons",
-    to: "/icons",
-  },
-  {
-    text: "Date Picker",
-    to: "/date-picker",
-  },
-  {
-    text: "Expansion Panel",
-    to: "/expansion-panel",
-  },
-  {
-    text: "Tabs",
-    to: "/tabs",
-  },
-  {
-    text: "menu",
-    to: "/menu",
-  },
-  {
-    text: "chips",
-    to: "/chips",
-  },
-  {
-    text: "dialog",
-    to: "/dialog",
-  },
+
   // {
   //     icon: iconFactory.checking,
   //     text: 'Fichajes',

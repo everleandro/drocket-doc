@@ -5,7 +5,7 @@
         Chips
       </h1>
       <p>
-        The chip component allows you to show a list of items in a chip.
+        The <code class="green--text mx-2 title">e-chip</code> component allows you to show a list of items in a chip.
       </p>
     </div>
     <section class="mb-12">

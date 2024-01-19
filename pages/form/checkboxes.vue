@@ -5,7 +5,8 @@
         Checkbox
       </h1>
       <p>
-        The Checkbox Component is a user interface element that allows users to toggle between two states, typically
+        The <code class="green--text mx-2 title">e-checkbox</code> component is a user interface element that allows users
+        to toggle between two states, typically
         representing selection or deselection. It consists of a small box that can be checked (selected) or unchecked
         (deselected). The Checkbox component can be used to represent both single and multiple selections.
       </p>

@@ -5,7 +5,8 @@
         Tabs
       </h1>
       <p>
-        The tabs component shows a list of tabs useful for showing different content hidden behind each tab.
+        The <code class="green--text mx-2 title">e-tab</code> component shows a list of tabs useful for showing different
+        content hidden behind each tab.
       </p>
     </div>
     <section class="mb-12">
