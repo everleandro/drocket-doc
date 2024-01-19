@@ -85,6 +85,8 @@
     </section>
 
     <section>
+      <h2 class="text-h4 mb-2">Props</h2>
+      <p>Explore the available props for the form component</p>
       <h3 class="text-h3"><code class="green--text mx-2">e-list</code></h3>
       <div class="responsive-table">
         <table>

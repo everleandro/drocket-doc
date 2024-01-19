@@ -64,6 +64,7 @@
       <div v-text="variableCode" v-prism="{ class: 'language-scss' }">
       </div>
     </section>
+
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Buttons</h2>
       <p>Icons can be used inside of buttons </p>
@@ -252,6 +253,3 @@ const iconHtmlCode = `<template">
   <e-button color="primary" append-icon="pencil">Edit</e-button>
 </template>`
 </script>
-<style lang="scss">
-.icon-page {}
-</style>
