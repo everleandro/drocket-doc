@@ -42,6 +42,10 @@ export default {
     title: "Tabs",
     url: `${preffix}tab`,
   },
+  drawer: {
+    title: "Tabs",
+    url: `${preffix}drawer/index.vue`,
+  },
   icon: {
     title: "Icon",
     url: `${preffix}icon/index.vue`,

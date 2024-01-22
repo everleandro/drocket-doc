@@ -26,13 +26,12 @@
   }
 }
 
-.e-bar {
+.e-drawer {
   .app-logo {
-    display: flex;
-    padding: 0 12px;
-    align-items: center;
-    color: var(--primary);
-    font-weight: 300;
+    .e-list-item__content {
+      font-weight: 300;
+      font-size: 2em;
+    }
 
     .e-icon {
       transform: rotate(45deg);

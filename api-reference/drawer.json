@@ -1,0 +1,86 @@
+[
+    {
+        "property": "model-value",
+        "description": "The v-model value of the component.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "absolute",
+        "description": "Sets the position of the component to absolute, set a box shadow to the component and make the drawer have a temporary behavior.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "fixed",
+        "description": "Sets the position of the component to fixed, remove the box shadow from the component and make the drawer have a permanent behavior.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "nav",
+        "description": "By default, the drawer will by rendered with a aside element. Set this property to true to render the drawer with a nav element instead.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "right",
+        "description": "Sets the position of the drawer to the right side of the screen. By default, the drawer is rendered on the left side of the screen",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "width",
+        "description": "Sets the width of the drawer. By default, the drawer has a width of 16rem. You can set this property to a number or a string with a valid CSS unit.",
+        "type": {
+            "value": "string <hr role='separator' aria-orientation='horizontal' class='e-divider my-2'> number",
+            "class": "string"
+        },
+        "default": {
+            "value": "string",
+            "class": "16rem"
+        }
+    },
+    {
+        "property": "width-unit",
+        "description": "Sets the unit of the width of the drawer. By default, the drawer has a width of 16rem. You can set this property to a number or a string with a valid CSS unit. If you set the width property to a number, you can use this property to set the unit of the width. ",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "rem",
+            "class": "string"
+        }
+    }
+]

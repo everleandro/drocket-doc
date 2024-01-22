@@ -103,6 +103,9 @@ export const iconFactory: Record<string, IconPath> = {
   trash: {
     d: "M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z",
   },
+  home: {
+    d: "M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z",
+  },
 };
 
 export default defineNuxtPlugin(() => {

@@ -5,7 +5,8 @@
         Buttons
       </h1>
       <p>
-        The <code class="green--text mx-2 title">e-button</code> component offers a variety of button types and sizes to meet your design needs. There are lots of
+        The <code class="green--text mx-2 title">e-button</code> component offers a variety of button types and sizes to
+        meet your design needs. There are lots of
         button types for the best fits design of your application.
       </p>
     </div>
@@ -53,7 +54,7 @@
         Here are the available size options: <code class="green--text">x-small small large x-large</code>
       </p>
 
-      <BoxExample :color="color">
+      <BoxExample color="primary">
         <template #tabs>
           <ETab value="design">
             Design
@@ -338,7 +339,7 @@ const buttonProperty = ref({
   outlined: false, loading: false, disabled: false,
   depressed: false, block: false, rounded: false, text: false
 })
-const colors = ['primary', 'secondary', 'salmon', 'carnation']
+const colors = ['primary', 'secondary', 'blue', 'warning', 'purple']
 
 
 const HTMLCode = computed(() => `<template>

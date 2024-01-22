@@ -1,9 +1,12 @@
 $colors: (
     "primary": #00af67,
     "green": #068f57,
+    "blue": #00d3ee,
     "salmon":rgb(242, 135, 115),
     "carnation":#F24949,
     "error":#e30425,
+    "warning": #ffa21a,
+    "purple": #AF2CC5,
     "secondary": #2c373c,
     "input": #4f636b,
     "input-placeholder": #b7b9ba,
@@ -16,6 +19,7 @@ $colors: (
     "grey": #91a0a8,
     "white": white,
 );
-// $btn-border-width: 1px;
+$btn-border-width: 1px;
+$border-radius-root: 4px;
 
 @import "drocket/setting.scss";

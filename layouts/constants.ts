@@ -41,43 +41,53 @@ export const mainLinks = [
     items: [
       {
         text: "schedule",
-        to: "/schedule",
+        to: "/containment/schedule",
       },
       {
         text: "buttons",
-        to: "/buttons",
+        to: "/containment/buttons",
       },
       {
         text: "icons",
-        to: "/icons",
+        to: "/containment/icons",
       },
       {
         text: "Date Picker",
-        to: "/date-picker",
+        to: "/containment/date-picker",
       },
       {
         text: "Expansion Panel",
-        to: "/expansion-panel",
+        to: "/containment/expansion-panel",
       },
       {
         text: "menu",
-        to: "/menu",
+        to: "/containment/menu",
       },
       {
         text: "chips",
-        to: "/chips",
+        to: "/containment/chips",
       },
       {
         text: "dialog",
-        to: "/dialog",
+        to: "/containment/dialog",
       },
       {
         text: "Tabs",
-        to: "/tabs",
+        to: "/containment/tabs",
       },
       {
         text: "Lists",
-        to: "/lists",
+        to: "/containment/lists",
+      },
+    ],
+  },
+  {
+    text: "LAYOUT",
+    group: true,
+    items: [
+      {
+        text: "Drawer",
+        to: "/layout/drawer",
       },
     ],
   },

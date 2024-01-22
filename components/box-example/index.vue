@@ -6,7 +6,8 @@
                 <template v-if="github">
                     <e-spacer />
                     <!-- <e-button :icon="$icon.fullScreen" @click="fullScreenAction" /> -->
-                    <e-button :prepend-icon="$icon.gitHub" text small :to="github.url" target="_blank" class="mr-1">
+                    <e-button :prepend-icon="$icon.gitHub" text small :to="github.url" target="_blank" class="mr-1"
+                        style="align-self: center;">
                         view on GitHub
                     </e-button>
                 </template>
