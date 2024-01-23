@@ -11,7 +11,7 @@
       </p>
     </div>
     <section class="mb-12" style="height: 540px;">
-      <iframe src="/iframe/drawer-example" frameborder="0" width="100%" height="100%"></iframe>
+      <iframe src="/iframe/drawer" frameborder="0" width="100%" height="100%"></iframe>
     </section>
     <section class="mb-12">
       <h2 class="text-h4 mb-2">Props</h2>

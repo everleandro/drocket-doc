@@ -38,9 +38,9 @@
                   </e-button>
                 </template>
                 <e-list color="primary" class="white">
-                  <e-list-item>Option 1</e-list-item>
-                  <e-list-item>Option 2</e-list-item>
-                  <e-list-item>Option 3</e-list-item>
+                  <e-list-item value="1">Option 1</e-list-item>
+                  <e-list-item value="2">Option 2</e-list-item>
+                  <e-list-item value="3">Option 3</e-list-item>
                 </e-list>
               </EMenu>
 
@@ -97,7 +97,7 @@ import menuApiReference from '@/api-reference/menu.json'
 
 const menuProperty = reactive({
   closeOnContentClick: false,
-  fullWidth: false,
+  fullWidth: true,
   disableMenu: false,
   openOnHover: false,
   model: false,

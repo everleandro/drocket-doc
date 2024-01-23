@@ -1,0 +1,110 @@
+[
+    {
+        "property": "absolute",
+        "description": "If true, the component will be positioned absolutely.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "dense",
+        "description": "Reduces the height of the component.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "outlined",
+        "description": "Displays an outlined version of the component.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "clipped",
+        "description": "If true, causes the component to be placed above the drawer if one exists in the layout",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "color",
+        "description": "Applies specified color to the component - supports only utility colors (for example <code class='boolean'>primary</code> or <code class='boolean'>secondary</code>)",
+        "type": {
+            "value": "string",
+            "class": "string"
+        },
+        "default": {
+            "value": "primary",
+            "class": "string"
+        }
+    },
+    {
+        "property": "height",
+        "description": "Sets the height of the bar. By default, the bar has a height of 48px. You can set this property to a number or a string with a valid CSS unit.",
+        "type": {
+            "value": "string <hr role='separator' aria-orientation='horizontal' class='e-divider my-2'> number",
+            "class": "string"
+        },
+        "default": {
+            "value": "undefined",
+            "class": "undefined"
+        }
+    },
+    {
+        "property": "fixed",
+        "description": "If true, the bar will be fixed to the top of the viewport and never scroll with its content.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "depressed",
+        "description": "Remves the box shadow effect from the bar.",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    },
+    {
+        "property": "app",
+        "description": "Applicable only when the component is a direct child of the e-app component, it allows the component to be integrated as part of the application layout",
+        "type": {
+            "value": "boolean",
+            "class": "string"
+        },
+        "default": {
+            "value": "false",
+            "class": "boolean"
+        }
+    }
+]

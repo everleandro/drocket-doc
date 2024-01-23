@@ -9,7 +9,7 @@ export const mainLinks = [
     group: true,
     items: [
       {
-        text: "form",
+        text: "Form",
         to: "/form",
       },
       {
@@ -17,19 +17,19 @@ export const mainLinks = [
         to: "/form/text-fields",
       },
       {
-        text: "selects",
+        text: "Selects",
         to: "/form/selects",
       },
       {
-        text: "checkboxes",
+        text: "Checkboxes",
         to: "/form/checkboxes",
       },
       {
-        text: "switches",
+        text: "Switches",
         to: "/form/switches",
       },
       {
-        text: "radio buttons",
+        text: "Radio Buttons",
         to: "/form/radio-buttons",
       },
     ],
@@ -40,15 +40,15 @@ export const mainLinks = [
     group: true,
     items: [
       {
-        text: "schedule",
+        text: "Schedule",
         to: "/containment/schedule",
       },
       {
-        text: "buttons",
+        text: "Buttons",
         to: "/containment/buttons",
       },
       {
-        text: "icons",
+        text: "Icons",
         to: "/containment/icons",
       },
       {
@@ -60,15 +60,15 @@ export const mainLinks = [
         to: "/containment/expansion-panel",
       },
       {
-        text: "menu",
+        text: "Menu",
         to: "/containment/menu",
       },
       {
-        text: "chips",
+        text: "Chips",
         to: "/containment/chips",
       },
       {
-        text: "dialog",
+        text: "Dialog",
         to: "/containment/dialog",
       },
       {
@@ -88,6 +88,10 @@ export const mainLinks = [
       {
         text: "Drawer",
         to: "/layout/drawer",
+      },
+      {
+        text: "Bar",
+        to: "/layout/bar",
       },
     ],
   },

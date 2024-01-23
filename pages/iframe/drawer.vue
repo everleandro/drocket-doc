@@ -133,7 +133,8 @@ const HTMLCode = computed(() => `<template>
     margin: 2px;
 }
 
-.code-conmtainer {
+
+.e-card {
     max-height: 400px;
 }
 

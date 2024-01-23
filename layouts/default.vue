@@ -1,7 +1,7 @@
 <template>
   <e-app>
     <e-bar app fixed>
-      <e-button :icon="$icon.menu" text color="tertiary" large @click="closeDrawer()" />
+      <e-button :icon="$icon.menu" text color="primary" @click="closeDrawer()" />
 
       <e-spacer />
       <e-button :prepend-icon="$icon.gitHub" text :to="githubRepo.root.url" target="_blank" class="mr-1">
