@@ -64,7 +64,7 @@
               <td class="string">48px <span class="boolean">!default;</span></td>
             </tr>
             <tr>
-              <td>$e-bar-box-shadow</td>
+              <td>$e-bar-box-shadow </td>
               <td>
                 <div v-prism="{ class: 'language-scss' }">
                   <pre>
