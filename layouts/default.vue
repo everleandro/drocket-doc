@@ -1,11 +1,11 @@
 <template>
   <e-app>
-    <e-bar app fixed>
-      <e-button :icon="$icon.menu" text color="primary" @click="closeDrawer()" />
+    <e-bar app fixed outlined depressed>
+      <e-button class="d-block d-lg-none" :icon="$icon.menu" text color="primary" @click="closeDrawer()" />
 
       <e-spacer />
       <e-button :prepend-icon="$icon.gitHub" text :to="githubRepo.root.url" target="_blank" class="mr-1">
-        view on GitHub
+        <span class="d-none d-lg-block">view on GitHub</span>
       </e-button>
     </e-bar>
     <EDrawer v-model="drawerModel" fixed nav>
@@ -13,7 +13,7 @@
         <e-list-item :prepend-icon="$icon.logo" color="primary" class="app-logo">
           Drocket
         </e-list-item>
-        <e-divider style="margin-top: -2px;"></e-divider>
+        <!-- <e-divider style="margin-top: -2px;"></e-divider> -->
       </template>
       <e-list v-model:group="listModel" color="primary">
         <template v-for="({ text, to, group, items }, index) in mainLinks" :key="index">
@@ -31,7 +31,7 @@
 
     </EDrawer>
 
-    <EMain>
+    <EMain id="doc-main-app">
       <EContainer class="mt-8">
         <router-view></router-view>
       </EContainer>
@@ -49,10 +49,17 @@ const listModel = ref([])
 watch(() => router, () => {
   if (drawerModel.value && (viewport.xs || viewport.sm || viewport.md)) {
     drawerModel.value = false
+  } else if (!drawerModel.value && (viewport.xl || viewport.lg)) {
+    drawerModel.value = true
   }
 
 }, { deep: true, immediate: true });
 
+watch(() => viewport, ({ lg, xl }) => {
+  if (lg || xl) {
+    drawerModel.value = true
+  }
+}, { deep: true, immediate: true });
 const closeDrawer = () => {
   drawerModel.value = !drawerModel.value;
 };
