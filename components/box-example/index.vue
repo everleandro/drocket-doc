@@ -8,7 +8,7 @@
                     <!-- <e-button :icon="$icon.fullScreen" @click="fullScreenAction" /> -->
                     <e-button :prepend-icon="$icon.gitHub" text small :to="github.url" target="_blank" class="mr-1"
                         style="align-self: center;">
-                        view on GitHub
+                        <span class="d-none d-lg-block">view on GitHub</span>
                     </e-button>
                 </template>
             </ETabGroup>
