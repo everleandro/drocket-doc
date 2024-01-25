@@ -104,12 +104,12 @@ export const mainLinks = [
     group: true,
     items: [
       {
-        text: "Sass-variables",
+        text: "Sass variables",
         to: "/style/sass-variables",
       },
       {
-        text: "spacing",
-        to: "/style/spacing",
+        text: "Helper Classes",
+        to: "/style/helper-classes",
       },
     ],
   },

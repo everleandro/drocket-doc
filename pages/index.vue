@@ -24,14 +24,23 @@
           Vue App
         </h2>
         <e-divider></e-divider>
-        <div class="mt-2">
+        <div class="mt-2 section-code-container">
           <p class="">Setting Up Drocket in Vue Application</p>
           <e-chip class="mb-2" color="secondary"> //src/main.ts</e-chip>
-          <div v-prism="{ class: 'language-js' }">{{ VueMainJs }}</div>
+          <div>
+            <copy-button />
+            <div v-prism="{ class: 'language-js' }">{{ VueMainJs }}</div>
+          </div>
           <e-chip class="mb-2 mt-4" color="secondary"> // vite.config.ts</e-chip>
-          <div v-prism="{ class: 'language-js' }">{{ ViteConfig }}</div>
+          <div>
+            <copy-button />
+            <div v-prism="{ class: 'language-js' }">{{ ViteConfig }}</div>
+          </div>
           <e-chip class="mb-2 mt-4" color="secondary"> // style.scss</e-chip>
-          <div v-prism="{ class: 'language-js' }">{{ SassVariables }}</div>
+          <div>
+            <copy-button />
+            <div v-prism="{ class: 'language-js' }">{{ SassVariables }}</div>
+          </div>
         </div>
       </div>
       <div class="mb-12">
@@ -39,14 +48,23 @@
           Nuxt App
         </h2>
         <e-divider></e-divider>
-        <div class="mt-2">
+        <div class="mt-2 section-code-container">
           <p class="">Setting Up Drocket in Nuxt Application</p>
           <e-chip class="mb-2" color="secondary"> // plugins/drocket.ts</e-chip>
-          <div v-prism="{ class: 'language-js' }">{{ NuxtPluginsJs }}</div>
+          <div>
+            <copy-button />
+            <div v-prism="{ class: 'language-js' }">{{ NuxtPluginsJs }}</div>
+          </div>
           <e-chip class="mb-2 mt-4" color="secondary"> // nuxt.config.ts</e-chip>
-          <div v-prism="{ class: 'language-js' }">{{ NuxtConfigJs }}</div>
+          <div>
+            <copy-button />
+            <div v-prism="{ class: 'language-js' }">{{ NuxtConfigJs }}</div>
+          </div>
           <e-chip class="mb-2 mt-4" color="secondary"> // sass/variables.scss</e-chip>
-          <div v-prism="{ class: 'language-js' }">{{ SassVariables }}</div>
+          <div>
+            <copy-button />
+            <div v-prism="{ class: 'language-js' }">{{ SassVariables }}</div>
+          </div>
         </div>
       </div>
       <div class="mb-12">
@@ -54,18 +72,24 @@
           Sass variables example file
         </h2>
         <e-divider></e-divider>
-        <div class="mt-2">
+        <div class="mt-2 section-code-container">
           <p class="">
             This file overrides the default library style settings, each of the colors defined in it can be passed as a
             property to components declared in the library and also generate helper classes.
           </p>
           <e-chip class="mb-2" color="secondary"> /sass/variables.scss</e-chip>
-          <div v-prism="{ class: 'language-scss' }">{{ SassVariablesExample }}</div>
+          <div>
+            <copy-button />
+            <div v-prism="{ class: 'language-scss' }">{{ SassVariablesExample }}</div>
+          </div>
           <p class="mt-4 mb-2">
             Generated classes
           </p>
           <e-divider></e-divider>
-          <div v-prism="{ class: 'language-scss' }">{{ GeneratedClasses }}</div>
+          <div>
+            <copy-button />
+            <div v-prism="{ class: 'language-scss' }">{{ GeneratedClasses }}</div>
+          </div>
         </div>
       </div>
 
@@ -77,9 +101,9 @@
 import type { BoxCode as BC } from "@/components/box-code/index.vue";
 
 const installCode: Record<string, BC> = {
-  npm: { code: 'npm install @drocket', language: 'language-js' },
-  pnpm: { code: 'pnpm add @drocket', language: 'language-js' },
-  yarn: { code: 'yarn add @drocket', language: 'language-js' }
+  npm: { code: 'npm install drocket', language: 'language-js' },
+  pnpm: { code: 'pnpm install drocket', language: 'language-js' },
+  yarn: { code: 'yarn add drocket', language: 'language-js' }
 }
 
 
@@ -178,4 +202,10 @@ const GeneratedClasses = `.primary {
 `
 
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.section-code-container {
+  >div {
+    position: relative;
+  }
+}
+</style>

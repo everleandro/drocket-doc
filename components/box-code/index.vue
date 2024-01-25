@@ -7,6 +7,7 @@
                 </ETab>
             </ETabGroup>
             <EWindow v-model="tab" class="">
+                <copy-button only-visible />
                 <EWindowItem :value="index" v-for="(value, _, index) in code" :key="index">
                     <div v-text="value.code" v-prism="{ class: value.language }"></div>
                 </EWindowItem>

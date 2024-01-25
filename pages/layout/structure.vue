@@ -12,7 +12,11 @@
       </p>
     </div>
     <section class="mb-12">
-      <div v-prism>{{ HTML }}</div>
+      <h2 class="text-h4 mb-2">Basic structure</h2>
+      <div style="position: relative;">
+        <copy-button />
+        <div v-prism>{{ HTML }}</div>
+      </div>
     </section>
 
 

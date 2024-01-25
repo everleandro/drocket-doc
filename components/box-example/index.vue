@@ -21,7 +21,8 @@
             </template>
             <ERow no-gutters>
                 <ECol :lg="showForm ? 16 : 24" cols="24" class="py-8 px-4">
-                    <EWindow v-model="tab" class="box-container">
+                    <EWindow v-model="tab" class="box-container" :data-tab-model="tab">
+                        <copy-button v-if="tab !== 'design'" only-visible></copy-button>
                         <slot name="window-item"></slot>
                     </EWindow>
                 </ECol>
@@ -101,6 +102,7 @@ const fullScreenAction = () => {
 
         pre[class*="language-"] {
             margin-top: 0;
+            height: 100%;
         }
 
         .e-window,
