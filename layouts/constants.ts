@@ -86,6 +86,10 @@ export const mainLinks = [
     group: true,
     items: [
       {
+        text: "Structure",
+        to: "/layout/structure",
+      },
+      {
         text: "Drawer",
         to: "/layout/drawer",
       },
@@ -95,7 +99,20 @@ export const mainLinks = [
       },
     ],
   },
-
+  {
+    text: "Style",
+    group: true,
+    items: [
+      {
+        text: "Sass-variables",
+        to: "/style/sass-variables",
+      },
+      {
+        text: "spacing",
+        to: "/style/spacing",
+      },
+    ],
+  },
   // {
   //     icon: iconFactory.checking,
   //     text: 'Fichajes',
