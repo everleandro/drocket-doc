@@ -2,6 +2,7 @@
 
 export default defineNuxtConfig({
   css: ["@/assets/styles/app.scss"],
+
   app: {
     head: {
       title: "Drocket",
@@ -38,6 +39,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   vite: {
     build: {
       sourcemap: true,
@@ -50,4 +52,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  compatibilityDate: "2024-12-02",
 });
