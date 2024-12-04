@@ -16,7 +16,9 @@
           To get started with Drocket, simply paste the following code into your
           terminal:
         </p>
-        <boxCode :code="installCode" class="my-2" />
+        <boxCode :code="installCode" />
+        <p class="mt-12">You also need to install Sass in your project to use the library:</p>
+        <boxCode :code="installSass" class="my-2" />
       </div>
       <!-- <div class="mb-12">
         <h2 class="text-h4 mb-2">Vue App</h2>
@@ -97,6 +99,12 @@
 </template>
 <script lang="ts" setup>
 import type { BoxCode as BC } from "@/components/box-code/index.vue";
+
+const installSass: Record<string, BC> = {
+  npm: { code: "npm install -D Sass", language: "language-js" },
+  pnpm: { code: "pnpm install -D Sass", language: "language-js" },
+  yarn: { code: "yarn add -D Sass", language: "language-js" },
+};
 
 const installCode: Record<string, BC> = {
   npm: { code: "npm install drocket", language: "language-js" },

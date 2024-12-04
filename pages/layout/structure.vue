@@ -34,9 +34,9 @@ const HTML = `<template>
 
     <e-main>
       <e-container >
-        <router-view>
+        <NuxtPage>
           <!-- here goes the content of the page -->  
-        </router-view>
+        </NuxtPage>
       </e-container>
     </e-main>
   </e-app>
