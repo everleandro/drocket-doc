@@ -164,7 +164,7 @@
         <table>
           <thead>
             <tr>
-              <th>Name</th>
+              <th>Icon</th>
               <th>Default</th>
             </tr>
           </thead>
@@ -228,7 +228,7 @@ const interfaces = [
 }`}]
 
 const HTMLCode = computed(() => `<template>
-  <e-icon \n    name="account" \n    color="${iconProperty.value.color}"${iconProperty.value.disabled ?
+  <e-icon \n    icon="account" \n    color="${iconProperty.value.color}"${iconProperty.value.disabled ?
     '\n    disabled' : ''}${iconProperty.value.size === iconSize.large ? '\n    large' : ''}${iconProperty.value.size === iconSize.xSmall ?
       '\n    x-small' : ''}${iconProperty.value.size === iconSize.xLarge ? '\n    x-large' : ''}${iconProperty.value.size === iconSize.small ? '\n    small' : ''}/>
 </template>

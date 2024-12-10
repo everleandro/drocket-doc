@@ -17,7 +17,9 @@
           terminal:
         </p>
         <boxCode :code="installCode" />
-        <p class="mt-12">You also need to install Sass in your project to use the library:</p>
+        <p class="mt-12">
+          You also need to install Sass in your project to use the library:
+        </p>
         <boxCode :code="installSass" class="my-2" />
       </div>
       <!-- <div class="mb-12">
