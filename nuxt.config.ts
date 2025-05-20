@@ -2,10 +2,16 @@
 
 export default defineNuxtConfig({
   css: ["@/assets/styles/app.scss"],
-
+  site: {
+    url: "https://drocket-doc.vercel.app",
+    name: "Drocket",
+  },
   app: {
     head: {
       title: "Drocket",
+      htmlAttrs: {
+        lang: "en",
+      },
       meta: [
         { charset: "utf-8" },
         {
@@ -47,11 +53,13 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@import "assets/styles/_global.scss";`,
+          api: "modern-compiler",
+          additionalData: `@use "assets/styles/_global.scss" as *; @use "drocket/mixin.scss";`,
         },
       },
     },
   },
 
   compatibilityDate: "2024-12-02",
+  modules: ["@nuxtjs/sitemap"],
 });

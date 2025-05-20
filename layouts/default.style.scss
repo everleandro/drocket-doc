@@ -27,7 +27,7 @@
 }
 
 // .e-bar--depressed {
-  // box-shadow: none;
+// box-shadow: none;
 // }
 
 #doc-main-app {
@@ -48,19 +48,19 @@
   }
 }
 
-@include _xs {
+@include mixin.xs {
   html {
     --root-font-size: 15.2px;
   }
 }
 
-@include _sm {
+@include mixin.sm {
   html {
     --root-font-size: 15.4px;
   }
 }
 
-@include _md {
+@include mixin.md {
   html {
     --root-font-size: 15.6px;
   }
