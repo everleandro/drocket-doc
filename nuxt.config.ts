@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Drocket",
+      title: "'Drocket - Vue Component Library",
       htmlAttrs: {
         lang: "en",
       },
@@ -29,8 +29,21 @@ export default defineNuxtConfig({
         {
           name: "description",
           content:
-            "Drocket is components library built on top of Vue. It offers a collection of pre-designed UI components and styles that you can easily integrate into your web applications. Install Drocket in your Vue application or Nuxt Application following step bellow.",
+            "Drocket is a Vue 3 component library designed to speed up your Nuxt and Vue development with pre-designed UI components and flexible styles.",
+            
         },
+          { name: 'keywords', content: 'vue, vue3, nuxt, components, ui, library, drocket' },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'author', content: 'Drocket Team' },
+        { property: 'og:title', content: 'Drocket - Vue Component Library' },
+        { property: 'og:description', content: 'Speed up your Vue and Nuxt apps with Drocket UI components.' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https://drocket-doc.vercel.app' },
+        { property: 'og:image', content: 'https://drocket-doc.vercel.app/og-image.png' }, // opcional
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: 'Drocket - Vue Component Library' },
+        { name: 'twitter:description', content: 'Speed up your Vue and Nuxt apps with Drocket UI components.' },
+        { name: 'twitter:image', content: 'https://drocket-doc.vercel.app/og-image.png' },
       ],
       script: [
         {
